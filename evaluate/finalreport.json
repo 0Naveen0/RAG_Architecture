@@ -1,0 +1,569 @@
+{
+  "timestamp": "2026-04-03T10:57:00.107573",
+  "total_queries": 20,
+  "summary": {
+    "precision": 0.714,
+    "recall": 0.679,
+    "f1": 0.69,
+    "keyword_match": 0.462,
+    "avg_latency_second": 19,
+    "refusal_accuracy": 1,
+    "rewrite_trigger_rate": 3,
+    "rewrite_success_rate": 1.0
+  },
+  "by_difficulty": {
+    "Easy": {
+      "count": 8,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75
+    },
+    "Hard": {
+      "count": 4,
+      "precision": 0.75,
+      "recall": 0.625,
+      "f1": 0.667
+    },
+    "Medium": {
+      "count": 2,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5
+    }
+  },
+  "by_category": {
+    "domain": {
+      "count": 13,
+      "precision": 0.769,
+      "recall": 0.731,
+      "f1": 0.744
+    },
+    "edge": {
+      "count": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  },
+  "failures": [
+    {
+      "id": "q001",
+      "query": "Is there no need to clean strings being passed as bindings?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.2,
+      "refusal_correct": false,
+      "should_refuse": false,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 13.776,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    },
+    {
+      "id": "q006",
+      "query": "What should I do,in order to protect from running seeding commands against production database?",
+      "category": "domain",
+      "difficulty_level": "Medium",
+      "expected_chunk": [
+        2
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.7142857142857143,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 31.265,
+      "answer": "In order to protect from running seeding commands against production database, you can use the --force flag when running the db:seed command"
+    },
+    {
+      "id": "q010",
+      "query": "why is there no need to clean strings being passed as bindings?",
+      "category": "edge",
+      "difficulty_level": "Hard",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": false,
+      "should_refuse": false,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 0.959,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    },
+    {
+      "id": "q016",
+      "query": "Is Laravel's sample environment configuration ready to use with Laravel Homestead?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": false,
+      "should_refuse": false,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 1.015,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    }
+  ],
+  "raw_results": [
+    {
+      "id": "q001",
+      "query": "Is there no need to clean strings being passed as bindings?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.2,
+      "refusal_correct": false,
+      "should_refuse": false,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 13.776,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    },
+    {
+      "id": "q002",
+      "query": "Which command is used to generate migrations?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 0.6666666666666666,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 27.618,
+      "answer": "The command used to generate migrations is \"make:migration\"."
+    },
+    {
+      "id": "q003",
+      "query": "How can I use seeders?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 0.2,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 31.065,
+      "answer": "Sure! Here's how to use Laravel's built-in seeders:\n\n1. Create a new file in your project's"
+    },
+    {
+      "id": "q004",
+      "query": "Explain redis facade with example?",
+      "category": "domain",
+      "difficulty_level": "Hard",
+      "expected_chunk": [
+        3,
+        4
+      ],
+      "retrieved_ids": [
+        "4"
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666,
+      "keyword_match": 0.5,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 31.227,
+      "answer": "The Redis facade is a Laravel package that provides a simple and intuitive interface for working with Redis databases. It allows developers to interact with Redis servers through the Laravel framework, making it easy to manage and manipulate data stored in Red"
+    },
+    {
+      "id": "q005",
+      "query": "What is redis and how it could be installed?",
+      "category": "domain",
+      "difficulty_level": "Hard",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 0.14285714285714285,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 31.218,
+      "answer": "Redis is an open-source, advanced key-value store that is commonly used for caching, distributed cache, and"
+    },
+    {
+      "id": "q006",
+      "query": "What should I do,in order to protect from running seeding commands against production database?",
+      "category": "domain",
+      "difficulty_level": "Medium",
+      "expected_chunk": [
+        2
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.7142857142857143,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 31.265,
+      "answer": "In order to protect from running seeding commands against production database, you can use the --force flag when running the db:seed command"
+    },
+    {
+      "id": "q007",
+      "query": "Which country won the T20 cricket world cup 2026? ",
+      "category": "off-domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": true,
+      "should_refuse": true,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 0.989,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    },
+    {
+      "id": "q008",
+      "query": "What is the core reason behind USA, Iran war?",
+      "category": "off-domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": true,
+      "should_refuse": true,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 1.047,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    },
+    {
+      "id": "q009",
+      "query": "How can I configure environment variables to point a newly created sqlite database?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 0.25,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "LOW",
+      "rewrite_triggered": true,
+      "latency_seconds": 42.809,
+      "answer": "To configure environment variables to point a newly created sqlite database, follow these steps:\n\n1. Open your terminal or command"
+    },
+    {
+      "id": "q010",
+      "query": "why is there no need to clean strings being passed as bindings?",
+      "category": "edge",
+      "difficulty_level": "Hard",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": false,
+      "should_refuse": false,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 0.959,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    },
+    {
+      "id": "q011",
+      "query": "What is the population of republic of china?",
+      "category": "off-domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": true,
+      "should_refuse": true,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 1.005,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    },
+    {
+      "id": "q012",
+      "query": "Has Predis been abandoned by the package's original author and may be removed from Laravel in a future release?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 1.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 31.246,
+      "answer": "Yes, Predis has been abandoned by the package's original author and may be removed from Laravel in a"
+    },
+    {
+      "id": "q013",
+      "query": "Has Predis been abandoned and likely to be removed?",
+      "category": "domain",
+      "difficulty_level": "Medium",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 1.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "LOW",
+      "rewrite_triggered": true,
+      "latency_seconds": 41.175,
+      "answer": "Yes, Predis has been abandoned by its original author and may be removed from Laravel in a future release. This"
+    },
+    {
+      "id": "q014",
+      "query": "Do each migration file name contains a timestamp?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 0.8,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "LOW",
+      "rewrite_triggered": true,
+      "latency_seconds": 41.69,
+      "answer": "Yes, each migration file name does contain a timestamp. This is done by Laravel to ensure that the migrations are executed in the"
+    },
+    {
+      "id": "q015",
+      "query": "Where is the database configuration for your application located?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 1.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 27.426,
+      "answer": "The database configuration for your application is located at config/database.php."
+    },
+    {
+      "id": "q016",
+      "query": "Is Laravel's sample environment configuration ready to use with Laravel Homestead?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": false,
+      "should_refuse": false,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 1.015,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    },
+    {
+      "id": "q017",
+      "query": "Can you provide me with a step-by-step guide on how to configure my environment variables for a newly created SQLite database?",
+      "category": "domain",
+      "difficulty_level": "Hard",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 0.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 31.242,
+      "answer": "Sure! Here's a step-by-step guide on how to configure your environment variables for a newly created"
+    },
+    {
+      "id": "q018",
+      "query": "Who is the PM of USA?",
+      "category": "off-domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": true,
+      "should_refuse": true,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 1.027,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    },
+    {
+      "id": "q019",
+      "query": "Is python an easy to learn, powerful programming language?",
+      "category": "off-domain",
+      "difficulty_level": "Medium",
+      "expected_chunk": [],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": true,
+      "should_refuse": true,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 0.96,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    },
+    {
+      "id": "q020",
+      "query": "How does laravel handle authentication sessions?",
+      "category": "off-domain",
+      "difficulty_level": "Medium",
+      "expected_chunk": [],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": true,
+      "should_refuse": true,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 0.998,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+flask
+gunicorn
+torch
+transformers
+sentence-transformers
+chromadb
+numpy
+python-dotenv

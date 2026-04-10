@@ -1,0 +1,264 @@
+[
+    {
+        "query_id": "q001",
+        "query": "Is there no need to clean strings being passed as bindings?",
+        "expected_keywords": [
+            "yes",
+            "no",
+            "need",
+            "clean",
+            "strings"
+        ],
+        "expected_chunk_id": [0],
+        "should_be_accepted": true,
+        "category": "domain",
+        "difficulty_level": "Easy"
+    },
+    {
+        "query_id": "q002",
+        "query": "Which command is used to generate migrations?",
+        "expected_keywords": [
+            "command",
+            "make:migration",
+            "artisan"
+        ],
+        "expected_chunk_id": [0],
+        "should_be_accepted": true,
+        "category": "domain",
+        "difficulty_level": "Easy"
+    },
+    {
+        "query_id": "q003",
+        "query": "How can I use seeders?",
+        "expected_keywords": [
+            "generate",
+            "seeder",
+            "execute",
+            "make:seeder",
+            "artisan"
+        ],
+        "expected_chunk_id": [0],
+        "should_be_accepted": true,
+        "category": "domain",
+        "difficulty_level": "Easy"
+    },
+    {
+        "query_id": "q004",
+        "query": "Explain redis facade with example?",
+        "expected_keywords": [
+            "Redis",
+            "Facade",
+            "Redis GET command",
+            "use Illuminate\\Support\\Facades\\Redis;"
+        ],
+        "expected_chunk_id": [3,4],
+        "should_be_accepted": true,
+        "category": "domain",
+        "difficulty_level": "Hard"
+    },
+    {
+        "query_id": "q005",
+        "query": "What is redis and how it could be installed?",
+        "expected_keywords": [
+            "Redis",
+            "data structure",
+            "install",
+            "PhpRedis",
+            "PECL",
+            "predis",
+            "composer"
+        ],
+        "expected_chunk_id": [0],
+        "should_be_accepted": true,
+        "category": "domain",
+        "difficulty_level": "Hard"
+    },
+    {
+        "query_id": "q006",
+        "query": "What should I do,in order to protect from running seeding commands against production database?",
+        "expected_keywords": [
+            "protect",
+            "running",
+            "seeding",
+            "commands",
+            "production",
+            "prompted",
+            "confirmation"
+        ],
+        "expected_chunk_id": [2],
+        "should_be_accepted": true,
+        "category": "domain",
+        "difficulty_level": "Medium"
+    },
+    {
+        "query_id": "q007",
+        "query": "Which country won the T20 cricket world cup 2026? ",
+        "expected_keywords": [],
+        "expected_chunk_id": [],
+        "should_be_accepted": false,
+        "category": "off-domain",
+        "difficulty_level": "Easy"
+    },
+    {
+        "query_id": "q008",
+        "query": "What is the core reason behind USA, Iran war?",
+        "expected_keywords": [],
+        "expected_chunk_id": [],
+        "should_be_accepted": false,
+        "category": "off-domain",
+        "difficulty_level": "Easy"
+    },
+    {
+        "query_id": "q009",
+        "query": "How can I configure environment variables to point a newly created sqlite database?",
+        "expected_keywords": [
+            "DB_CONNECTION",
+            "sqlite",
+            "DB_DATABASE",
+            "database.sqlite"
+        ],
+        "expected_chunk_id": [0],
+        "should_be_accepted": true,
+        "category": "domain",
+        "difficulty_level": "Easy"
+    },
+    {
+        "query_id": "q010",
+        "query": "why is there no need to clean strings being passed as bindings?",
+        "expected_keywords": [
+            "Laravel",
+            "query",
+            "builder",
+            "uses",
+            "PDO",
+            "parameter",
+            "binding"
+        ],
+        "expected_chunk_id": [0],
+        "should_be_accepted": true,
+        "category": "edge",
+        "difficulty_level": "Hard"
+    },
+    {
+        "query_id": "q011",
+        "query": "What is the population of republic of china?",
+        "expected_keywords": [],
+        "expected_chunk_id": [],
+        "should_be_accepted": false,
+        "category": "off-domain",
+        "difficulty_level": "Easy"
+    },
+    {
+        "query_id": "q012",
+        "query": "Has Predis been abandoned by the package's original author and may be removed from Laravel in a future release?",
+        "expected_keywords": [
+            "Predis",
+            "abandoned",
+            "yes"
+        ],
+        "expected_chunk_id": [0],
+        "should_be_accepted": true,
+        "category": "domain",
+        "difficulty_level": "Easy"
+    },
+    {
+        "query_id": "q013",
+        "query": "Has Predis been abandoned and likely to be removed?",
+        "expected_keywords": [
+            "Predis",
+            "abandoned",
+            "yes"
+        ],
+        "expected_chunk_id": [0],
+        "should_be_accepted": true,
+        "category": "domain",
+        "difficulty_level": "Medium"
+    },
+    {
+        "query_id": "q014",
+        "query": "Do each migration file name contains a timestamp?",
+        "expected_keywords": [
+            "yes",
+            "migration",
+            "file",
+            "contains",
+            "timestamp"
+        ],
+        "expected_chunk_id": [0],
+        "should_be_accepted": true,
+        "category": "domain",
+        "difficulty_level": "Easy"
+    },
+    {
+        "query_id": "q015",
+        "query": "Where is the database configuration for your application located?",
+        "expected_keywords": [
+            "database",
+            "configuration",
+            "located",
+            "config",
+            "database.php",
+            "config/database.php"
+        ],
+        "expected_chunk_id": [0],
+        "should_be_accepted": true,
+        "category": "domain",
+        "difficulty_level": "Easy"
+    },
+    {
+        "query_id": "q016",
+        "query": "Is Laravel's sample environment configuration ready to use with Laravel Homestead?",
+        "expected_keywords": [
+            "By",
+            "default",
+            "Laravel",
+            "configuration",
+            "Homestead"
+        ],
+        "expected_chunk_id": [0],
+        "should_be_accepted": true,
+        "category": "domain",
+        "difficulty_level": "Easy"
+    },
+    {
+        "query_id": "q017",
+        "query": "Can you provide me with a step-by-step guide on how to configure my environment variables for a newly created SQLite database?",
+        "expected_keywords": [
+            "DB_CONNECTION",
+            "sqlite",
+            "DB_DATABASE",
+            "database.sqlite"
+        ],
+        "expected_chunk_id": [0],
+        "should_be_accepted": true,
+        "category": "domain",
+        "difficulty_level": "Hard"
+    },
+    {
+        "query_id": "q018",
+        "query": "Who is the PM of USA?",
+        "expected_keywords": [],
+        "expected_chunk_id": [],
+        "should_be_accepted": false,
+        "category": "off-domain",
+        "difficulty_level": "Easy"
+    },
+    {
+        "query_id": "q019",
+        "query": "Is python an easy to learn, powerful programming language?",
+        "expected_keywords": [],
+        "expected_chunk_id": [],
+        "should_be_accepted": false,
+        "category": "off-domain",
+        "difficulty_level": "Medium"
+    },
+    {
+        "query_id": "q020",
+        "query": "How does laravel handle authentication sessions?",
+        "expected_keywords": [],
+        "expected_chunk_id": [],
+        "should_be_accepted": false,
+        "category": "off-domain",
+        "difficulty_level": "Medium"
+    }
+]

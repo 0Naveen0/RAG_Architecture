@@ -1,0 +1,328 @@
+[
+  {
+    "request_id": "878ed891-5d1f-42cd-8334-63cc7aa68ce4",
+    "timestamp": "2026-04-05T15:10:30.430248",
+    "query": "What should I do,in order to protect from running seeding commands against production database?",
+    "answer": "In",
+    "confidence": "HIGH",
+    "source": "seeder.txt",
+    "chunk_ids": [
+      0,
+      2
+    ],
+    "retrieval_scores": [
+      0.5530707836151123,
+      0.49086397886276245,
+      0.37529563903808594,
+      0.30848634243011475,
+      0.30310338735580444,
+      0.28081977367401123,
+      0.26238179206848145
+    ],
+    "reranker_scores": [
+      5.42990779876709,
+      4.045717239379883,
+      0.40496575832366943
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 34.572,
+      "retrieval": 0.013,
+      "reranking": 3.252,
+      "rewrite": null,
+      "generation": 31.271
+    },
+    "anomalies": [
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "984b3832-b009-4da2-b73f-6eca4fb3b86d",
+    "timestamp": "2026-04-10T08:26:02.945164",
+    "query": "Who is the PM of USA?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.16167736053466797,
+      0.1574939489364624,
+      0.1561795473098755,
+      0.1395883560180664,
+      0.13692808151245117,
+      0.1340998411178589,
+      0.13204419612884521
+    ],
+    "reranker_scores": [
+      -11.36478042602539,
+      -11.36607551574707,
+      -11.37800407409668
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 3.521,
+      "retrieval": 0.007,
+      "reranking": 3.477,
+      "rewrite": null,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "b845ce7d-89b8-4b14-89b5-f62f43568764",
+    "timestamp": "2026-04-10T08:33:06.279514",
+    "query": "Who is the PM of USA?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.16167736053466797,
+      0.1574939489364624,
+      0.1561795473098755,
+      0.1395883560180664,
+      0.13692808151245117,
+      0.1340998411178589,
+      0.13204419612884521
+    ],
+    "reranker_scores": [
+      -11.36478042602539,
+      -11.36607551574707,
+      -11.37800407409668
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.479,
+      "retrieval": 0.006,
+      "reranking": 2.444,
+      "rewrite": null,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "5c16cd76-e747-4b52-98d4-82744e349998",
+    "timestamp": "2026-04-10T08:35:39.037185",
+    "query": "Who is the PM of USA?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.16167736053466797,
+      0.1574939489364624,
+      0.1561795473098755,
+      0.1395883560180664,
+      0.13692808151245117,
+      0.1340998411178589,
+      0.13204419612884521
+    ],
+    "reranker_scores": [
+      -11.36478042602539,
+      -11.36607551574707,
+      -11.37800407409668
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.532,
+      "retrieval": 0.006,
+      "reranking": 2.498,
+      "rewrite": null,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "9cc73754-3a9e-4c10-bc95-6fb2722b154e",
+    "timestamp": "2026-04-10T08:43:45.081107",
+    "query": "Who is the PM of USA?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.16167736053466797,
+      0.1574939489364624,
+      0.1561795473098755,
+      0.1395883560180664,
+      0.13692808151245117,
+      0.1340998411178589,
+      0.13204419612884521
+    ],
+    "reranker_scores": [
+      -11.36478042602539,
+      -11.36607551574707,
+      -11.37800407409668
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 3.452,
+      "retrieval": 0.006,
+      "reranking": 3.427,
+      "rewrite": null,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "dd4ab0bc-764d-49c2-a65c-baebeef7b1b9",
+    "timestamp": "2026-04-10T08:51:57.382818",
+    "query": "Who is the PM of USA?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.16167736053466797,
+      0.1574939489364624,
+      0.1561795473098755,
+      0.1395883560180664,
+      0.13692808151245117,
+      0.1340998411178589,
+      0.13204419612884521
+    ],
+    "reranker_scores": [
+      -11.36478042602539,
+      -11.36607551574707,
+      -11.37800407409668
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.699,
+      "retrieval": 0.031,
+      "reranking": 2.64,
+      "rewrite": null,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "201475ac-f51c-4b96-b304-1aa1fd2747f0",
+    "timestamp": "2026-04-10T08:55:34.583994",
+    "query": "Who is the PM of USA?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.16167736053466797,
+      0.1574939489364624,
+      0.1561795473098755,
+      0.1395883560180664,
+      0.13692808151245117,
+      0.1340998411178589,
+      0.13204419612884521
+    ],
+    "reranker_scores": [
+      -11.36478042602539,
+      -11.36607551574707,
+      -11.37800407409668
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 3.614,
+      "retrieval": 0.006,
+      "reranking": 3.582,
+      "rewrite": null,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "0b5955c0-3294-4718-a5eb-24e9e8f8a66a",
+    "timestamp": "2026-04-10T09:01:25.334948",
+    "query": "Who is the PM of USA?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.16167736053466797,
+      0.1574939489364624,
+      0.1561795473098755,
+      0.1395883560180664,
+      0.13692808151245117,
+      0.1340998411178589,
+      0.13204419612884521
+    ],
+    "reranker_scores": [
+      -11.36478042602539,
+      -11.36607551574707,
+      -11.37800407409668
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 3.773,
+      "retrieval": 0.004,
+      "reranking": 3.734,
+      "rewrite": null,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "29509007-5cec-4c2f-8876-4ecdb4a0caa7",
+    "timestamp": "2026-04-10T09:24:13.461828",
+    "query": "Who is the PM of USA?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.16167736053466797,
+      0.1574939489364624,
+      0.1561795473098755,
+      0.1395883560180664,
+      0.13692808151245117,
+      0.1340998411178589,
+      0.13204419612884521
+    ],
+    "reranker_scores": [
+      -11.36478042602539,
+      -11.36607551574707,
+      -11.37800407409668
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 3.008,
+      "retrieval": 0.013,
+      "reranking": 2.97,
+      "rewrite": null,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  }
+]

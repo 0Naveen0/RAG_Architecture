@@ -1,0 +1,19 @@
+[
+    {
+        "query_id": "q006",
+        "query": "What should I do,in order to protect from running seeding commands against production database?",
+        "expected_keywords": [
+            "protect",
+            "running",
+            "seeding",
+            "commands",
+            "production",
+            "prompted",
+            "confirmation"
+        ],
+        "expected_chunk_id": [2],
+        "should_be_accepted": true,
+        "category": "domain",
+        "difficulty_level": "Medium"
+    }
+]
