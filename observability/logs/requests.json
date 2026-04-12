@@ -476,5 +476,117 @@
       "slow_query",
       "generation_slow"
     ]
+  },
+  {
+    "request_id": "17a94f00-4078-4187-b0cb-9f32f96e2fd0",
+    "timestamp": "2026-04-12T14:31:26.416300",
+    "query": "What should I do,in order to protect from running seeding commands against production database?",
+    "answer": "In order to protect from running seeding commands against production database, you can use the --force flag when running the migrate command. This will prompt you for confirmation before executing the command. If you are using the Homestead virtual machine, you can run the migrate command from within your virtual machine. To force the commands to run without a prompt, use the --force flag when running the migrate command. Rolling Back Migrations\n\t\t\t\tTo roll back the latest migration operation, you can use the rollback command. This command rolls back the last \"batch\" of migrations, which may include multiple migration files. To roll back a limited number of migrations, provide the step option to the rollback command. For example, the following command will roll back the last five migrations:\n\t\t\t\t\n\t\t\t\tphp artisan migrate:rollback --step=5\n\t\t\t\t\n\t\t\t\tMigrating to a Specific Version\n\t\t\t\tTo migrate to a specific version of your database schema, you can use the migrate:latest command. This command will automatically update your database schema to the latest version. To migrate to a specific version, provide the version number as an argument to the migrate:latest command. For example, the following command will migrate to the latest version of your database schema:\n\t\t\t\t\n\t\t\t\tphp artisan migrate:latest\n\t\t\t\t\n\t\t\t\tRolling Back All Migrations\n\t\t\t\tTo roll back all of your application's migrations, use the migrate:reset command. This command",
+    "confidence": "HIGH",
+    "source": "seeder.txt",
+    "chunk_ids": [
+      "seeder.txt_2",
+      "migrations.txt_2"
+    ],
+    "retrieval_scores": [
+      0.5530709028244019,
+      0.4908640384674072,
+      0.3752956986427307,
+      0.30848634243011475,
+      0.30310332775115967,
+      0.28081977367401123,
+      0.26238179206848145
+    ],
+    "reranker_scores": [
+      5.429904460906982,
+      4.045716285705566
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 165.687,
+      "retrieval": 0.012,
+      "reranking": 4.024,
+      "rewrite": 0.0,
+      "generation": 161.599
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "b8cd4ce1-0c93-4942-93da-0f7cf7c2a7b1",
+    "timestamp": "2026-04-12T14:44:18.007654",
+    "query": "How does laravel handle authentication sessions?",
+    "answer": "In Laravel, authentication sessions are handled through the `Illuminate\\Auth\\SessionGuard` class. This class provides methods for managing session data, including storing user credentials and generating session tokens. When a user logs in, their credentials are stored in the session, and a new session token is generated. The session token is then sent back to the client in the response header, along with any other necessary cookies or headers. When a user logs out, their session token is deleted from the session store. To authenticate users, Laravel uses the `Illuminate\\Auth\\AuthManager` class, which provides methods for registering and authenticating users. When a user attempts to access a resource that requires authentication, the `Illuminate\\Routing\\Router` class routes the request to the appropriate controller action. The controller action checks if the user is authorized to access the resource, and if they are, it generates a session token and sends it back to the client in the response header. If the user is not authorized, the controller action returns a 401 Unauthorized response. Overall, Laravel handles authentication sessions using the `Illuminate\\Auth\\SessionGuard` class, which provides methods for managing session data, generating session tokens, and checking if a user is authorized to access a resource.",
+    "confidence": "LOW",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_1",
+      "database.txt_0"
+    ],
+    "retrieval_scores": [
+      0.4476284980773926,
+      0.4048861265182495,
+      0.3829350471496582,
+      0.35919880867004395,
+      0.3568507432937622,
+      0.34509122371673584,
+      0.34321677684783936
+    ],
+    "reranker_scores": [
+      -1.8130826950073242
+    ],
+    "rewrite_triggered": true,
+    "rewritten_query": "\n      ### System:\n      Laravel is an open-source web application framework for PHP. It provides a robust set of features to build scalable and secure web applications. Laravel handles authentication sessions by implementing the `Illuminate\\Auth\\SessionGuard` class. This class manages the session data and ensures that users are authenticated before accessing protected routes.",
+    "latency": {
+      "total": 188.266,
+      "retrieval": 0.011,
+      "reranking": 4.011,
+      "rewrite": 35.591,
+      "generation": 148.592
+    },
+    "anomalies": [
+      "slow_query",
+      "low_confidence",
+      "rewrite_failed",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "a8ffd103-efb7-471f-b687-b88eab295339",
+    "timestamp": "2026-04-12T14:46:36.646108",
+    "query": "Who is the PM of USA?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.16167736053466797,
+      0.1574939489364624,
+      0.1561795473098755,
+      0.13958829641342163,
+      0.13692808151245117,
+      0.1340998411178589,
+      0.13204413652420044
+    ],
+    "reranker_scores": [
+      -11.36478042602539,
+      -11.366080284118652
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 4.025,
+      "retrieval": 0.008,
+      "reranking": 3.991,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
   }
 ]

@@ -120,7 +120,7 @@ class RAGOrchestrator :
 		t0_retrieval = time.time()
 		results = self.retriever.retrieve(query_embeddings)
 		latency['retrieval'] = round(time.time()-t0_retrieval,3)
-		final_result = ({"answer":REFUSAL_MESSAGE,"confidence":"low","source":None,"chunk_id":None,'rewrite_triggered':rewrite_triggered,'rewrite_success':rewrite_success})
+		final_result = ({"answer":REFUSAL_MESSAGE,"confidence":"low","source":None,"chunk_ids":None,'rewrite_triggered':rewrite_triggered,'rewrite_success':rewrite_success})
 		if(not results or len(results['documents'][0])==0):
 			latency['total'] = round(time.time()-total_start,3)
 			self._log(query,final_result,latency,[],[],[],False,None)
@@ -196,7 +196,8 @@ class RAGOrchestrator :
 			# latency['total'] = round(time.time()-total_start,3)
 			# self._log(query,final_result,latency,retrieval_scores,reranker_scores,[],rewrite_triggered,rewritten_query)
 			confidence= 'LOW'
-		chunk_ids = [c['metadata']['chunk_id'] for c in filtered_chunks[:MAX_ALLOWED_CHUNKS] ]
+		# chunk_ids = [c['metadata']['chunk_id'] for c in filtered_chunks[:MAX_ALLOWED_CHUNKS] ]
+		chunk_ids = [f"{c['metadata']['source']}_{c['metadata']['chunk_id']}" for c in filtered_chunks[:MAX_ALLOWED_CHUNKS] ]
 		latency['total'] = round(time.time()-total_start,3)
 		final_result = ({"answer":answer,"confidence":confidence,"source":top_meta["source"],"chunk_id":top_meta["chunk_id"],'rewrite_triggered':rewrite_triggered,'rewrite_success':rewrite_success})
 		# final_result = ({"answer":answer,"confidence":confidence,"source":top_meta["source"],"chunk_ids":chunk_ids,'rewrite_triggered':rewrite_triggered,'rewrite_success':rewrite_success})

@@ -55,7 +55,7 @@ class LangfuseTracer:
           'anomalies' :log['anomalies'],
           'confidence' : log['confidence'],
           'source' : log['source'],
-          'chunk_ids':log['chunk_ids'],
+          'chunk_ids':','.join(map(str,log['chunk_ids'])),
 				  'rewrite_triggered':log['rewrite_triggered'],
 				  'rewritten_query':log['rewritten_query']
           }
