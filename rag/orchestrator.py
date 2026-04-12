@@ -1,17 +1,17 @@
 from rag.guard import Guard
-from config.config import SIMILARITY_THRESHOLD,MAX_ALLOWED_CHUNKS,LOG_PATH
+from config.config import SIMILARITY_THRESHOLD,MAX_ALLOWED_CHUNKS,LOG_PATH,REFUSAL_MESSAGE
 from rag.retriever import Retriever
 from rag.generator import Generator
 from models.embedding_model import EmbeddingModel
 from config.model_loader import get_llm
 from models.llm_model import LLMModel
 from rewriter.query_rewriter import QueryRewriter
-from reranker.reranker import Reranker
+from reranker.reranker import Reranker,select_chunks
 import time
 from observability.logger import Logger
 from observability.anomaly_detector import AnomalyDetector
 
-REFUSAL_MESSAGE = "I do not have sufficient information in the knowledge base to answer this question."
+#REFUSAL_MESSAGE = "I do not have sufficient information in the knowledge base to answer this question."
 
 class RAGOrchestrator :
 	# def __init__(self,embedding_model,retriever,generator):
@@ -106,7 +106,7 @@ class RAGOrchestrator :
 		self.generator = Generator(llm)
 		qrewriter = QueryRewriter(llm)
 		total_start = time.time()
-		latency={"total":0.0,"retrieval":0.0,"reranking":0.0,"rewrite":None,"generation":0.0}
+		latency={"total":0.0,"retrieval":0.0,"reranking":0.0,"rewrite":0.0,"generation":0.0}
 		rewrite_triggered = False
 		rewrite_success = False
 		rewritten_query = None
@@ -134,12 +134,19 @@ class RAGOrchestrator :
 		t0_reranking = time.time()
 		retrieval_scores = [chunk['similarity'] for chunk in raw_chunks]
 		reranked_chunks = 	reranker.rerank(query=query,chunks=raw_chunks)
+		selected_chunks = select_chunks(reranked_chunks,max_chunks=MAX_ALLOWED_CHUNKS)
+		reranker_scores = [chunk['reranker_score'] for chunk in selected_chunks]
 		reranked_results = {
-						'documents': [[chunk['text'] for chunk in reranked_chunks]],
-						'distances': [[1-chunk['similarity'] for chunk in reranked_chunks]],
-						'metadatas': [[chunk['metadata'] for chunk in reranked_chunks]]
-						}
-		reranker_scores = [chunk['reranker_score'] for chunk in reranked_chunks]
+						'documents': [[chunk['text'] for chunk in selected_chunks]],
+						'distances': [[1-chunk['similarity'] for chunk in selected_chunks]],
+						'metadatas': [[chunk['metadata'] for chunk in selected_chunks]]
+						}    
+		# reranked_results = {
+		# 				'documents': [[chunk['text'] for chunk in reranked_chunks]],
+		# 				'distances': [[1-chunk['similarity'] for chunk in reranked_chunks]],
+		# 				'metadatas': [[chunk['metadata'] for chunk in reranked_chunks]]
+		# 				}
+		# reranker_scores = [chunk['reranker_score'] for chunk in reranked_chunks]
 		latency['reranking'] = round(time.time()-t0_reranking,3)
 
     # Guard Chunks using confidence

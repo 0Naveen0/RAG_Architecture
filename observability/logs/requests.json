@@ -324,5 +324,157 @@
       "low_confidence",
       "empty_retrieval"
     ]
+  },
+  {
+    "request_id": "b89aee62-63cb-4a71-a0b2-1780011b1027",
+    "timestamp": "2026-04-11T14:44:20.503256",
+    "query": "What should I do,in order to protect from running seeding commands against production database?",
+    "answer": "In order to protect from running seeding commands against production database, you can use the --force flag when running the",
+    "confidence": "HIGH",
+    "source": "seeder.txt",
+    "chunk_ids": [
+      0,
+      2
+    ],
+    "retrieval_scores": [
+      0.5530709028244019,
+      0.4908640384674072,
+      0.3752956986427307,
+      0.30848634243011475,
+      0.30310332775115967,
+      0.28081977367401123,
+      0.26238179206848145
+    ],
+    "reranker_scores": [
+      5.429904460906982,
+      4.045716285705566,
+      0.4049682021141052
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 35.278,
+      "retrieval": 0.684,
+      "reranking": 3.937,
+      "rewrite": null,
+      "generation": 30.025
+    },
+    "anomalies": [
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "a903e61c-0ab2-4522-9852-1b3b3129b45f",
+    "timestamp": "2026-04-12T12:51:16.624608",
+    "query": "Which command is used to generate migrations?",
+    "answer": "The command used to generate migrations is \"make:migration\".",
+    "confidence": "HIGH",
+    "source": "migrations.txt",
+    "chunk_ids": [
+      0,
+      1
+    ],
+    "retrieval_scores": [
+      0.5023914575576782,
+      0.45723843574523926,
+      0.4564807415008545,
+      0.4011509418487549,
+      0.3055713176727295,
+      0.29954373836517334,
+      0.28809189796447754
+    ],
+    "reranker_scores": [
+      6.560132026672363,
+      5.419808387756348
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 50.854,
+      "retrieval": 2.529,
+      "reranking": 11.011,
+      "rewrite": 0.0,
+      "generation": 36.338
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "93f65ad9-1ee9-46a6-993a-8ee55603ff72",
+    "timestamp": "2026-04-12T13:03:31.483342",
+    "query": "What should I do,in order to protect from running seeding commands against production database?",
+    "answer": "In order to protect from running seeding commands against production database, you can use the --force flag when running the migrate command. This will prompt you for confirmation before executing the command. If you are using the Homestead virtual machine, you can run the migrate command from within your virtual machine. To force the commands to run without a prompt, use the --force flag when running the migrate command. Rolling Back Migrations\n\t\t\t\tTo roll back the latest migration operation, you can use the rollback command. This command rolls back the last \"batch\" of migrations, which may include multiple migration files. To roll back a limited number of migrations, provide the step option to the rollback command. For example, the following command will roll back the last five migrations:\n\t\t\t\t\n\t\t\t\tphp artisan migrate:rollback --step=5\n\t\t\t\t\n\t\t\t\tMigrating to a Specific Version\n\t\t\t\tTo migrate to a specific version of your database schema, you can use the migrate:latest command. This command will automatically update your database schema to the latest version. To migrate to a specific version, provide the version number as an argument to the migrate:latest command. For example, the following command will migrate to the latest version of your database schema:\n\t\t\t\t\n\t\t\t\tphp artisan migrate:latest\n\t\t\t\t\n\t\t\t\tRolling Back All Migrations\n\t\t\t\tTo roll back all of your application's migrations, use the migrate:reset command. This command",
+    "confidence": "HIGH",
+    "source": "seeder.txt",
+    "chunk_ids": [
+      2,
+      2
+    ],
+    "retrieval_scores": [
+      0.5530709028244019,
+      0.4908640384674072,
+      0.3752956986427307,
+      0.30848634243011475,
+      0.30310332775115967,
+      0.28081977367401123,
+      0.26238179206848145
+    ],
+    "reranker_scores": [
+      5.429904460906982,
+      4.045716285705566
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 176.227,
+      "retrieval": 0.007,
+      "reranking": 3.97,
+      "rewrite": 0.0,
+      "generation": 172.17
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "33f88a30-4967-4f10-b0c6-3cd8c19f1f4e",
+    "timestamp": "2026-04-12T13:42:33.841909",
+    "query": "What should I do,in order to protect from running seeding commands against production database?",
+    "answer": "In order to protect from running seeding commands against production database, you can use the --force flag when running the migrate command. This will prompt you for confirmation before executing the command. If you are using the Homestead virtual machine, you can run the migrate command from within your virtual machine. To force the commands to run without a prompt, use the --force flag when running the migrate command. Rolling Back Migrations\n\t\t\t\tTo roll back the latest migration operation, you can use the rollback command. This command rolls back the last \"batch\" of migrations, which may include multiple migration files. To roll back a limited number of migrations, provide the step option to the rollback command. For example, the following command will roll back the last five migrations:\n\t\t\t\t\n\t\t\t\tphp artisan migrate:rollback --step=5\n\t\t\t\t\n\t\t\t\tMigrating to a Specific Version\n\t\t\t\tTo migrate to a specific version of your database schema, you can use the migrate:latest command. This command will automatically update your database schema to the latest version. To migrate to a specific version, provide the version number as an argument to the migrate:latest command. For example, the following command will migrate to the latest version of your database schema:\n\t\t\t\t\n\t\t\t\tphp artisan migrate:latest\n\t\t\t\t\n\t\t\t\tRolling Back All Migrations\n\t\t\t\tTo roll back all of your application's migrations, use the migrate:reset command. This command",
+    "confidence": "HIGH",
+    "source": "seeder.txt",
+    "chunk_ids": [
+      2,
+      2
+    ],
+    "retrieval_scores": [
+      0.5530709028244019,
+      0.4908640384674072,
+      0.3752956986427307,
+      0.30848634243011475,
+      0.30310332775115967,
+      0.28081977367401123,
+      0.26238179206848145
+    ],
+    "reranker_scores": [
+      5.429904460906982,
+      4.045716285705566
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 172.41,
+      "retrieval": 0.013,
+      "reranking": 3.827,
+      "rewrite": 0.0,
+      "generation": 168.504
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
   }
 ]

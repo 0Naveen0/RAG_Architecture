@@ -8,6 +8,8 @@ CHROMA_DB_PATH         = "/content/drive/MyDrive/ColabNotebooks/EKA_RAG_Project_
 TOP_K				           = 7	
 RERANKER_MODEL_NAME    = "cross-encoder/ms-marco-MiniLM-L6-v2"
 RERANKER_TOP_K         = 3
+RERANKER_GAP_POSITIVE = 0.5
+RERANKER_GAP_NEGATIVE = 2.0
 SIMILARITY_THRESHOLD   = 0.12  #0.08
 SIMILARITY_THRESHOLD_ACCEPTED = 0.45
 
@@ -18,7 +20,7 @@ TEMPERATURE			       = 0.2
 DO_SAMPLE			         = False
 TOP_P                  = 0.9
 REPETITION_PENALTY    = 1.1
-MAX_TIME              = 30.0
+MAX_TIME              = 180.0
 GUARD_ACTIVE          = True
 CHUNK_SIZE            = 400
 CHUNK_OVERLAP         = 50
