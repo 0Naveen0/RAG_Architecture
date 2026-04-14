@@ -32,3 +32,7 @@ REFUSAL_MESSAGE = "I do not have sufficient information in the knowledge base to
 MAX_TOTAL_LATENCY = 45.0
 MAX_GENERATION_LATENCY = 30.0
 LOG_PATH                = "/content/drive/MyDrive/ColabNotebooks/EKA_RAG_Project_v2/observability/logs/requests.json"
+
+###RATE LIMITER
+LIMITER_MAX_REQUESTS  = 10
+LIMITER_WINDOW_SECOND = 60

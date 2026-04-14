@@ -588,5 +588,224 @@
       "low_confidence",
       "empty_retrieval"
     ]
+  },
+  {
+    "request_id": "43cd5fb4-a5e0-4b77-ad8d-984f536f28d2",
+    "timestamp": "2026-04-14T09:15:06.979046",
+    "query": "Who is PM of India?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.13431185483932495,
+      0.12327975034713745,
+      0.11948662996292114,
+      0.11109298467636108,
+      0.11086738109588623,
+      0.10260546207427979,
+      0.09693223237991333
+    ],
+    "reranker_scores": [
+      -11.349455833435059,
+      -11.390421867370605
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 5.438,
+      "retrieval": 1.249,
+      "reranking": 3.641,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "647520ae-8ead-4f87-a5f7-768bac498eb3",
+    "timestamp": "2026-04-14T09:19:29.388215",
+    "query": "What should I do,in order to protect from running seeding commands against production database?",
+    "answer": "In order to protect from running seeding commands against production database, you can use the --force flag when running the migrate command. This will prompt you for confirmation before executing the command. If you are using the Homestead virtual machine, you can run the migrate command from within your virtual machine. To force the commands to run without a prompt, use the --force flag when running the migrate command. Rolling Back Migrations\n\t\t\t\tTo roll back the latest migration operation, you can use the rollback command. This command rolls back the last \"batch\" of migrations, which may include multiple migration files. To roll back a limited number of migrations, provide the step option to the rollback command. For example, the following command will roll back the last five migrations:\n\t\t\t\t\n\t\t\t\tphp artisan migrate:rollback --step=5\n\t\t\t\t\n\t\t\t\tMigrating to a Specific Version\n\t\t\t\tTo migrate to a specific version of your database schema, you can use the migrate:latest command. This command will automatically update your database schema to the latest version. To migrate to a specific version, provide the version number as an argument to the migrate:latest command. For example, the following command will migrate to the latest version of your database schema:\n\t\t\t\t\n\t\t\t\tphp artisan migrate:latest\n\t\t\t\t\n\t\t\t\tRolling Back All Migrations\n\t\t\t\tTo roll back all of your application's migrations, use the migrate:reset command. This command",
+    "confidence": "HIGH",
+    "source": "seeder.txt",
+    "chunk_ids": [
+      "seeder.txt_2",
+      "migrations.txt_2"
+    ],
+    "retrieval_scores": [
+      0.5530707836151123,
+      0.49086397886276245,
+      0.37529563903808594,
+      0.30848634243011475,
+      0.30310338735580444,
+      0.28081977367401123,
+      0.26238179206848145
+    ],
+    "reranker_scores": [
+      5.42990779876709,
+      4.045717239379883
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 179.051,
+      "retrieval": 0.006,
+      "reranking": 1.961,
+      "rewrite": 0.0,
+      "generation": 177.01
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "1423a42a-162a-4104-8b81-e2f55c153abb",
+    "timestamp": "2026-04-14T09:21:30.126845",
+    "query": "Who is PM of Russia?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.14996176958084106,
+      0.11880213022232056,
+      0.11493265628814697,
+      0.11034500598907471,
+      0.10515189170837402,
+      0.10203367471694946,
+      0.09951615333557129
+    ],
+    "reranker_scores": [
+      -11.3555908203125,
+      -11.362309455871582
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.116,
+      "retrieval": 0.006,
+      "reranking": 2.085,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "3c461bb5-bdfc-42ae-afe1-d36b913260f4",
+    "timestamp": "2026-04-14T09:23:09.619561",
+    "query": "When is holi?",
+    "answer": "Holi is celebrated on the full moon day (Phagwah) in the month of March/April every year in India. It is a festival of colors, sweets, and family gatherings. The exact date of Holi varies from region to region, but it usually falls between March 14th and March 18th.",
+    "confidence": "LOW",
+    "source": "queries.txt",
+    "chunk_ids": [
+      "queries.txt_11",
+      "queries.txt_11"
+    ],
+    "retrieval_scores": [
+      0.20780152082443237,
+      0.14244353771209717,
+      0.11960834264755249,
+      0.11520075798034668,
+      0.11298835277557373,
+      0.11026155948638916,
+      0.10929590463638306
+    ],
+    "reranker_scores": [
+      -11.146820068359375,
+      -11.34249496459961
+    ],
+    "rewrite_triggered": true,
+    "rewritten_query": "Is holi celebrated on which day?",
+    "latency": {
+      "total": 76.826,
+      "retrieval": 0.006,
+      "reranking": 1.898,
+      "rewrite": 7.506,
+      "generation": 67.4
+    },
+    "anomalies": [
+      "slow_query",
+      "low_confidence",
+      "rewrite_failed",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "489f1182-27e1-414d-a285-a3425cf43401",
+    "timestamp": "2026-04-14T09:29:21.646262",
+    "query": "Who is PM of India?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.13431185483932495,
+      0.12327975034713745,
+      0.11948662996292114,
+      0.11109298467636108,
+      0.11086738109588623,
+      0.10260546207427979,
+      0.09693223237991333
+    ],
+    "reranker_scores": [
+      -11.349455833435059,
+      -11.390421867370605
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.151,
+      "retrieval": 0.006,
+      "reranking": 2.119,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "ad1e2973-397c-41f6-a92a-3cfb4d21cf1a",
+    "timestamp": "2026-04-14T09:36:47.098829",
+    "query": "Tell me about laravel?",
+    "answer": "LARAVEL is an open-source web application framework for PHP that provides a comprehensive set of tools and features for building scalable, secure, and maintainable web applications. It is designed to simplify the process of developing web applications by providing a clean and intuitive syntax for writing code, making it easier to manage dependencies, and reducing the amount of boilerplate code required. Laravel is built on the Laravel Framework, which is a modular and flexible PHP framework that provides a wide range of features and services for building web applications. The Laravel framework includes a powerful and extensible set of components, such as the Eloquent ORM, the Request Facade, and the Validator, which make it easy to build complex web applications with ease. Laravel also offers a range of pre-built packages and plugins, including the popular Laravel Mix, which allows developers to combine multiple CSS and JavaScript files into one single file, and the Laravel Passport, which provides a secure authentication system for web applications. Overall, Laravel is a powerful and versatile tool for building scalable and maintainable web applications, and it has become a go-to choice for many developers looking to build high-performance and reliable web applications.",
+    "confidence": "HIGH",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_0"
+    ],
+    "retrieval_scores": [
+      0.5522528886795044,
+      0.4923757314682007,
+      0.4863719344139099,
+      0.4794089198112488,
+      0.46627771854400635,
+      0.4602820873260498,
+      0.4540354609489441
+    ],
+    "reranker_scores": [
+      -0.1567084789276123
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 119.975,
+      "retrieval": 0.01,
+      "reranking": 2.087,
+      "rewrite": 0.0,
+      "generation": 117.847
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
   }
 ]

@@ -3,6 +3,8 @@ const spinner = document.getElementById("loading");
 const answerBox = document.getElementById("answer");
 const confidenceBox = document.getElementById("confidence");
 const sourceBox = document.getElementById("source");
+
+
 export function showLoading(){
     spinner.style.display = "block";
     
@@ -24,10 +26,3 @@ export function displayAnswer(result){
     
 }
 
-result ={
-    answer : "This is answer",
-    confidence: "HIGH",
-    source:"File.txt"
-
-
-}
