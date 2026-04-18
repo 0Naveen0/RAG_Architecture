@@ -807,5 +807,910 @@
       "slow_query",
       "generation_slow"
     ]
+  },
+  {
+    "request_id": "d5c57245-d300-46de-9d61-a7177c08e654",
+    "timestamp": "2026-04-15T15:13:53.573912",
+    "query": "Is there no need to clean strings being passed as bindings?",
+    "answer": "Yes, there is no need to clean strings being passed as bindings in Laravel's database query builder. The Laravel query builder uses PDO parameter binding to protect your application from SQL injection attacks. This means that any user input that is passed as a binding will be sanitized before being bound to the query. Therefore, it is safe to rely on the built-in parameter binding mechanism to ensure that user input is not exposed to SQL injection vulnerabilities.",
+    "confidence": "HIGH",
+    "source": "queries.txt",
+    "chunk_ids": [
+      "queries.txt_0"
+    ],
+    "retrieval_scores": [
+      0.12824034690856934,
+      0.12155133485794067,
+      0.11448001861572266,
+      0.10849881172180176,
+      0.10597509145736694,
+      0.09823799133300781,
+      0.07918554544448853
+    ],
+    "reranker_scores": [
+      0.9388947986980067
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 49.946,
+      "retrieval": 0.053,
+      "reranking": 1.654,
+      "rewrite": 0.0,
+      "generation": 48.017
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "f88a249c-a319-40fa-a34b-3943e9af581a",
+    "timestamp": "2026-04-15T15:14:24.720478",
+    "query": "Which command is used to generate migrations?",
+    "answer": "The command used to generate migrations is \"make:migration\".",
+    "confidence": "HIGH",
+    "source": "migrations.txt",
+    "chunk_ids": [
+      "migrations.txt_1",
+      "migrations.txt_0"
+    ],
+    "retrieval_scores": [
+      0.5023916363716125,
+      0.45723849534988403,
+      0.45648080110549927,
+      0.4011509418487549,
+      0.3055713176727295,
+      0.29954373836517334,
+      0.28809189796447754
+    ],
+    "reranker_scores": [
+      0.9985863059474624,
+      0.9955915277706109
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 29.404,
+      "retrieval": 0.004,
+      "reranking": 1.778,
+      "rewrite": 0.0,
+      "generation": 27.613
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "5c8c14b2-1c7c-4be9-b44c-e2033e71cc42",
+    "timestamp": "2026-04-15T15:17:05.764156",
+    "query": "How can I use seeders?",
+    "answer": "Sure! Here's how you can use Laravel's built-in seeders:\n\n1. Create a new seed file in the `database/seeds` directory.\n\n```php\nnamespace App\\Database\\Seeds;\n\nuse Illuminate\\Database\\Seeder;\n\nclass UsersTableSeeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        $users = factory(App\\Models\\User::class, 5)->create();\n\n        foreach ($users as $user) {\n            $user->save();\n        }\n    }\n}\n```\n\n2. Run the `make:seeder` command to generate a new seed file.\n\n```bash\nphp artisan make:seeder UsersTableSeeder\n```\n\n3. Modify the `UsersTableSeeder` class to insert user data into the `users` table.\n\n```php\nnamespace App\\Database\\Seeds;\n\nuse Illuminate\\Database\\Seeder;\n\nclass UsersTableSeeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        $users = factory(App\\Models\\User::class, 5)->create();\n\n        foreach ($users as $user) {\n            $user->save();\n        }\n    }\n}\n```\n\n4. Run the `seed` command to run the seed file",
+    "confidence": "HIGH",
+    "source": "seeder.txt",
+    "chunk_ids": [
+      "seeder.txt_2",
+      "seeder.txt_0"
+    ],
+    "retrieval_scores": [
+      0.4973253607749939,
+      0.4300055503845215,
+      0.2939625382423401,
+      0.13520604372024536,
+      0.12206834554672241,
+      0.12162166833877563,
+      0.11975765228271484
+    ],
+    "reranker_scores": [
+      0.9748119632468717,
+      0.9630483146964315
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 160.294,
+      "retrieval": 0.004,
+      "reranking": 1.735,
+      "rewrite": 0.0,
+      "generation": 158.546
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "367ec7f1-4d07-4695-a973-fd962e2c01f0",
+    "timestamp": "2026-04-15T15:19:16.093340",
+    "query": "Explain redis facade with example?",
+    "answer": "The Redis facade is a Laravel package that provides a simple and intuitive interface for working with Redis databases. It allows developers to interact with Redis servers through the Laravel framework, making it easy to manage and manipulate data stored in Redis.\n\nHere's an example of how to use the Redis facade:\n\n```php\nuse App\\Http\\Controllers\\UserController;\n\n// Get the Redis connection\n$redis = app(Redis::class);\n\n// Create a new user\n$user = new UserController();\n$user->showProfile(1); // Call the showProfile() method on the UserController facade\n\n// Set a value in Redis\n$redis->set('user:profile:1', 'Hello World!');\n\n// Get a value from Redis\n$value = $redis->get('user:profile:1');\necho $value; // Output: Hello World!\n```\n\nIn this example, we create a new `UserController` facade and call the `showProfile()` method on it. We then set a value in Redis using the `set()` method. Finally, we retrieve the value from Redis using the `get()` method.\n\nTo learn more about Redis facade, you can check out the official documentation at https://laravel.com/docs/8.x/redis.",
+    "confidence": "HIGH",
+    "source": "redis.txt",
+    "chunk_ids": [
+      "redis.txt_4"
+    ],
+    "retrieval_scores": [
+      0.46394598484039307,
+      0.4502573013305664,
+      0.4258013367652893,
+      0.4076821208000183,
+      0.3727864623069763,
+      0.3566473722457886,
+      0.32322847843170166
+    ],
+    "reranker_scores": [
+      0.9825975381524712,
+      0.9728644557086061
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 129.621,
+      "retrieval": 0.004,
+      "reranking": 1.752,
+      "rewrite": 0.0,
+      "generation": 127.857
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "4ab74df1-91cf-489a-83e6-d28bd901bced",
+    "timestamp": "2026-04-15T15:20:27.309670",
+    "query": "What is redis and how it could be installed?",
+    "answer": "Redis is an open-source, advanced key-value store developed by Redis Labs. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets, and sorted sets. Before using Redis with Laravel, we recommend installing and using the PhpRedis PHP extension via PECL. Alternatively, you can also install the predis/predis package via Composer. Redis is a powerful and versatile tool that can be used for various purposes such as caching, message brokers, and distributed systems. However, it requires a certain level of expertise to configure and manage effectively. Installation instructions for both packages can be found on their respective GitHub repositories.",
+    "confidence": "HIGH",
+    "source": "redis.txt",
+    "chunk_ids": [
+      "redis.txt_0"
+    ],
+    "retrieval_scores": [
+      0.6203212738037109,
+      0.5789366960525513,
+      0.5167573690414429,
+      0.4940568208694458,
+      0.47310423851013184,
+      0.46264517307281494,
+      0.40771007537841797
+    ],
+    "reranker_scores": [
+      0.9961118408034508
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 70.477,
+      "retrieval": 0.004,
+      "reranking": 1.867,
+      "rewrite": 0.0,
+      "generation": 68.596
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "f2254f92-3149-44cd-a76b-5f6f7f82319c",
+    "timestamp": "2026-04-15T15:21:15.182772",
+    "query": "What should I do,in order to protect from running seeding commands against production database?",
+    "answer": "In order to protect from running seeding commands against production database, you can use the --force flag when running the db:seed command. This will prompt you for confirmation before executing the seeding operations. If you want to force the seeders to run without a prompt, you can use the --force flag.",
+    "confidence": "HIGH",
+    "source": "migrations.txt",
+    "chunk_ids": [
+      "migrations.txt_2",
+      "seeder.txt_2"
+    ],
+    "retrieval_scores": [
+      0.5530708432197571,
+      0.49086397886276245,
+      0.37529563903808594,
+      0.30848634243011475,
+      0.3031034469604492,
+      0.28081977367401123,
+      0.26238179206848145
+    ],
+    "reranker_scores": [
+      0.9956356291899889,
+      0.9828037431847135
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 46.675,
+      "retrieval": 0.004,
+      "reranking": 1.881,
+      "rewrite": 0.0,
+      "generation": 44.748
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "d7c45211-cb6a-4a3f-ba52-4f59c611f7bc",
+    "timestamp": "2026-04-15T15:21:19.577949",
+    "query": "Which country won the T20 cricket world cup 2026? ",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.09511029720306396,
+      0.08319967985153198,
+      0.050956666469573975,
+      0.047073185443878174,
+      0.046423912048339844,
+      0.044290363788604736,
+      0.03987264633178711
+    ],
+    "reranker_scores": [
+      1.477083909461228e-05,
+      1.4376758517285165e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.728,
+      "retrieval": 0.004,
+      "reranking": 1.717,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "1da1e208-c95e-4c17-9c6f-2cce32348497",
+    "timestamp": "2026-04-15T15:21:26.163374",
+    "query": "What is the core reason behind USA, Iran war?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.11831361055374146,
+      0.11273026466369629,
+      0.08612328767776489,
+      0.08414280414581299,
+      0.08220630884170532,
+      0.0714559555053711,
+      0.06744962930679321
+    ],
+    "reranker_scores": [
+      1.3223983849169921e-05,
+      1.227076065228676e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.695,
+      "retrieval": 0.004,
+      "reranking": 1.629,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "b5b72f32-b30d-4f4d-af18-939c1ae7d18e",
+    "timestamp": "2026-04-15T15:22:45.996668",
+    "query": "How can I configure environment variables to point a newly created sqlite database?",
+    "answer": "To configure environment variables to point a newly created sqlite database, you can use the `DB_CONNECTION` and `DB_DATABASE` variables in your `.env` file. Here's an example:\n\n```\nDB_CONNECTION=sqlite\nDB_DATABASE=/path/to/database.sqlite\n```\n\nReplace `/path/to/database.sqlite` with the actual path to your sqlite database. Make sure to replace `path/to/` with the actual path to your sqlite database. Save the changes to your `.env` file and run `php artisan env`. This will update your `.env` file with the correct database connection settings.",
+    "confidence": "HIGH",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_0",
+      "database.txt_1"
+    ],
+    "retrieval_scores": [
+      0.4397536516189575,
+      0.36789536476135254,
+      0.35091912746429443,
+      0.33403754234313965,
+      0.27097922563552856,
+      0.26405876874923706,
+      0.25251877307891846
+    ],
+    "reranker_scores": [
+      0.9766933619724917,
+      0.9018468984978959
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 77.823,
+      "retrieval": 0.003,
+      "reranking": 1.648,
+      "rewrite": 0.0,
+      "generation": 76.116
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "c7bb96f7-ef70-4778-bc44-6e8b997c857d",
+    "timestamp": "2026-04-15T15:52:47.451515",
+    "query": "Is there no need to clean strings being passed as bindings?",
+    "answer": "Yes, there is no need to clean strings being passed as bindings in Laravel's database query builder. The Laravel query builder uses PDO parameter binding to protect your application from SQL injection attacks. This means that any user input that is passed as a binding will be sanitized before being bound to the query. Therefore, it is safe to rely on the built-in parameter binding mechanism to ensure that user input is not exposed to SQL injection vulnerabilities.",
+    "confidence": "HIGH",
+    "source": "queries.txt",
+    "chunk_ids": [
+      "queries.txt_0"
+    ],
+    "retrieval_scores": [
+      0.12824034690856934,
+      0.12155133485794067,
+      0.11448001861572266,
+      0.10849881172180176,
+      0.10597509145736694,
+      0.09823799133300781,
+      0.07918554544448853
+    ],
+    "reranker_scores": [
+      0.9388947986980067
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 49.621,
+      "retrieval": 0.072,
+      "reranking": 1.746,
+      "rewrite": 0.0,
+      "generation": 47.591
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "6826a43e-6ec5-458c-b2d5-0fbc61c933b8",
+    "timestamp": "2026-04-15T15:53:18.071147",
+    "query": "Which command is used to generate migrations?",
+    "answer": "The command used to generate migrations is \"make:migration\".",
+    "confidence": "HIGH",
+    "source": "migrations.txt",
+    "chunk_ids": [
+      "migrations.txt_1",
+      "migrations.txt_0"
+    ],
+    "retrieval_scores": [
+      0.5023916363716125,
+      0.45723849534988403,
+      0.45648080110549927,
+      0.4011509418487549,
+      0.3055713176727295,
+      0.29954373836517334,
+      0.28809189796447754
+    ],
+    "reranker_scores": [
+      0.9985863059474624,
+      0.9955915277706109
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 29.283,
+      "retrieval": 0.004,
+      "reranking": 1.71,
+      "rewrite": 0.0,
+      "generation": 27.562
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "8fce4b78-811f-496a-a950-dda7834d9f2b",
+    "timestamp": "2026-04-15T15:56:01.391785",
+    "query": "How can I use seeders?",
+    "answer": "Sure! Here's how you can use Laravel's built-in seeders:\n\n1. Create a new seed file in the `database/seeds` directory.\n\n```php\nnamespace App\\Database\\Seeds;\n\nuse Illuminate\\Database\\Seeder;\n\nclass UsersTableSeeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        $users = factory(App\\Models\\User::class, 5)->create();\n\n        foreach ($users as $user) {\n            $user->save();\n        }\n    }\n}\n```\n\n2. Run the `make:seeder` command to generate a new seed file.\n\n```bash\nphp artisan make:seeder UsersTableSeeder\n```\n\n3. Modify the `UsersTableSeeder` class to insert user data into the `users` table.\n\n```php\nnamespace App\\Database\\Seeds;\n\nuse Illuminate\\Database\\Seeder;\n\nclass UsersTableSeeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        $users = factory(App\\Models\\User::class, 5)->create();\n\n        foreach ($users as $user) {\n            $user->save();\n        }\n    }\n}\n```\n\n4. Run the `seed` command to run the seed file",
+    "confidence": "HIGH",
+    "source": "seeder.txt",
+    "chunk_ids": [
+      "seeder.txt_2",
+      "seeder.txt_0"
+    ],
+    "retrieval_scores": [
+      0.4973253607749939,
+      0.4300055503845215,
+      0.2939625382423401,
+      0.13520604372024536,
+      0.12206834554672241,
+      0.12162166833877563,
+      0.11975765228271484
+    ],
+    "reranker_scores": [
+      0.9748119632468717,
+      0.9630483146964315
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 162.584,
+      "retrieval": 0.004,
+      "reranking": 1.682,
+      "rewrite": 0.0,
+      "generation": 160.889
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "1e76715d-7f55-4d6b-a54e-f972bb11b4e8",
+    "timestamp": "2026-04-15T15:58:11.221433",
+    "query": "Explain redis facade with example?",
+    "answer": "The Redis facade is a Laravel package that provides a simple and intuitive interface for working with Redis databases. It allows developers to interact with Redis servers through the Laravel framework, making it easy to manage and manipulate data stored in Redis.\n\nHere's an example of how to use the Redis facade:\n\n```php\nuse App\\Http\\Controllers\\UserController;\n\n// Get the Redis connection\n$redis = app(Redis::class);\n\n// Create a new user\n$user = new UserController();\n$user->showProfile(1); // Call the showProfile() method on the UserController facade\n\n// Set a value in Redis\n$redis->set('user:profile:1', 'Hello World!');\n\n// Get a value from Redis\n$value = $redis->get('user:profile:1');\necho $value; // Output: Hello World!\n```\n\nIn this example, we create a new `UserController` facade and call the `showProfile()` method on it. We then set a value in Redis using the `set()` method. Finally, we retrieve the value from Redis using the `get()` method.\n\nTo learn more about Redis facade, you can check out the official documentation at https://laravel.com/docs/8.x/redis.",
+    "confidence": "HIGH",
+    "source": "redis.txt",
+    "chunk_ids": [
+      "redis.txt_4"
+    ],
+    "retrieval_scores": [
+      0.46394598484039307,
+      0.4502573013305664,
+      0.4258013367652893,
+      0.4076821208000183,
+      0.3727864623069763,
+      0.3566473722457886,
+      0.32322847843170166
+    ],
+    "reranker_scores": [
+      0.9825975381524712,
+      0.9728644557086061
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 129.031,
+      "retrieval": 0.004,
+      "reranking": 1.73,
+      "rewrite": 0.0,
+      "generation": 127.29
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "fed7124a-c674-4734-9e19-a184f07b9f3d",
+    "timestamp": "2026-04-15T15:59:22.504146",
+    "query": "What is redis and how it could be installed?",
+    "answer": "Redis is an open-source, advanced key-value store developed by Redis Labs. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets, and sorted sets. Before using Redis with Laravel, we recommend installing and using the PhpRedis PHP extension via PECL. Alternatively, you can also install the predis/predis package via Composer. Redis is a powerful and versatile tool that can be used for various purposes such as caching, message brokers, and distributed systems. However, it requires a certain level of expertise to configure and manage effectively. Installation instructions for both packages can be found on their respective GitHub repositories.",
+    "confidence": "HIGH",
+    "source": "redis.txt",
+    "chunk_ids": [
+      "redis.txt_0"
+    ],
+    "retrieval_scores": [
+      0.6203212738037109,
+      0.5789366960525513,
+      0.5167573690414429,
+      0.4940568208694458,
+      0.47310423851013184,
+      0.46264517307281494,
+      0.40771007537841797
+    ],
+    "reranker_scores": [
+      0.9961118408034508
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 70.586,
+      "retrieval": 0.004,
+      "reranking": 1.68,
+      "rewrite": 0.0,
+      "generation": 68.895
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "63788551-313c-4b4a-8387-4491714614d8",
+    "timestamp": "2026-04-15T16:00:09.952850",
+    "query": "What should I do,in order to protect from running seeding commands against production database?",
+    "answer": "In order to protect from running seeding commands against production database, you can use the --force flag when running the db:seed command. This will prompt you for confirmation before executing the seeding operations. If you want to force the seeders to run without a prompt, you can use the --force flag.",
+    "confidence": "HIGH",
+    "source": "migrations.txt",
+    "chunk_ids": [
+      "migrations.txt_2",
+      "seeder.txt_2"
+    ],
+    "retrieval_scores": [
+      0.5530708432197571,
+      0.49086397886276245,
+      0.37529563903808594,
+      0.30848634243011475,
+      0.3031034469604492,
+      0.28081977367401123,
+      0.26238179206848145
+    ],
+    "reranker_scores": [
+      0.9956356291899889,
+      0.9828037431847135
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 45.643,
+      "retrieval": 0.004,
+      "reranking": 1.693,
+      "rewrite": 0.0,
+      "generation": 43.875
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "9d9bcb60-8825-434e-98a3-215ee562d797",
+    "timestamp": "2026-04-15T16:00:12.456749",
+    "query": "Which country won the T20 cricket world cup 2026? ",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.09511029720306396,
+      0.08319967985153198,
+      0.050956666469573975,
+      0.047073185443878174,
+      0.046423912048339844,
+      0.044290363788604736,
+      0.03987264633178711
+    ],
+    "reranker_scores": [
+      1.477083909461228e-05,
+      1.4376758517285165e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.754,
+      "retrieval": 0.004,
+      "reranking": 1.744,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "6c8d3ea1-175c-4201-bb0a-2c2bb4dffe4f",
+    "timestamp": "2026-04-15T16:00:14.692216",
+    "query": "What is the core reason behind USA, Iran war?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.11831361055374146,
+      0.11273026466369629,
+      0.08612328767776489,
+      0.08414280414581299,
+      0.08220630884170532,
+      0.0714559555053711,
+      0.06744962930679321
+    ],
+    "reranker_scores": [
+      1.3223983849169921e-05,
+      1.227076065228676e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.78,
+      "retrieval": 0.004,
+      "reranking": 1.74,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "89212b5b-f656-4471-85a9-82558451ee9a",
+    "timestamp": "2026-04-15T16:01:33.589880",
+    "query": "How can I configure environment variables to point a newly created sqlite database?",
+    "answer": "To configure environment variables to point a newly created sqlite database, you can use the `DB_CONNECTION` and `DB_DATABASE` variables in your `.env` file. Here's an example:\n\n```\nDB_CONNECTION=sqlite\nDB_DATABASE=/path/to/database.sqlite\n```\n\nReplace `/path/to/database.sqlite` with the actual path to your sqlite database. Make sure to replace `path/to/` with the actual path to your sqlite database. Save the changes to your `.env` file and run `php artisan env`. This will update your `.env` file with the correct database connection settings.",
+    "confidence": "HIGH",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_0",
+      "database.txt_1"
+    ],
+    "retrieval_scores": [
+      0.4397536516189575,
+      0.36789536476135254,
+      0.35091912746429443,
+      0.33403754234313965,
+      0.27097922563552856,
+      0.26405876874923706,
+      0.25251877307891846
+    ],
+    "reranker_scores": [
+      0.9766933619724917,
+      0.9018468984978959
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 78.483,
+      "retrieval": 0.004,
+      "reranking": 1.888,
+      "rewrite": 0.0,
+      "generation": 76.582
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "8c73df06-761c-4d03-ad79-182c854076b6",
+    "timestamp": "2026-04-15T16:03:40.402306",
+    "query": "why is there no need to clean strings being passed as bindings?",
+    "answer": "There is no need to clean strings being passed as bindings because PDO parameter binding protects against SQL injection attacks. PDO does not support binding column names, so it cannot be used to specify column names that are not part of the query. By default, PDO will automatically bind any non-nullable parameters with their corresponding values, which means that if a user inputs a value for a non-nullable parameter, it will be bound to that value. This ensures that the query is safe from SQL injection attacks. However, if you want to ensure that the user input is validated before binding the parameter, you can use the `bindParam()` method to pass in a custom value instead of the default one. For example:\n\n```php\n$stmt = $pdo->prepare('SELECT * FROM users WHERE id = :id');\n$stmt->bindParam(':id', $user_id);\n$stmt->execute();\n```\n\nIn this example, `:id` is replaced with the user ID passed in as a parameter. This ensures that the user input is validated before binding the parameter to the query.",
+    "confidence": "LOW",
+    "source": "queries.txt",
+    "chunk_ids": [
+      "queries.txt_0",
+      "queries.txt_0"
+    ],
+    "retrieval_scores": [
+      0.14797347784042358,
+      0.1330890655517578,
+      0.11273747682571411,
+      0.11071246862411499,
+      0.10644906759262085,
+      0.09605991840362549,
+      0.06793820858001709
+    ],
+    "reranker_scores": [
+      0.7735488748225658
+    ],
+    "rewrite_triggered": true,
+    "rewritten_query": "\n      ### System:\n      Why is there no need to clean strings being passed as bindings?",
+    "latency": {
+      "total": 126.018,
+      "retrieval": 0.007,
+      "reranking": 1.716,
+      "rewrite": 10.655,
+      "generation": 113.557
+    },
+    "anomalies": [
+      "slow_query",
+      "low_confidence",
+      "rewrite_failed",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "df74cecc-fc54-45fe-9fe9-ed4d91085325",
+    "timestamp": "2026-04-15T16:03:43.648515",
+    "query": "What is the population of republic of china?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.19495999813079834,
+      0.15610969066619873,
+      0.15480947494506836,
+      0.14115458726882935,
+      0.1407608985900879,
+      0.1382274627685547,
+      0.12735259532928467
+    ],
+    "reranker_scores": [
+      1.3631163091517048e-05,
+      1.3602295783830242e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.022,
+      "retrieval": 0.007,
+      "reranking": 2.003,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "fe6cdb1e-9dda-48a8-b2b0-c67ea7260518",
+    "timestamp": "2026-04-15T16:04:39.339391",
+    "query": "Has Predis been abandoned by the package's original author and may be removed from Laravel in a future release?",
+    "answer": "No, Predis has not been abandoned by the package's original author and may still be used with Laravel. Laravel provides support for both the PhpRedis and Predis extensions, so you can choose which one to use based on your specific needs. If you decide to use the PhpRedis extension, you can install it via PECL or composer. If you prefer using Predis, you can install it through Composer. Both extensions provide similar functionality and are widely used in Laravel applications.",
+    "confidence": "HIGH",
+    "source": "redis.txt",
+    "chunk_ids": [
+      "redis.txt_0"
+    ],
+    "retrieval_scores": [
+      0.5036774277687073,
+      0.3190171718597412,
+      0.2787807583808899,
+      0.24690353870391846,
+      0.23824548721313477,
+      0.23013651371002197,
+      0.2285994291305542
+    ],
+    "reranker_scores": [
+      0.9962872780994859
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 55.004,
+      "retrieval": 0.004,
+      "reranking": 1.666,
+      "rewrite": 0.0,
+      "generation": 53.326
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "cc76d57e-d80b-4686-9d25-255af1e04bff",
+    "timestamp": "2026-04-15T16:05:31.623824",
+    "query": "Has Predis been abandoned and likely to be removed?",
+    "answer": "No, Predis has not been abandoned and is still supported by its original author. However, it may be removed from Laravel in a future release due to its lack of active development and potential security vulnerabilities. Laravel provides a built-in Redis implementation called PhpRedis, which is recommended for most applications. If you need to use Predis, you can install it via Composer or manually add it to your `config/app.php` configuration file.",
+    "confidence": "HIGH",
+    "source": "redis.txt",
+    "chunk_ids": [
+      "redis.txt_0"
+    ],
+    "retrieval_scores": [
+      0.2641511559486389,
+      0.19431239366531372,
+      0.09007000923156738,
+      0.08804553747177124,
+      0.06996709108352661,
+      0.06442058086395264,
+      0.05624955892562866
+    ],
+    "reranker_scores": [
+      0.836088083733154
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 51.282,
+      "retrieval": 0.004,
+      "reranking": 1.767,
+      "rewrite": 0.0,
+      "generation": 49.504
+    },
+    "anomalies": [
+      "slow_query",
+      "generation_slow"
+    ]
+  },
+  {
+    "request_id": "009ef65a-4832-4922-84ce-f22b150b093d",
+    "timestamp": "2026-04-18T15:47:22.192339",
+    "query": "When is holi?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.2078014612197876,
+      0.14244353771209717,
+      0.11960840225219727,
+      0.11520075798034668,
+      0.1129884123802185,
+      0.11026161909103394,
+      0.10929590463638306
+    ],
+    "reranker_scores": [
+      1.4420878066882713e-05,
+      1.1858000430853738e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 14.903,
+      "retrieval": 2.861,
+      "reranking": 10.824,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "ff67e1ac-c0ff-4ef5-9549-760d46a86e96",
+    "timestamp": "2026-04-18T15:50:18.847143",
+    "query": "How can I configure environment variables after creating a newly created database?",
+    "answer": "You do not know [Source: database.txt | CHUNKID:1]",
+    "confidence": "HIGH",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_1"
+    ],
+    "retrieval_scores": [
+      0.467540442943573,
+      0.4192553162574768,
+      0.41202831268310547,
+      0.3295879364013672,
+      0.32486772537231445,
+      0.3241884708404541,
+      0.3199610710144043
+    ],
+    "reranker_scores": [
+      0.9596782597453057,
+      0.9140539885515822
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 4.759,
+      "retrieval": 0.004,
+      "reranking": 4.394,
+      "rewrite": 0.0,
+      "generation": 0.353
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "87bfbaa4-03da-4e7f-b88b-a067e6e0e589",
+    "timestamp": "2026-04-18T16:01:08.550632",
+    "query": "How can I configure environment variables after creating a newly created database?",
+    "answer": "[Source: database.txt | CHUNKID: 1] \nYou can configure environment variables after creating a newly created database by managing several environment variables such as host, database, username, password, etc. Alternatively, you can use a single database \"URL\" that contains all of the connection information for the database in a single string, which follows a standard schema convention: driver://username:password@host:port/database?options. If the url (or corresponding DATABASE_URL environment variable) configuration option is present, it will be used to extract the database connection and credential information.",
+    "confidence": "HIGH",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_1"
+    ],
+    "retrieval_scores": [
+      0.467540442943573,
+      0.4192553162574768,
+      0.41202831268310547,
+      0.3295879364013672,
+      0.32486772537231445,
+      0.3241884708404541,
+      0.3199610710144043
+    ],
+    "reranker_scores": [
+      0.9596782597453057,
+      0.9140539885515822
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 4.773,
+      "retrieval": 0.004,
+      "reranking": 4.244,
+      "rewrite": 0.0,
+      "generation": 0.506
+    },
+    "anomalies": []
   }
 ]

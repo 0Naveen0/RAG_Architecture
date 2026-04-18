@@ -39,7 +39,7 @@ class LangfuseTracer:
 		# load_dotenv("../.env")
 		#load_dotenv("/content/drive/MyDrive/ColabNotebooks/EKA_RAG_Project_v2/.env")
 		load_dotenv(".env")
-		print(f"Public_key={os.getenv('LANGFUSE_PUBLIC_KEY')}")
+		# print(f"Public_key={os.getenv('LANGFUSE_PUBLIC_KEY')}")
 		cls._client = Langfuse(public_key=os.getenv("LANGFUSE_PUBLIC_KEY"),secret_key=os.getenv("LANGFUSE_SECRET_KEY"),base_url=os.getenv("LANGFUSE_BASE_URL"),debug=True)
 		return cls._client
 	@staticmethod	

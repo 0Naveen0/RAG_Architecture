@@ -7,4 +7,15 @@ if __name__ == "__main__":
   print("*"*50)
   print(results)
   print("*"*50)
-  Report.generate(results,output_path="evaluate/finalreport.json")
+  Report.generate(results,output_path="evaluate/finalreport11.json")
+
+# from evaluate.eval_retrieval import EvalRunner
+# # from evaluate.report import Report
+
+# if __name__ == "__main__":
+#   runner = EvalRunner(dataset_path="evaluate/dataset.json")
+#   results = runner.run()
+#   print("*"*50)
+#   print(results)
+#   print("*"*50)
+#   # Report.generate(results,output_path="evaluate/finalreport.json")

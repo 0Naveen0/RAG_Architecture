@@ -36,3 +36,7 @@ LOG_PATH                = "/content/drive/MyDrive/ColabNotebooks/EKA_RAG_Project
 ###RATE LIMITER
 LIMITER_MAX_REQUESTS  = 10
 LIMITER_WINDOW_SECOND = 60
+
+MAX_RETRIES = 3
+GROQ_MODEL = "llama-3.3-70b-versatile"
+

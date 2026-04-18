@@ -1,40 +1,11 @@
 from config.config import MAX_CONTEXT_TOKENS,MAX_ALLOWED_CHUNKS,REFUSAL_MESSAGE
-
+from config.config import GROQ_MODEL
+# from model.groq_model import GROQ_MODEL
 
 class Generator:
 	def __init__(self,llm_model):
 		self.llm = llm_model
-
-	# def get_answer_from_text(self, text):
-	# 	answer =text
-	# 	answer_start_tag = "Answer:"
-	# 	mylist = text.split("###")
-	# 	for item in mylist:
-	# 		# print(item)
-	# 		if answer_start_tag in item:
-	# 			answer = item
-	# 	return answer
-
-				
-	def get_answer_from_text(self,text):
-		answer_tag = "Response:"
-		if answer_tag in text:
-			answer = text.split(answer_tag)[-1].strip()
-			if "###" in answer or "<|" in answer:
-				answer = answer.split("###")[0].split("<|")[0].strip()
-			return answer if len(answer)>5 else REFUSAL_MESSAGE
-  
-		return text
-
-	# def get_answer_from_text(self,text):
-	# 	answer_tag = "### Answer:"
-	# 	if answer_tag in text:
-	# 		answer = text.split(answer_tag)[-1].strip()
-	# 		if "###" in answer:
-	# 			answer = answer.split("###")[0].strip()
-	# 		return answer if answer else REFUSAL_MESSAGE
-	
-	# 	return REFUSAL_MESSAGE
+    # self.groq_model = GROQ_MODEL
 
 	def build_context(self,filtered_chunks):
 		context = ""
@@ -44,6 +15,40 @@ class Generator:
 				context+= f"Context {i+1}:\n"+chunk["text"]+"\nSource: "+f"{chunk["metadata"]["source"]}"+f"\nChunk Id: {chunk["metadata"]["chunk_id"]}"+"\n\n"
 				i+=1
 		return context[:MAX_CONTEXT_TOKENS*4]
+
+
+	def generate_with_groq(self,query,filtered_chunks,model):
+		context = self.build_context(filtered_chunks)
+		system_prompt_ = ("\nYou are a Laravel Assistant.Answer using ONLY provided context.",
+                     "Cite source file and chunk id for all claims (eg.[FILE:filename.pdf | CHUNKID:1)]",
+                     "If answer is not present within the context,say that you do not know",
+                     "Do not use internal knowledge"
+                    )
+		system_prompt = '\n'.join(str(x) for x in system_prompt_)
+		print(f"System-{system_prompt}")
+		PROMPT_TEMPLATE_GROQ = """
+				<|begin_of_text|>
+        <|start_header_id|>system<|end_header_id|>
+        {system_prompt}<|eot_id|>
+        <|start_header_id|>user<|end_header_id|>
+				
+				Context:
+				{context}
+				
+				Query: {query}
+				<|eot_id|>
+        <|start_header_id|>assistance<|end_header_id|>				
+				"""
+		messages = [
+			{'role':'system','content':system_prompt},
+			{'role':'user','content':f'\nContext:\n{context}\n\nQuery:\n{query}'},
+			{'role':'assistant','content':''}
+		]		
+		prompt  = PROMPT_TEMPLATE_GROQ.format(system_prompt=system_prompt,context=context,query=query,REFUSAL_MESSAGE=REFUSAL_MESSAGE)
+		print(f"Prompt-{messages}")
+		raw_output = model.generate_with_groq(messages)
+		print(f"[GROQ_Answer]->{raw_output}")
+		return raw_output
 
 	def generate(self,query,filtered_chunks):
 		context = self.build_context(filtered_chunks)
@@ -71,6 +76,8 @@ class Generator:
 		# 	        ### Answer:
 
 		# 		  """
+
+
 		PROMPT_TEMPLATE = """
 				<|System|> You are a laravel Expert Assistant.
 				Answer using only the provided context.
