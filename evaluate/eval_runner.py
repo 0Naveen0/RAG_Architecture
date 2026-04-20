@@ -34,7 +34,8 @@ class EvalRunner:
 		#Run pipeline and log latency
 		start = time.time()
 		# response = self.ragorchestrator.run(query)
-		response = self.ragorchestrator.run_test(query)
+		# response = self.ragorchestrator.run_test(query)
+		response = self.ragorchestrator.run_groq(query)
 		latency = round(time.time()-start,3)
 		
 		#Extract Response

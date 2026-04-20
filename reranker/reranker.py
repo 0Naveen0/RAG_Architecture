@@ -1,6 +1,32 @@
 from sentence_transformers import CrossEncoder # cross-encoder/ms-marco-MiniLM-L6-v2
 from config.config import RERANKER_MODEL_NAME,RERANKER_TOP_K,RERANKER_GAP_POSITIVE,RERANKER_GAP_NEGATIVE #3	#top_k = 10
 
+def remove_duplicate_chunks(filtered_chunks:list)->list:
+	deduplicated_chunks = []
+	seen =set()
+	# print(type(filtered_chunks))
+	# print(filtered_chunks)
+	if not filtered_chunks:
+		return filtered_chunks
+	for data in (filtered_chunks):
+		if isinstance(data, dict):
+			meta = data.get('metadata', {})
+		elif isinstance(data, list) and len(data) > 0:
+            
+			if isinstance(data[0], dict):
+				meta = data[0].get('metadata', {})
+			else:
+				continue
+		else:
+			continue
+		# print (f"[Meta]{meta}")
+		id = f"{meta.get('source')}_{meta.get('chunk_id')}"
+		if id not in seen:
+			seen.add(id)
+			deduplicated_chunks.append(data)			
+	return deduplicated_chunks
+
+
 def select_chunks(reranked_chunks:list,max_chunks:int = 2)->list:
 	
 	if not reranked_chunks:

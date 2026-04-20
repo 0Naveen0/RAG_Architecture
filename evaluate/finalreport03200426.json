@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-04-20T13:28:34.823676",
+  "total_queries": 1,
+  "summary": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "keyword_match": 0.0,
+    "avg_latency_second": 7,
+    "refusal_accuracy": 0,
+    "rewrite_trigger_rate": 0,
+    "rewrite_success_rate": 0.0
+  },
+  "by_difficulty": {
+    "Easy": {
+      "count": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  },
+  "by_category": {
+    "domain": {
+      "count": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  },
+  "failures": [
+    {
+      "id": "q014",
+      "query": "Do each migration file name contains a timestamp?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": false,
+      "should_refuse": false,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 6.661,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    }
+  ],
+  "raw_results": [
+    {
+      "id": "q014",
+      "query": "Do each migration file name contains a timestamp?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": false,
+      "should_refuse": false,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 6.661,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    }
+  ]
+}

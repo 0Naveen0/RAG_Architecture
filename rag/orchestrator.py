@@ -3,10 +3,10 @@ from config.config import SIMILARITY_THRESHOLD,MAX_ALLOWED_CHUNKS,LOG_PATH,REFUS
 from rag.retriever import Retriever
 from rag.generator import Generator
 from models.embedding_model import EmbeddingModel
-from config.model_loader import get_llm
-from models.llm_model import LLMModel
+# from config.model_loader import get_llm # For Tinyllama
+# from models.llm_model import LLMModel # For Tinyllama
 from rewriter.query_rewriter import QueryRewriter
-from reranker.reranker import Reranker,select_chunks
+from reranker.reranker import Reranker,select_chunks,remove_duplicate_chunks
 import time
 from observability.logger import Logger
 from observability.anomaly_detector import AnomalyDetector
@@ -222,11 +222,12 @@ class RAGOrchestrator :
 	def run_groq(self,query):
 		self.embedding_model = EmbeddingModel()
 		self.retriever = Retriever()
-		self.llm_model,tokenizer = get_llm()
-		llm = LLMModel()
+		# self.llm_model,tokenizer = get_llm()#For Tinyllama
+		# llm = LLMModel() #For Tinyllama
 		groqq = GroqGenerator()
 		self.generator = Generator(groqq)
-		qrewriter = QueryRewriter(llm)
+		# qrewriter = QueryRewriter(llm)#For Tinyllama
+		qrewriter = QueryRewriter(groqq)
 		total_start = time.time()
 		latency={"total":0.0,"retrieval":0.0,"reranking":0.0,"rewrite":0.0,"generation":0.0}
 		rewrite_triggered = False
@@ -294,7 +295,8 @@ class RAGOrchestrator :
 		elif(retrieval_status=="GAP_ZONE"):	
 				#query rewrite
 			t0_rewrite = time.time()  
-			rewritten_query = qrewriter.rewrite(query)    
+			# rewritten_query = qrewriter.rewrite(query) #For Tinyllma   
+			rewritten_query = qrewriter.rewrite_with_groq(query)    
 			rewritten_query_embeddings = self.embedding_model.embed([rewritten_query])[0]
 			rewritten_results =  self.retriever.retrieve(rewritten_query_embeddings)
 			rewrite_triggered =True
@@ -321,6 +323,7 @@ class RAGOrchestrator :
 					rewrite_success=True
 				elif rw_status == "GAP_ZONE":
 					filtered_chunks = filtered_chunks + rw_chunks
+					# filtered_chunks=remove_duplicate_chunks(filtered_chunks)
 					filtered_chunks.sort(key=lambda x:x['reranker_score'],reverse=True)
 		# 	answer = self.generator.generate(query,filtered_chunks)
 		# else:
@@ -330,8 +333,10 @@ class RAGOrchestrator :
 			self._log(query,final_result,latency,retrieval_scores,reranker_scores,[],rewrite_triggered,rewritten_query)
 			return final_result
 
-		t0_generation = time.time()			
+		t0_generation = time.time()		
+		filtered_chunks=remove_duplicate_chunks(filtered_chunks)	
 		# answer = self.generator.generate(query,filtered_chunks[:MAX_ALLOWED_CHUNKS])
+
 		answer = self.generator.generate_with_groq(query,filtered_chunks[:MAX_ALLOWED_CHUNKS],groqq)
 		# answer ="From LLM"
 		latency['generation'] = round(time.time()-t0_generation,3)

@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-04-20T13:19:29.091368",
+  "total_queries": 1,
+  "summary": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "keyword_match": 1.0,
+    "avg_latency_second": 7,
+    "refusal_accuracy": 0,
+    "rewrite_trigger_rate": 0,
+    "rewrite_success_rate": 0.0
+  },
+  "by_difficulty": {
+    "Medium": {
+      "count": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "by_category": {
+    "domain": {
+      "count": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "failures": [],
+  "raw_results": [
+    {
+      "id": "q006",
+      "query": "What should I do,in order to protect from running seeding commands against production database?",
+      "category": "domain",
+      "difficulty_level": "Medium",
+      "expected_chunk": [
+        2
+      ],
+      "retrieved_ids": [
+        "2"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 1.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 6.697,
+      "answer": "To protect from running seeding commands against your production database, you will be prompted for confirmation before the seeders are executed. [SOURCE: seeder.txt | CHUNKID: 2] \n\nHowever, if you want to force the seeders to run without a prompt, you can use the --force flag: \nphp artisan db:seed --force [SOURCE: seeder.txt | CHUNKID: 2]"
+    }
+  ]
+}

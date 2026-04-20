@@ -1712,5 +1712,1174 @@
       "generation": 0.506
     },
     "anomalies": []
+  },
+  {
+    "request_id": "b2eae71c-d76e-4ca0-918a-cc2488642b98",
+    "timestamp": "2026-04-20T13:05:06.702077",
+    "query": "How can I configure environment variables to point  a newly created sqlite database?",
+    "answer": "To configure environment variables to point to a newly created SQLite database, you can use the following environment variables: \nDB_CONNECTION=sqlite \nDB_DATABASE=/absolute/path/to/database.sqlite \n[Source: database.txt | CHUNKID: 0]",
+    "confidence": "HIGH",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_0",
+      "database.txt_1"
+    ],
+    "retrieval_scores": [
+      0.4397536516189575,
+      0.36789536476135254,
+      0.35091912746429443,
+      0.33403754234313965,
+      0.27097922563552856,
+      0.26405876874923706,
+      0.25251877307891846
+    ],
+    "reranker_scores": [
+      0.9766933619724917,
+      0.9018468984978959
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 6.596,
+      "retrieval": 1.09,
+      "reranking": 4.549,
+      "rewrite": 0.0,
+      "generation": 0.386
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "1f9df20c-8fca-4968-97f1-6fb6ee75fd88",
+    "timestamp": "2026-04-20T13:19:28.256333",
+    "query": "What should I do,in order to protect from running seeding commands against production database?",
+    "answer": "To protect from running seeding commands against your production database, you will be prompted for confirmation before the seeders are executed. [SOURCE: seeder.txt | CHUNKID: 2] \n\nHowever, if you want to force the seeders to run without a prompt, you can use the --force flag: \nphp artisan db:seed --force [SOURCE: seeder.txt | CHUNKID: 2]",
+    "confidence": "HIGH",
+    "source": "migrations.txt",
+    "chunk_ids": [
+      "migrations.txt_2",
+      "seeder.txt_2"
+    ],
+    "retrieval_scores": [
+      0.5530708432197571,
+      0.49086397886276245,
+      0.37529563903808594,
+      0.30848634243011475,
+      0.3031034469604492,
+      0.28081977367401123,
+      0.26238179206848145
+    ],
+    "reranker_scores": [
+      0.9956356291899889,
+      0.9828037431847135
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.822,
+      "retrieval": 0.066,
+      "reranking": 2.044,
+      "rewrite": 0.0,
+      "generation": 0.481
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "1b9064ed-53b1-472c-91c0-98cddce6cf60",
+    "timestamp": "2026-04-20T13:23:45.514978",
+    "query": "Is there no need to clean strings being passed as bindings?",
+    "answer": "According to the context, there is no need to clean strings being passed as bindings because the Laravel query builder uses PDO parameter binding to protect the application against SQL injection attacks. [Source: queries.txt | Chunk Id: 0]",
+    "confidence": "HIGH",
+    "source": "queries.txt",
+    "chunk_ids": [
+      "queries.txt_0"
+    ],
+    "retrieval_scores": [
+      0.12824034690856934,
+      0.12155133485794067,
+      0.11448001861572266,
+      0.10849881172180176,
+      0.10597509145736694,
+      0.09823799133300781,
+      0.07918554544448853
+    ],
+    "reranker_scores": [
+      0.9388947986980067
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 3.406,
+      "retrieval": 0.077,
+      "reranking": 2.375,
+      "rewrite": 0.0,
+      "generation": 0.536
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "7647a4a6-ef7b-4bfa-8f11-cf5d90ecde6a",
+    "timestamp": "2026-04-20T13:28:33.442073",
+    "query": "Do each migration file name contains a timestamp?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.3238424062728882,
+      0.29865527153015137,
+      0.21248793601989746,
+      0.20246630907058716,
+      0.196133553981781,
+      0.18420100212097168,
+      0.16205644607543945
+    ],
+    "reranker_scores": [
+      0.030073300645319816
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.297,
+      "retrieval": 0.056,
+      "reranking": 2.0,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "8ab2ed0a-4b0a-4d96-8f6f-55d832fb3e20",
+    "timestamp": "2026-04-20T13:30:57.014974",
+    "query": "Is there no need to clean strings being passed as bindings?",
+    "answer": "According to the context, there is no need to clean strings being passed as bindings because the Laravel query builder uses PDO parameter binding to protect the application against SQL injection attacks. [Source: queries.txt | Chunk Id: 0]",
+    "confidence": "HIGH",
+    "source": "queries.txt",
+    "chunk_ids": [
+      "queries.txt_0"
+    ],
+    "retrieval_scores": [
+      0.12824034690856934,
+      0.12155133485794067,
+      0.11448001861572266,
+      0.10849881172180176,
+      0.10597509145736694,
+      0.09823799133300781,
+      0.07918554544448853
+    ],
+    "reranker_scores": [
+      0.9388947986980067
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.573,
+      "retrieval": 0.076,
+      "reranking": 1.793,
+      "rewrite": 0.0,
+      "generation": 0.389
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "afd6b5b4-6e20-4035-a6c1-de70cfabc8cc",
+    "timestamp": "2026-04-20T13:31:00.793649",
+    "query": "Which command is used to generate migrations?",
+    "answer": "The command used to generate migrations is: php artisan make:migration [FILE: migrations.txt | CHUNKID: 0] and [FILE: migrations.txt | CHUNKID: 1].",
+    "confidence": "HIGH",
+    "source": "migrations.txt",
+    "chunk_ids": [
+      "migrations.txt_1",
+      "migrations.txt_0"
+    ],
+    "retrieval_scores": [
+      0.5023916363716125,
+      0.45723849534988403,
+      0.45648080110549927,
+      0.4011509418487549,
+      0.3055713176727295,
+      0.29954373836517334,
+      0.28809189796447754
+    ],
+    "reranker_scores": [
+      0.9985863059474624,
+      0.9955915277706109
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.363,
+      "retrieval": 0.005,
+      "reranking": 1.893,
+      "rewrite": 0.0,
+      "generation": 0.457
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "d926476c-0d8f-4465-87af-0da39ba3ad5e",
+    "timestamp": "2026-04-20T13:31:04.411213",
+    "query": "How can I use seeders?",
+    "answer": "To use seeders, you can run the db:seed Artisan command, which will run the DatabaseSeeder class by default. This class can be used to call other seed classes using the call method. [seeder.txt | CHUNKID:2] \n\nYou can also specify a specific seeder class to run individually using the --class option:\nphp artisan db:seed --class=UserSeeder [seeder.txt | CHUNKID:2]\n\nAdditionally, you can seed your database using the migrate:fresh command, which will drop all tables and re-run all of your migrations:\nphp artisan migrate:fresh --seed [seeder.txt | CHUNKID:2]\n\nIf you want to force the seeders to run without a prompt, you can use the --force flag:\nphp artisan db:seed --force [seeder.txt | CHUNKID:2] \n\nYou can generate a seeder using the make:seeder Artisan command:\nphp artisan make:seeder UserSeeder [seeder.txt | CHUNKID:0] \n\nWithin the run method of the seeder class, you can insert data into your database using the query builder or Eloquent model factories. [seeder.txt | CHUNKID:0]",
+    "confidence": "HIGH",
+    "source": "seeder.txt",
+    "chunk_ids": [
+      "seeder.txt_2",
+      "seeder.txt_0"
+    ],
+    "retrieval_scores": [
+      0.4973253607749939,
+      0.4300055503845215,
+      0.2939625382423401,
+      0.13520604372024536,
+      0.12206834554672241,
+      0.12162166833877563,
+      0.11975765228271484
+    ],
+    "reranker_scores": [
+      0.9748119632468717,
+      0.9630483146964315
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.912,
+      "retrieval": 0.004,
+      "reranking": 1.821,
+      "rewrite": 0.0,
+      "generation": 1.079
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "03064367-25ad-4303-b65c-54b853d8ca26",
+    "timestamp": "2026-04-20T13:31:07.872188",
+    "query": "Explain redis facade with example?",
+    "answer": "The Redis facade in Laravel provides a convenient interface to interact with a Redis server. You can call any Redis command on the facade, and Laravel will pass the command to the Redis server using magic methods. \n\nFor example, you can use the `get` and `set` methods to retrieve and store data in Redis:\n```php\n$user = Redis::get('user:profile:'.$id);\nRedis::set('name', 'Taylor');\n```\nAlternatively, you can use the `command` method to pass commands to the server:\n```php\n$values = Redis::command('lrange', ['name', 5, 10]);\n```\nYou can also use the `connection` method to get a Redis instance:\n```php\n$redis = Redis::connection();\n```\nOr, you can pass a connection or cluster name to get a specific server or cluster:\n```php\n$redis = Redis::connection('my-connection');\n```\n[Source: redis.txt | CHUNKID: 4]",
+    "confidence": "HIGH",
+    "source": "redis.txt",
+    "chunk_ids": [
+      "redis.txt_4"
+    ],
+    "retrieval_scores": [
+      0.46394598484039307,
+      0.4502573013305664,
+      0.4258013367652893,
+      0.4076821208000183,
+      0.3727864623069763,
+      0.3566473722457886,
+      0.32322847843170166
+    ],
+    "reranker_scores": [
+      0.9825975381524712,
+      0.9728644557086061
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 3.017,
+      "retrieval": 0.004,
+      "reranking": 1.987,
+      "rewrite": 0.0,
+      "generation": 0.959
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "0fd78359-4ddb-450c-8250-c930e09eb478",
+    "timestamp": "2026-04-20T13:31:10.891052",
+    "query": "What is redis and how it could be installed?",
+    "answer": "Redis is an open source, advanced key-value store, often referred to as a data structure server since keys can contain strings, hashes, lists, sets, and sorted sets. [SOURCE: redis.txt | CHUNKID: 0]\nTo install Redis with Laravel, you can either install the PhpRedis PHP extension via PECL, which may yield better performance for applications that make heavy use of Redis, or install the predis/predis package via Composer using the command \"composer require predis/predis\". [SOURCE: redis.txt | CHUNKID: 0]",
+    "confidence": "HIGH",
+    "source": "redis.txt",
+    "chunk_ids": [
+      "redis.txt_0"
+    ],
+    "retrieval_scores": [
+      0.6203212738037109,
+      0.5789366960525513,
+      0.5167573690414429,
+      0.4940568208694458,
+      0.47310423851013184,
+      0.46264517307281494,
+      0.40771007537841797
+    ],
+    "reranker_scores": [
+      0.9961118408034508
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.506,
+      "retrieval": 0.005,
+      "reranking": 1.851,
+      "rewrite": 0.0,
+      "generation": 0.637
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "a4fcb6ae-602c-40e3-b184-8e57c547aadc",
+    "timestamp": "2026-04-20T13:31:14.144055",
+    "query": "What should I do,in order to protect from running seeding commands against production database?",
+    "answer": "To protect from running seeding commands against your production database, you will be prompted for confirmation before the seeders are executed. However, if you want to force the seeders to run without a prompt, use the --force flag: \nphp artisan db:seed --force [seeder.txt | CHUNKID:2]",
+    "confidence": "HIGH",
+    "source": "migrations.txt",
+    "chunk_ids": [
+      "migrations.txt_2",
+      "seeder.txt_2"
+    ],
+    "retrieval_scores": [
+      0.5530708432197571,
+      0.49086397886276245,
+      0.37529563903808594,
+      0.30848634243011475,
+      0.3031034469604492,
+      0.28081977367401123,
+      0.26238179206848145
+    ],
+    "reranker_scores": [
+      0.9956356291899889,
+      0.9828037431847135
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.563,
+      "retrieval": 0.004,
+      "reranking": 1.867,
+      "rewrite": 0.0,
+      "generation": 0.599
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "f2666620-039f-4949-9cc1-83cb5bbab1d6",
+    "timestamp": "2026-04-20T13:31:16.458708",
+    "query": "Which country won the T20 cricket world cup 2026? ",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.09511029720306396,
+      0.08319967985153198,
+      0.050956666469573975,
+      0.047073185443878174,
+      0.046423912048339844,
+      0.044290363788604736,
+      0.03987264633178711
+    ],
+    "reranker_scores": [
+      1.477083909461228e-05,
+      1.4376758517285165e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.845,
+      "retrieval": 0.004,
+      "reranking": 1.833,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "640f0f61-943b-4be5-91f6-1351c51373f6",
+    "timestamp": "2026-04-20T13:31:18.767606",
+    "query": "What is the core reason behind USA, Iran war?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.11831361055374146,
+      0.11273026466369629,
+      0.08612328767776489,
+      0.08414280414581299,
+      0.08220630884170532,
+      0.0714559555053711,
+      0.06744962930679321
+    ],
+    "reranker_scores": [
+      1.3223983849169921e-05,
+      1.227076065228676e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.864,
+      "retrieval": 0.004,
+      "reranking": 1.761,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "1f828a74-65b3-4d96-a81e-d378a30b7028",
+    "timestamp": "2026-04-20T13:31:21.769141",
+    "query": "How can I configure environment variables to point a newly created sqlite database?",
+    "answer": "To configure environment variables to point to a newly created SQLite database, you can use the following environment variables: \nDB_CONNECTION=sqlite \nDB_DATABASE=/absolute/path/to/database.sqlite \n[Source: database.txt | CHUNKID: 0]",
+    "confidence": "HIGH",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_0",
+      "database.txt_1"
+    ],
+    "retrieval_scores": [
+      0.4397536516189575,
+      0.36789536476135254,
+      0.35091912746429443,
+      0.33403754234313965,
+      0.27097922563552856,
+      0.26405876874923706,
+      0.25251877307891846
+    ],
+    "reranker_scores": [
+      0.9766933619724917,
+      0.9018468984978959
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.503,
+      "retrieval": 0.005,
+      "reranking": 1.89,
+      "rewrite": 0.0,
+      "generation": 0.585
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "65b60710-1d74-43b8-9b8d-d8eb06a9f89d",
+    "timestamp": "2026-04-20T13:38:19.210594",
+    "query": "why is there no need to clean strings being passed as bindings?",
+    "answer": "The Laravel query builder uses PDO parameter binding to protect your application against SQL injection attacks. Therefore, there is no need to clean strings being passed as bindings. \n[Source: queries.txt | Chunk Id: 0]",
+    "confidence": "LOW",
+    "source": "queries.txt",
+    "chunk_ids": [
+      "queries.txt_0"
+    ],
+    "retrieval_scores": [
+      0.14797347784042358,
+      0.1330890655517578,
+      0.11273747682571411,
+      0.11071246862411499,
+      0.10644906759262085,
+      0.09605991840362549,
+      0.06793820858001709
+    ],
+    "reranker_scores": [
+      0.7735488748225658
+    ],
+    "rewrite_triggered": true,
+    "rewritten_query": "What are the underlying mechanisms that eliminate the necessity for sanitizing string inputs when used as bindings in a database query or SQL statement, thereby preventing SQL injection attacks?",
+    "latency": {
+      "total": 3.181,
+      "retrieval": 0.054,
+      "reranking": 1.844,
+      "rewrite": 0.528,
+      "generation": 0.398
+    },
+    "anomalies": [
+      "low_confidence",
+      "rewrite_failed"
+    ]
+  },
+  {
+    "request_id": "f80da95e-97d6-4a32-9ddc-4f38366b91fd",
+    "timestamp": "2026-04-20T13:47:28.191492",
+    "query": "Is there no need to clean strings being passed as bindings?",
+    "answer": "According to the context, there is no need to clean strings being passed as bindings because the Laravel query builder uses PDO parameter binding to protect the application against SQL injection attacks. [Source: queries.txt | Chunk Id: 0]",
+    "confidence": "HIGH",
+    "source": "queries.txt",
+    "chunk_ids": [
+      "queries.txt_0"
+    ],
+    "retrieval_scores": [
+      0.12824034690856934,
+      0.12155133485794067,
+      0.11448001861572266,
+      0.10849881172180176,
+      0.10597509145736694,
+      0.09823799133300781,
+      0.07918554544448853
+    ],
+    "reranker_scores": [
+      0.9388947986980067
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.5,
+      "retrieval": 0.068,
+      "reranking": 1.814,
+      "rewrite": 0.0,
+      "generation": 0.385
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "cbcd676a-d46c-4b38-b32b-98d4f53f5c5b",
+    "timestamp": "2026-04-20T13:47:31.862419",
+    "query": "Which command is used to generate migrations?",
+    "answer": "The command used to generate migrations is: \nphp artisan make:migration \n[FILE: migrations.txt | CHUNKID: 0] \nand \n[FILE: migrations.txt | CHUNKID: 1]",
+    "confidence": "HIGH",
+    "source": "migrations.txt",
+    "chunk_ids": [
+      "migrations.txt_1",
+      "migrations.txt_0"
+    ],
+    "retrieval_scores": [
+      0.5023916363716125,
+      0.45723849534988403,
+      0.45648080110549927,
+      0.4011509418487549,
+      0.3055713176727295,
+      0.29954373836517334,
+      0.28809189796447754
+    ],
+    "reranker_scores": [
+      0.9985863059474624,
+      0.9955915277706109
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.299,
+      "retrieval": 0.005,
+      "reranking": 1.817,
+      "rewrite": 0.0,
+      "generation": 0.469
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "237ad87e-53fa-43ea-8c85-a57555f24b0e",
+    "timestamp": "2026-04-20T13:47:35.314967",
+    "query": "How can I use seeders?",
+    "answer": "To use seeders, you can run the db:seed Artisan command, which will run the DatabaseSeeder class by default. This class can be used to call other seed classes, allowing you to control the seeding order. [seeder.txt | CHUNKID:2] \n\nYou can also use the --class option to specify a specific seeder class to run individually, for example: \nphp artisan db:seed --class=UserSeeder [seeder.txt | CHUNKID:2]\n\nAdditionally, you can seed your database using the migrate:fresh command, which will drop all tables and re-run all of your migrations: \nphp artisan migrate:fresh --seed [seeder.txt | CHUNKID:2]\n\nIf you want to force the seeders to run without a prompt, you can use the --force flag: \nphp artisan db:seed --force [seeder.txt | CHUNKID:2] \n\nTo generate a seeder, you can execute the make:seeder Artisan command: \nphp artisan make:seeder UserSeeder [seeder.txt | CHUNKID:0] \n\nYou can then modify the seeder class to insert data into your database using the query builder or Eloquent model factories. [seeder.txt | CHUNKID:0]",
+    "confidence": "HIGH",
+    "source": "seeder.txt",
+    "chunk_ids": [
+      "seeder.txt_2",
+      "seeder.txt_0"
+    ],
+    "retrieval_scores": [
+      0.4973253607749939,
+      0.4300055503845215,
+      0.2939625382423401,
+      0.13520604372024536,
+      0.12206834554672241,
+      0.12162166833877563,
+      0.11975765228271484
+    ],
+    "reranker_scores": [
+      0.9748119632468717,
+      0.9630483146964315
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.755,
+      "retrieval": 0.006,
+      "reranking": 1.818,
+      "rewrite": 0.0,
+      "generation": 0.923
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "b8404d52-f710-4b86-9d24-067be6f10c0d",
+    "timestamp": "2026-04-20T13:47:38.446281",
+    "query": "Explain redis facade with example?",
+    "answer": "The Redis facade in Laravel provides a convenient way to interact with a Redis server. You can call any Redis command on the facade, and Laravel will pass the command to the Redis server using magic methods. \n\nFor example, you can use the `get` and `set` methods to retrieve and store data in Redis:\n```php\n$user = Redis::get('user:profile:'.$id);\nRedis::set('name', 'Taylor');\n```\nAlternatively, you can use the `command` method to pass commands to the server:\n```php\n$values = Redis::command('lrange', ['name', 5, 10]);\n```\nYou can also use the `connection` method to get a Redis instance:\n```php\n$redis = Redis::connection();\n```\nOr, you can pass a connection or cluster name to the `connection` method:\n```php\n$redis = Redis::connection('my-connection');\n```\n[Source: redis.txt | CHUNKID: 4]",
+    "confidence": "HIGH",
+    "source": "redis.txt",
+    "chunk_ids": [
+      "redis.txt_4"
+    ],
+    "retrieval_scores": [
+      0.46394598484039307,
+      0.4502573013305664,
+      0.4258013367652893,
+      0.4076821208000183,
+      0.3727864623069763,
+      0.3566473722457886,
+      0.32322847843170166
+    ],
+    "reranker_scores": [
+      0.9825975381524712,
+      0.9728644557086061
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.612,
+      "retrieval": 0.004,
+      "reranking": 1.825,
+      "rewrite": 0.0,
+      "generation": 0.774
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "d6acb29e-2675-4255-b85d-f8be4a21bec3",
+    "timestamp": "2026-04-20T13:47:41.458785",
+    "query": "What is redis and how it could be installed?",
+    "answer": "Redis is an open source, advanced key-value store, often referred to as a data structure server since keys can contain strings, hashes, lists, sets, and sorted sets. [SOURCE: redis.txt | CHUNKID: 0]\nTo install Redis with Laravel, you can either install the PhpRedis PHP extension via PECL, which may yield better performance for applications that make heavy use of Redis, or install the predis/predis package via Composer using the command \"composer require predis/predis\". [SOURCE: redis.txt | CHUNKID: 0]",
+    "confidence": "HIGH",
+    "source": "redis.txt",
+    "chunk_ids": [
+      "redis.txt_0"
+    ],
+    "retrieval_scores": [
+      0.6203212738037109,
+      0.5789366960525513,
+      0.5167573690414429,
+      0.4940568208694458,
+      0.47310423851013184,
+      0.46264517307281494,
+      0.40771007537841797
+    ],
+    "reranker_scores": [
+      0.9961118408034508
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.576,
+      "retrieval": 0.004,
+      "reranking": 1.889,
+      "rewrite": 0.0,
+      "generation": 0.676
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "77b57da9-e453-4a97-a213-c93aad5b82e9",
+    "timestamp": "2026-04-20T13:47:44.402878",
+    "query": "What should I do,in order to protect from running seeding commands against production database?",
+    "answer": "To protect from running seeding commands against your production database, you will be prompted for confirmation before the seeders are executed. However, if you want to force the seeders to run without a prompt, use the --force flag: \nphp artisan db:seed --force [seeder.txt | CHUNKID:2]",
+    "confidence": "HIGH",
+    "source": "migrations.txt",
+    "chunk_ids": [
+      "migrations.txt_2",
+      "seeder.txt_2"
+    ],
+    "retrieval_scores": [
+      0.5530708432197571,
+      0.49086397886276245,
+      0.37529563903808594,
+      0.30848634243011475,
+      0.3031034469604492,
+      0.28081977367401123,
+      0.26238179206848145
+    ],
+    "reranker_scores": [
+      0.9956356291899889,
+      0.9828037431847135
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.318,
+      "retrieval": 0.004,
+      "reranking": 1.848,
+      "rewrite": 0.0,
+      "generation": 0.384
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "ec1b4de8-80b1-429e-846c-c55c8af7b31d",
+    "timestamp": "2026-04-20T13:47:46.725601",
+    "query": "Which country won the T20 cricket world cup 2026? ",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.09511029720306396,
+      0.08319967985153198,
+      0.050956666469573975,
+      0.047073185443878174,
+      0.046423912048339844,
+      0.044290363788604736,
+      0.03987264633178711
+    ],
+    "reranker_scores": [
+      1.477083909461228e-05,
+      1.4376758517285165e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.874,
+      "retrieval": 0.004,
+      "reranking": 1.863,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "fc715d1a-ec61-4f5b-a789-ac04bb93bc3f",
+    "timestamp": "2026-04-20T13:47:49.138192",
+    "query": "What is the core reason behind USA, Iran war?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.11831361055374146,
+      0.11273026466369629,
+      0.08612328767776489,
+      0.08414280414581299,
+      0.08220630884170532,
+      0.0714559555053711,
+      0.06744962930679321
+    ],
+    "reranker_scores": [
+      1.3223983849169921e-05,
+      1.227076065228676e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.933,
+      "retrieval": 0.004,
+      "reranking": 1.909,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "11a0ea91-d792-453d-862b-ae300eea471e",
+    "timestamp": "2026-04-20T13:47:52.088908",
+    "query": "How can I configure environment variables to point a newly created sqlite database?",
+    "answer": "To configure environment variables to point to a newly created SQLite database, you can use the following environment variables: \nDB_CONNECTION=sqlite \nDB_DATABASE=/absolute/path/to/database.sqlite \n[Source: database.txt | CHUNKID: 0]",
+    "confidence": "HIGH",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_0",
+      "database.txt_1"
+    ],
+    "retrieval_scores": [
+      0.4397536516189575,
+      0.36789536476135254,
+      0.35091912746429443,
+      0.33403754234313965,
+      0.27097922563552856,
+      0.26405876874923706,
+      0.25251877307891846
+    ],
+    "reranker_scores": [
+      0.9766933619724917,
+      0.9018468984978959
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.372,
+      "retrieval": 0.004,
+      "reranking": 1.831,
+      "rewrite": 0.0,
+      "generation": 0.439
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "227a88b8-903e-4a6c-bc37-b3d541303ab6",
+    "timestamp": "2026-04-20T13:47:55.102855",
+    "query": "why is there no need to clean strings being passed as bindings?",
+    "answer": "The Laravel query builder uses PDO parameter binding to protect your application against SQL injection attacks. Therefore, there is no need to clean strings being passed as bindings. \n[Source: queries.txt | Chunk Id: 0]",
+    "confidence": "LOW",
+    "source": "queries.txt",
+    "chunk_ids": [
+      "queries.txt_0"
+    ],
+    "retrieval_scores": [
+      0.14797347784042358,
+      0.1330890655517578,
+      0.11273747682571411,
+      0.11071246862411499,
+      0.10644906759262085,
+      0.09605991840362549,
+      0.06793820858001709
+    ],
+    "reranker_scores": [
+      0.7735488748225658
+    ],
+    "rewrite_triggered": true,
+    "rewritten_query": "What are the underlying mechanisms that eliminate the necessity for sanitizing string inputs when using parameterized queries or prepared statements with bound variables.",
+    "latency": {
+      "total": 2.518,
+      "retrieval": 0.004,
+      "reranking": 1.789,
+      "rewrite": 0.402,
+      "generation": 0.254
+    },
+    "anomalies": [
+      "low_confidence",
+      "rewrite_failed"
+    ]
+  },
+  {
+    "request_id": "2ea8fcb7-3903-4e79-82a5-8854eb785dbe",
+    "timestamp": "2026-04-20T13:47:57.686173",
+    "query": "What is the population of republic of china?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.19495999813079834,
+      0.15610969066619873,
+      0.15480947494506836,
+      0.14115458726882935,
+      0.1407608985900879,
+      0.1382274627685547,
+      0.12735259532928467
+    ],
+    "reranker_scores": [
+      1.3631163091517048e-05,
+      1.3602295783830242e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.82,
+      "retrieval": 0.004,
+      "reranking": 1.809,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "57afc310-0036-4342-93a7-d456964b98d9",
+    "timestamp": "2026-04-20T13:48:00.353464",
+    "query": "Has Predis been abandoned by the package's original author and may be removed from Laravel in a future release?",
+    "answer": "Yes, Predis has been abandoned by the package's original author and may be removed from Laravel in a future release. [SOURCE: redis.txt | CHUNKID: 0]",
+    "confidence": "HIGH",
+    "source": "redis.txt",
+    "chunk_ids": [
+      "redis.txt_0"
+    ],
+    "retrieval_scores": [
+      0.5036774277687073,
+      0.3190171718597412,
+      0.2787807583808899,
+      0.24690353870391846,
+      0.23824548721313477,
+      0.23013651371002197,
+      0.2285994291305542
+    ],
+    "reranker_scores": [
+      0.9962872780994859
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.204,
+      "retrieval": 0.004,
+      "reranking": 1.817,
+      "rewrite": 0.0,
+      "generation": 0.375
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "acb2e48e-e5cd-4f0c-8dbb-9f2bf6b06b79",
+    "timestamp": "2026-04-20T13:48:03.514512",
+    "query": "Has Predis been abandoned and likely to be removed?",
+    "answer": "Yes, Predis has been abandoned by the package's original author and may be removed from Laravel in a future release. [SOURCE: redis.txt | CHUNKID: 0]",
+    "confidence": "HIGH",
+    "source": "redis.txt",
+    "chunk_ids": [
+      "redis.txt_0"
+    ],
+    "retrieval_scores": [
+      0.2641511559486389,
+      0.19431239366531372,
+      0.09007000923156738,
+      0.08804553747177124,
+      0.06996709108352661,
+      0.06442058086395264,
+      0.05624955892562866
+    ],
+    "reranker_scores": [
+      0.836088083733154
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.14,
+      "retrieval": 0.004,
+      "reranking": 1.91,
+      "rewrite": 0.0,
+      "generation": 0.214
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "a9b30920-461b-4baa-b2f5-f7805a8ee0e5",
+    "timestamp": "2026-04-20T13:48:06.332219",
+    "query": "Do each migration file name contains a timestamp?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.3238424062728882,
+      0.29865527153015137,
+      0.21248793601989746,
+      0.20246630907058716,
+      0.196133553981781,
+      0.18420100212097168,
+      0.16205644607543945
+    ],
+    "reranker_scores": [
+      0.030073300645319816
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.769,
+      "retrieval": 0.004,
+      "reranking": 1.758,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "81ba89f7-99fc-483e-895b-872ef46234ee",
+    "timestamp": "2026-04-20T13:48:10.040030",
+    "query": "Where is the database configuration for your application located?",
+    "answer": "The database configuration for your application is located at config/database.php. \n[Source: database.txt | Chunk Id: 0]",
+    "confidence": "HIGH",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_0"
+    ],
+    "retrieval_scores": [
+      0.5140937566757202,
+      0.45581579208374023,
+      0.42693811655044556,
+      0.32875126600265503,
+      0.3079599142074585,
+      0.2892315983772278,
+      0.2879125475883484
+    ],
+    "reranker_scores": [
+      0.9962894046243377
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.286,
+      "retrieval": 0.004,
+      "reranking": 1.796,
+      "rewrite": 0.0,
+      "generation": 0.408
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "b0752fc6-99aa-4846-a01f-fa18ac028acf",
+    "timestamp": "2026-04-20T13:48:13.298964",
+    "query": "Is Laravel's sample environment configuration ready to use with Laravel Homestead?",
+    "answer": "Yes, Laravel's sample environment configuration is ready to use with Laravel Homestead. [Source: database.txt | CHUNKID: 0]",
+    "confidence": "HIGH",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_0"
+    ],
+    "retrieval_scores": [
+      0.4082510471343994,
+      0.3997672200202942,
+      0.3977487087249756,
+      0.3818281888961792,
+      0.37261641025543213,
+      0.3641161322593689,
+      0.3422035574913025
+    ],
+    "reranker_scores": [
+      0.9982811048583581
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.283,
+      "retrieval": 0.004,
+      "reranking": 1.871,
+      "rewrite": 0.0,
+      "generation": 0.353
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "1c6faa0f-d451-4d8d-a482-47c0b64e9592",
+    "timestamp": "2026-04-20T13:48:17.852660",
+    "query": "Can you provide me with a step-by-step guide on how to configure my environment variables for a newly created SQLite database?",
+    "answer": "To configure your environment variables for a newly created SQLite database, follow these steps:\n\n1. Create a new SQLite database using a command such as `touch database/database.sqlite`.\n2. Set the `DB_CONNECTION` environment variable to `sqlite`.\n3. Set the `DB_DATABASE` environment variable to the absolute path of your newly created database, for example: `DB_DATABASE=/absolute/path/to/database.sqlite`.\n4. To enable foreign key constraints for SQLite connections, set the `DB_FOREIGN_KEYS` environment variable to `true`.\n\n[Source: database.txt | Chunk Id: 0]",
+    "confidence": "HIGH",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_0",
+      "database.txt_1"
+    ],
+    "retrieval_scores": [
+      0.4862414002418518,
+      0.4203851819038391,
+      0.39282864332199097,
+      0.3095804452896118,
+      0.3065282106399536,
+      0.2722437381744385,
+      0.27135348320007324
+    ],
+    "reranker_scores": [
+      0.8439316426810699,
+      0.731752689205101
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 3.556,
+      "retrieval": 0.003,
+      "reranking": 1.818,
+      "rewrite": 0.0,
+      "generation": 1.724
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "86990e42-a066-4eea-bde4-9b05888e85a9",
+    "timestamp": "2026-04-20T13:48:20.211301",
+    "query": "Who is the PM of USA?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.16167736053466797,
+      0.15749382972717285,
+      0.1561795473098755,
+      0.13958823680877686,
+      0.13692808151245117,
+      0.1340997815132141,
+      0.13204413652420044
+    ],
+    "reranker_scores": [
+      1.159668740573261e-05,
+      1.1581678550015451e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.899,
+      "retrieval": 0.004,
+      "reranking": 1.887,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "8983590d-b586-43c3-9096-8954bc46e161",
+    "timestamp": "2026-04-20T13:48:22.588179",
+    "query": "Is python an easy to learn, powerful programming language?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.0328599214553833,
+      0.03109365701675415,
+      0.023149609565734863,
+      0.017821073532104492,
+      0.009286701679229736,
+      0.0071784257888793945,
+      -0.0007464885711669922
+    ],
+    "reranker_scores": [
+      3.475170396053777e-05,
+      2.6257639801407552e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.956,
+      "retrieval": 0.005,
+      "reranking": 1.857,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "10ed92b5-873f-44b5-8f4f-6d88902d7205",
+    "timestamp": "2026-04-20T13:48:25.005506",
+    "query": "How does laravel handle authentication sessions?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.44762861728668213,
+      0.40488624572753906,
+      0.38293516635894775,
+      0.35919880867004395,
+      0.3568507432937622,
+      0.34509122371673584,
+      0.34321683645248413
+    ],
+    "reranker_scores": [
+      0.1402657511041475
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.765,
+      "retrieval": 0.004,
+      "reranking": 1.753,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
   }
 ]

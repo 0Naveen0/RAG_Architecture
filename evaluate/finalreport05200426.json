@@ -1,0 +1,554 @@
+{
+  "timestamp": "2026-04-20T13:48:26.204227",
+  "total_queries": 20,
+  "summary": {
+    "precision": 0.786,
+    "recall": 0.75,
+    "f1": 0.762,
+    "keyword_match": 0.85,
+    "avg_latency_second": 3,
+    "refusal_accuracy": 1,
+    "rewrite_trigger_rate": 1,
+    "rewrite_success_rate": 1.0
+  },
+  "by_difficulty": {
+    "Easy": {
+      "count": 8,
+      "precision": 0.625,
+      "recall": 0.625,
+      "f1": 0.625
+    },
+    "Hard": {
+      "count": 4,
+      "precision": 1.0,
+      "recall": 0.875,
+      "f1": 0.917
+    },
+    "Medium": {
+      "count": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "by_category": {
+    "domain": {
+      "count": 13,
+      "precision": 0.769,
+      "recall": 0.731,
+      "f1": 0.744
+    },
+    "edge": {
+      "count": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "failures": [
+    {
+      "id": "q002",
+      "query": "Which command is used to generate migrations?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "1"
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 1.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 2.998,
+      "answer": "The command used to generate migrations is: \nphp artisan make:migration \n[FILE: migrations.txt | CHUNKID: 0] \nand \n[FILE: migrations.txt | CHUNKID: 1]"
+    },
+    {
+      "id": "q003",
+      "query": "How can I use seeders?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "2"
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 1.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 3.212,
+      "answer": "To use seeders, you can run the db:seed Artisan command, which will run the DatabaseSeeder class by default. This class can be used to call other seed classes, allowing you to control the seeding order. [seeder.txt | CHUNKID:2] \n\nYou can also use the --class option to specify a specific seeder class to run individually, for example: \nphp artisan db:seed --class=UserSeeder [seeder.txt | CHUNKID:2]\n\nAdditionally, you can seed your database using the migrate:fresh command, which will drop all tables and re-run all of your migrations: \nphp artisan migrate:fresh --seed [seeder.txt | CHUNKID:2]\n\nIf you want to force the seeders to run without a prompt, you can use the --force flag: \nphp artisan db:seed --force [seeder.txt | CHUNKID:2] \n\nTo generate a seeder, you can execute the make:seeder Artisan command: \nphp artisan make:seeder UserSeeder [seeder.txt | CHUNKID:0] \n\nYou can then modify the seeder class to insert data into your database using the query builder or Eloquent model factories. [seeder.txt | CHUNKID:0]"
+    },
+    {
+      "id": "q014",
+      "query": "Do each migration file name contains a timestamp?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": false,
+      "should_refuse": false,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 3.194,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    }
+  ],
+  "raw_results": [
+    {
+      "id": "q001",
+      "query": "Is there no need to clean strings being passed as bindings?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 0.8,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 6.638,
+      "answer": "According to the context, there is no need to clean strings being passed as bindings because the Laravel query builder uses PDO parameter binding to protect the application against SQL injection attacks. [Source: queries.txt | Chunk Id: 0]"
+    },
+    {
+      "id": "q002",
+      "query": "Which command is used to generate migrations?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "1"
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 1.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 2.998,
+      "answer": "The command used to generate migrations is: \nphp artisan make:migration \n[FILE: migrations.txt | CHUNKID: 0] \nand \n[FILE: migrations.txt | CHUNKID: 1]"
+    },
+    {
+      "id": "q003",
+      "query": "How can I use seeders?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "2"
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 1.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 3.212,
+      "answer": "To use seeders, you can run the db:seed Artisan command, which will run the DatabaseSeeder class by default. This class can be used to call other seed classes, allowing you to control the seeding order. [seeder.txt | CHUNKID:2] \n\nYou can also use the --class option to specify a specific seeder class to run individually, for example: \nphp artisan db:seed --class=UserSeeder [seeder.txt | CHUNKID:2]\n\nAdditionally, you can seed your database using the migrate:fresh command, which will drop all tables and re-run all of your migrations: \nphp artisan migrate:fresh --seed [seeder.txt | CHUNKID:2]\n\nIf you want to force the seeders to run without a prompt, you can use the --force flag: \nphp artisan db:seed --force [seeder.txt | CHUNKID:2] \n\nTo generate a seeder, you can execute the make:seeder Artisan command: \nphp artisan make:seeder UserSeeder [seeder.txt | CHUNKID:0] \n\nYou can then modify the seeder class to insert data into your database using the query builder or Eloquent model factories. [seeder.txt | CHUNKID:0]"
+    },
+    {
+      "id": "q004",
+      "query": "Explain redis facade with example?",
+      "category": "domain",
+      "difficulty_level": "Hard",
+      "expected_chunk": [
+        3,
+        4
+      ],
+      "retrieved_ids": [
+        "4"
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666,
+      "keyword_match": 0.5,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 3.113,
+      "answer": "The Redis facade in Laravel provides a convenient way to interact with a Redis server. You can call any Redis command on the facade, and Laravel will pass the command to the Redis server using magic methods. \n\nFor example, you can use the `get` and `set` methods to retrieve and store data in Redis:\n```php\n$user = Redis::get('user:profile:'.$id);\nRedis::set('name', 'Taylor');\n```\nAlternatively, you can use the `command` method to pass commands to the server:\n```php\n$values = Redis::command('lrange', ['name', 5, 10]);\n```\nYou can also use the `connection` method to get a Redis instance:\n```php\n$redis = Redis::connection();\n```\nOr, you can pass a connection or cluster name to the `connection` method:\n```php\n$redis = Redis::connection('my-connection');\n```\n[Source: redis.txt | CHUNKID: 4]"
+    },
+    {
+      "id": "q005",
+      "query": "What is redis and how it could be installed?",
+      "category": "domain",
+      "difficulty_level": "Hard",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 1.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 3.199,
+      "answer": "Redis is an open source, advanced key-value store, often referred to as a data structure server since keys can contain strings, hashes, lists, sets, and sorted sets. [SOURCE: redis.txt | CHUNKID: 0]\nTo install Redis with Laravel, you can either install the PhpRedis PHP extension via PECL, which may yield better performance for applications that make heavy use of Redis, or install the predis/predis package via Composer using the command \"composer require predis/predis\". [SOURCE: redis.txt | CHUNKID: 0]"
+    },
+    {
+      "id": "q006",
+      "query": "What should I do,in order to protect from running seeding commands against production database?",
+      "category": "domain",
+      "difficulty_level": "Medium",
+      "expected_chunk": [
+        2
+      ],
+      "retrieved_ids": [
+        "2"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 1.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 2.76,
+      "answer": "To protect from running seeding commands against your production database, you will be prompted for confirmation before the seeders are executed. However, if you want to force the seeders to run without a prompt, use the --force flag: \nphp artisan db:seed --force [seeder.txt | CHUNKID:2]"
+    },
+    {
+      "id": "q007",
+      "query": "Which country won the T20 cricket world cup 2026? ",
+      "category": "off-domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": true,
+      "should_refuse": true,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 2.361,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    },
+    {
+      "id": "q008",
+      "query": "What is the core reason behind USA, Iran war?",
+      "category": "off-domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": true,
+      "should_refuse": true,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 2.465,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    },
+    {
+      "id": "q009",
+      "query": "How can I configure environment variables to point a newly created sqlite database?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 1.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 2.905,
+      "answer": "To configure environment variables to point to a newly created SQLite database, you can use the following environment variables: \nDB_CONNECTION=sqlite \nDB_DATABASE=/absolute/path/to/database.sqlite \n[Source: database.txt | CHUNKID: 0]"
+    },
+    {
+      "id": "q010",
+      "query": "why is there no need to clean strings being passed as bindings?",
+      "category": "edge",
+      "difficulty_level": "Hard",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 1.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "LOW",
+      "rewrite_triggered": true,
+      "latency_seconds": 3.288,
+      "answer": "The Laravel query builder uses PDO parameter binding to protect your application against SQL injection attacks. Therefore, there is no need to clean strings being passed as bindings. \n[Source: queries.txt | Chunk Id: 0]"
+    },
+    {
+      "id": "q011",
+      "query": "What is the population of republic of china?",
+      "category": "off-domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": true,
+      "should_refuse": true,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 2.267,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    },
+    {
+      "id": "q012",
+      "query": "Has Predis been abandoned by the package's original author and may be removed from Laravel in a future release?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 1.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 3.194,
+      "answer": "Yes, Predis has been abandoned by the package's original author and may be removed from Laravel in a future release. [SOURCE: redis.txt | CHUNKID: 0]"
+    },
+    {
+      "id": "q013",
+      "query": "Has Predis been abandoned and likely to be removed?",
+      "category": "domain",
+      "difficulty_level": "Medium",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 1.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 3.229,
+      "answer": "Yes, Predis has been abandoned by the package's original author and may be removed from Laravel in a future release. [SOURCE: redis.txt | CHUNKID: 0]"
+    },
+    {
+      "id": "q014",
+      "query": "Do each migration file name contains a timestamp?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": false,
+      "should_refuse": false,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 3.194,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    },
+    {
+      "id": "q015",
+      "query": "Where is the database configuration for your application located?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 1.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 3.265,
+      "answer": "The database configuration for your application is located at config/database.php. \n[Source: database.txt | Chunk Id: 0]"
+    },
+    {
+      "id": "q016",
+      "query": "Is Laravel's sample environment configuration ready to use with Laravel Homestead?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 0.6,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 3.229,
+      "answer": "Yes, Laravel's sample environment configuration is ready to use with Laravel Homestead. [Source: database.txt | CHUNKID: 0]"
+    },
+    {
+      "id": "q017",
+      "query": "Can you provide me with a step-by-step guide on how to configure my environment variables for a newly created SQLite database?",
+      "category": "domain",
+      "difficulty_level": "Hard",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 1.0,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 4.06,
+      "answer": "To configure your environment variables for a newly created SQLite database, follow these steps:\n\n1. Create a new SQLite database using a command such as `touch database/database.sqlite`.\n2. Set the `DB_CONNECTION` environment variable to `sqlite`.\n3. Set the `DB_DATABASE` environment variable to the absolute path of your newly created database, for example: `DB_DATABASE=/absolute/path/to/database.sqlite`.\n4. To enable foreign key constraints for SQLite connections, set the `DB_FOREIGN_KEYS` environment variable to `true`.\n\n[Source: database.txt | Chunk Id: 0]"
+    },
+    {
+      "id": "q018",
+      "query": "Who is the PM of USA?",
+      "category": "off-domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": true,
+      "should_refuse": true,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 2.326,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    },
+    {
+      "id": "q019",
+      "query": "Is python an easy to learn, powerful programming language?",
+      "category": "off-domain",
+      "difficulty_level": "Medium",
+      "expected_chunk": [],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": true,
+      "should_refuse": true,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 2.599,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    },
+    {
+      "id": "q020",
+      "query": "How does laravel handle authentication sessions?",
+      "category": "off-domain",
+      "difficulty_level": "Medium",
+      "expected_chunk": [],
+      "retrieved_ids": [],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "keyword_match": 0.0,
+      "refusal_correct": true,
+      "should_refuse": true,
+      "was_refused": true,
+      "confidence": "low",
+      "rewrite_triggered": false,
+      "latency_seconds": 2.997,
+      "answer": "I do not have sufficient information in the knowledge base to answer this question."
+    }
+  ]
+}

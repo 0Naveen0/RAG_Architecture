@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-04-20T13:23:46.880367",
+  "total_queries": 1,
+  "summary": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "keyword_match": 0.8,
+    "avg_latency_second": 9,
+    "refusal_accuracy": 0,
+    "rewrite_trigger_rate": 0,
+    "rewrite_success_rate": 0.0
+  },
+  "by_difficulty": {
+    "Easy": {
+      "count": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "by_category": {
+    "domain": {
+      "count": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "failures": [],
+  "raw_results": [
+    {
+      "id": "q001",
+      "query": "Is there no need to clean strings being passed as bindings?",
+      "category": "domain",
+      "difficulty_level": "Easy",
+      "expected_chunk": [
+        0
+      ],
+      "retrieved_ids": [
+        "0"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "keyword_match": 0.8,
+      "refusal_correct": true,
+      "should_refuse": false,
+      "was_refused": false,
+      "confidence": "HIGH",
+      "rewrite_triggered": false,
+      "latency_seconds": 9.118,
+      "answer": "According to the context, there is no need to clean strings being passed as bindings because the Laravel query builder uses PDO parameter binding to protect the application against SQL injection attacks. [Source: queries.txt | Chunk Id: 0]"
+    }
+  ]
+}

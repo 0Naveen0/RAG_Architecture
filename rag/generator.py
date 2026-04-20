@@ -88,7 +88,7 @@ class Generator:
 				
 				Question: {query}
 				</s>
-				<|assistance|>
+				<|assistant|>
 				"""
 		prompt  = PROMPT_TEMPLATE.format(context=context,query=query,REFUSAL_MESSAGE=REFUSAL_MESSAGE)
 		print(f"Filtered Chunks->{filtered_chunks}")
