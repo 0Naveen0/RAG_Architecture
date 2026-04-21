@@ -2881,5 +2881,458 @@
       "low_confidence",
       "empty_retrieval"
     ]
+  },
+  {
+    "request_id": "e8ca2e8c-d3c4-453e-937a-3926edb6ec6a",
+    "timestamp": "2026-04-21T08:35:06.401139",
+    "query": "Who is PM of India?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.13431191444396973,
+      0.12327980995178223,
+      0.11948662996292114,
+      0.11109304428100586,
+      0.110867440700531,
+      0.10260552167892456,
+      0.0969322919845581
+    ],
+    "reranker_scores": [
+      1.1775746030370973e-05,
+      1.1303125662300215e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 5.09,
+      "retrieval": 0.061,
+      "reranking": 4.799,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "bb673a73-04e6-42c1-9450-f2647c4acf75",
+    "timestamp": "2026-04-21T08:35:59.029349",
+    "query": "when is holi?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.2078014612197876,
+      0.14244353771209717,
+      0.11960840225219727,
+      0.11520075798034668,
+      0.11298835277557373,
+      0.11026155948638916,
+      0.10929590463638306
+    ],
+    "reranker_scores": [
+      1.4420864314266567e-05,
+      1.1858011739395486e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.961,
+      "retrieval": 0.005,
+      "reranking": 2.94,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "c317e464-c618-452d-9d4b-e40d12275004",
+    "timestamp": "2026-04-21T08:36:26.933229",
+    "query": "Tell me about laravel?",
+    "answer": "Laravel makes interacting with databases extremely simple across a variety of database backends using either raw SQL, the fluent query builder, and the Eloquent ORM. [Source: database.txt | Chunk Id: 0]",
+    "confidence": "LOW",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_0"
+    ],
+    "retrieval_scores": [
+      0.5522528886795044,
+      0.49237585067749023,
+      0.4863719344139099,
+      0.479408860206604,
+      0.46627771854400635,
+      0.4602820873260498,
+      0.45403552055358887
+    ],
+    "reranker_scores": [
+      0.46090260659419696
+    ],
+    "rewrite_triggered": true,
+    "rewritten_query": "What are the key features, architecture, and applications of the Laravel PHP web framework?",
+    "latency": {
+      "total": 4.231,
+      "retrieval": 0.005,
+      "reranking": 2.288,
+      "rewrite": 0.303,
+      "generation": 0.357
+    },
+    "anomalies": [
+      "low_confidence",
+      "rewrite_failed"
+    ]
+  },
+  {
+    "request_id": "91686ddc-c1f9-42b3-a31c-3313f163277a",
+    "timestamp": "2026-04-21T08:53:43.351124",
+    "query": "Who is PM of Russia?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.14996182918548584,
+      0.11880213022232056,
+      0.11493265628814697,
+      0.11034500598907471,
+      0.10515189170837402,
+      0.10203367471694946,
+      0.09951615333557129
+    ],
+    "reranker_scores": [
+      1.1703701658787058e-05,
+      1.1625377572744652e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.406,
+      "retrieval": 0.005,
+      "reranking": 2.376,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "bdc12517-f75e-46c2-8211-2c6bd6698ce7",
+    "timestamp": "2026-04-21T08:54:48.621995",
+    "query": "Who is PM of India?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.13431191444396973,
+      0.12327980995178223,
+      0.11948662996292114,
+      0.11109304428100586,
+      0.110867440700531,
+      0.10260552167892456,
+      0.0969322919845581
+    ],
+    "reranker_scores": [
+      1.1775746030370973e-05,
+      1.1303125662300215e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.386,
+      "retrieval": 0.005,
+      "reranking": 2.359,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "7f307970-76fd-48eb-a25d-595bacef5887",
+    "timestamp": "2026-04-21T08:55:21.951895",
+    "query": "explain laravel database?",
+    "answer": "Laravel makes interacting with databases extremely simple across a variety of database backends using either raw SQL, the fluent query builder, and the Eloquent ORM. Currently, Laravel supports four databases: MySQL 5.6+, PostgreSQL 9.4+, SQLite 3.8.8+, and SQL Server 2017+. [Source: database.txt | CHUNKID: 0] \n\nThe database configuration for a Laravel application is located at config/database.php, where all database connections can be defined, as well as specifying which connection should be used by default. [Source: database.txt | CHUNKID: 0] \n\nLaravel also provides examples for most of the supported database systems in the config/database.php file. [Source: database.txt | CHUNKID: 0] \n\nAdditionally, Laravel's sample environment configuration is ready to use with Laravel Homestead, a convenient virtual machine for doing Laravel development on a local machine. [Source: database.txt | CHUNKID: 0] \n\nConfiguration for SQLite databases can be done by setting environment variables such as DB_CONNECTION and DB_DATABASE, and foreign key constraints can be enabled by setting DB_FOREIGN_KEYS to true. [Source: database.txt | CHUNKID: 0] \n\nDatabase connections can also be configured using URLs, with each configuration value having its own corresponding environment variable. [Source: database.txt | CHUNKID: 0]",
+    "confidence": "HIGH",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_0"
+    ],
+    "retrieval_scores": [
+      0.6347430348396301,
+      0.5710114240646362,
+      0.5642671585083008,
+      0.5613231062889099,
+      0.5611732006072998,
+      0.5475128889083862,
+      0.5451910495758057
+    ],
+    "reranker_scores": [
+      0.9885353812306311
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 3.12,
+      "retrieval": 0.005,
+      "reranking": 2.246,
+      "rewrite": 0.0,
+      "generation": 0.851
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "6cf610c3-26ad-48a1-a3f0-09465b342894",
+    "timestamp": "2026-04-21T09:05:19.632702",
+    "query": "Where is Darbhanga in India?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.14910376071929932,
+      0.13116765022277832,
+      0.1233069896697998,
+      0.10342031717300415,
+      0.09978413581848145,
+      0.09329783916473389,
+      0.09152907133102417
+    ],
+    "reranker_scores": [
+      1.4426091252937522e-05,
+      1.3168133583333958e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.525,
+      "retrieval": 0.081,
+      "reranking": 2.415,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "6e845046-6816-408e-8884-b8c579ed25d0",
+    "timestamp": "2026-04-21T09:08:45.537815",
+    "query": "Predis is likely to remove in future?",
+    "answer": "Predis has been abandoned by the package's original author and may be removed from Laravel in a future release. [SOURCE: redis.txt | CHUNKID: 0]",
+    "confidence": "LOW",
+    "source": "redis.txt",
+    "chunk_ids": [
+      "redis.txt_0"
+    ],
+    "retrieval_scores": [
+      0.30146563053131104,
+      0.22613972425460815,
+      0.11765170097351074,
+      0.10337841510772705,
+      0.09897351264953613,
+      0.09405720233917236,
+      0.09249496459960938
+    ],
+    "reranker_scores": [
+      0.30724796190614584
+    ],
+    "rewrite_triggered": true,
+    "rewritten_query": "Is Predis anticipated to be deprecated in upcoming versions or releases, potentially leading to its removal from supported libraries or frameworks?",
+    "latency": {
+      "total": 4.417,
+      "retrieval": 0.008,
+      "reranking": 2.415,
+      "rewrite": 0.392,
+      "generation": 0.25
+    },
+    "anomalies": [
+      "low_confidence",
+      "rewrite_failed"
+    ]
+  },
+  {
+    "request_id": "0d847037-7f5d-416f-9f73-4eeec66907c5",
+    "timestamp": "2026-04-21T09:18:13.555111",
+    "query": "How migration is created in laravel?",
+    "answer": "To create a migration in Laravel, you can use the make:migration Artisan command. The command is as follows: \nphp artisan make:migration create_users_table [FILE: migrations.txt | CHUNKID: 0] \n\nYou can also use the --table and --create options to indicate the name of the table and whether or not the migration will be creating a new table. For example: \nphp artisan make:migration create_users_table --create=users \nphp artisan make:migration add_votes_to_users_table --table=users [FILE: migrations.txt | CHUNKID: 0] \n\nAdditionally, you can specify a custom output path for the generated migration using the --path option. [FILE: migrations.txt | CHUNKID: 1]",
+    "confidence": "HIGH",
+    "source": "migrations.txt",
+    "chunk_ids": [
+      "migrations.txt_0",
+      "migrations.txt_1"
+    ],
+    "retrieval_scores": [
+      0.6877231597900391,
+      0.6675299406051636,
+      0.5876870155334473,
+      0.5835257768630981,
+      0.4538953900337219,
+      0.438302218914032,
+      0.43031489849090576
+    ],
+    "reranker_scores": [
+      0.9959050695422897,
+      0.9860622507802385
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.92,
+      "retrieval": 0.007,
+      "reranking": 2.153,
+      "rewrite": 0.0,
+      "generation": 0.737
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "e49184ec-8259-47e0-9fd3-fd4ff80dcf91",
+    "timestamp": "2026-04-21T09:22:30.647433",
+    "query": "How queries is created in laravel?",
+    "answer": "In Laravel, queries can be created using the database query builder, which provides a convenient, fluent interface to creating and running database queries. [Source: queries.txt | CHUNKID: 0] \n\nYou may use the table method on the DB facade to begin a query. The table method returns a fluent query builder instance for the given table, allowing you to chain more constraints onto the query and then finally get the results using the get method. [Source: queries.txt | CHUNKID: 0]\n\nFor example:\n```php\n$users = DB::table('users')->get();\n```\nThis will retrieve all rows from the 'users' table. [Source: queries.txt | CHUNKID: 0]\n\nYou can also add constraints to the query using methods such as where, orWhere, whereColumn, and more. [Source: queries.txt | CHUNKID: 12]\n\nFor example:\n```php\n$users = DB::table('users')\n    ->where('name', '=', 'John')\n    ->where(function ($query) {\n        $query->where('votes', '>', 100)\n            ->orWhere('title', '=', 'Admin');\n    })\n    ->get();\n```\nThis will retrieve all rows from the 'users' table where the name is 'John' and the votes are greater than 100 or the title is 'Admin'. [Source: queries.txt | CHUNKID: 12]",
+    "confidence": "HIGH",
+    "source": "queries.txt",
+    "chunk_ids": [
+      "queries.txt_0",
+      "queries.txt_12"
+    ],
+    "retrieval_scores": [
+      0.589145302772522,
+      0.5719504356384277,
+      0.5375127196311951,
+      0.5362136960029602,
+      0.5263612270355225,
+      0.5258070826530457,
+      0.5178396105766296
+    ],
+    "reranker_scores": [
+      0.9884309011491786,
+      0.9805291829382278
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 3.558,
+      "retrieval": 0.055,
+      "reranking": 2.375,
+      "rewrite": 0.0,
+      "generation": 1.101
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "3f4a46c5-d73a-451f-b99e-2779c3f3cf44",
+    "timestamp": "2026-04-21T09:23:10.992599",
+    "query": "How queries is created in laravel?",
+    "answer": "In Laravel, a query is created using the database query builder, which provides a convenient, fluent interface to creating and running database queries. [Source: queries.txt | Chunk Id: 0] \n\nYou may use the table method on the DB facade to begin a query. The table method returns a fluent query builder instance for the given table, allowing you to chain more constraints onto the query and then finally get the results using the get method. [Source: queries.txt | Chunk Id: 0]\n\nFor example:\n```php\n$users = DB::table('users')\n            ->where('name', '=', 'John')\n            ->get();\n```\nThis will create a query to retrieve all rows from the 'users' table where the 'name' column is 'John'. [Source: queries.txt | Chunk Id: 0] \n\nYou can also use other methods such as whereColumn, whereExists, and whereRaw to create more complex queries. [Source: queries.txt | Chunk Id: 12] \n\nFor example:\n```php\n$users = DB::table('users')\n            ->whereColumn([\n                ['first_name', '=', 'last_name'],\n                ['updated_at', '>', 'created_at'],\n            ])->get();\n```\nThis will create a query to retrieve all rows from the 'users' table where the 'first_name' column is equal to the 'last_name' column and the 'updated_at' column is greater than the 'created_at' column. [Source: queries.txt | Chunk Id: 12] \n\nYou can also use parameter grouping to create more advanced where clauses. [Source: queries.txt | Chunk Id: 12] \n\nFor example:\n```php\n$users = DB::table('users')\n            ->where('name', '=', 'John')\n            ->where(function ($query) {\n                $query->where('votes', '>', 100)\n                      ->orWhere('title', '=', 'Admin');\n            })\n            ->get();\n```\nThis will create a query to retrieve all rows from the 'users' table where the 'name' column is 'John' and the 'votes' column is greater than 100 or the 'title' column is 'Admin'. [Source: queries.txt | Chunk Id: 12] \n\nYou can also use the whereExists method to write where exists SQL clauses. [Source: queries.txt | Chunk Id: 12] \n\nFor example:\n```php\n$users = DB::table('users')\n            ->whereExists(function ($query) {\n                $query->select(DB::raw(1))\n                      ->from('orders')\n                      ->whereRaw('orders.user_id = users.id');\n            })\n            ->get();\n```\nThis will create a query to retrieve all rows from the 'users' table where there exists at least one row in the 'orders' table with a matching 'user_id'. [Source: queries.txt | Chunk Id: 12] \n\nThese are just a few examples of how queries can be created in Laravel. [Source: queries.txt | Chunk Id: 0, 12]",
+    "confidence": "HIGH",
+    "source": "queries.txt",
+    "chunk_ids": [
+      "queries.txt_0",
+      "queries.txt_12"
+    ],
+    "retrieval_scores": [
+      0.589145302772522,
+      0.5719504356384277,
+      0.5375127196311951,
+      0.5362136960029602,
+      0.5263612270355225,
+      0.5258070826530457,
+      0.5178396105766296
+    ],
+    "reranker_scores": [
+      0.9884309011491786,
+      0.9805291829382278
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 4.444,
+      "retrieval": 0.005,
+      "reranking": 2.842,
+      "rewrite": 0.0,
+      "generation": 1.575
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "6437142b-e2c0-4d25-aacc-9d548c944ad4",
+    "timestamp": "2026-04-21T09:29:35.918784",
+    "query": "Laravel version",
+    "answer": "I do not know [Source: database.txt | Chunk Id: 0]",
+    "confidence": "HIGH",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_0"
+    ],
+    "retrieval_scores": [
+      0.4564136862754822,
+      0.42394334077835083,
+      0.40842872858047485,
+      0.4041256904602051,
+      0.3969787359237671,
+      0.3851836323738098,
+      0.38099151849746704
+    ],
+    "reranker_scores": [
+      0.9917243330298882
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 3.057,
+      "retrieval": 0.007,
+      "reranking": 2.286,
+      "rewrite": 0.0,
+      "generation": 0.744
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "45d8d8fd-1752-4a22-9c56-14f4d21d570f",
+    "timestamp": "2026-04-21T09:30:40.044179",
+    "query": "What should I do,in order to protect from running seeding commands against production database?",
+    "answer": "To protect from running seeding commands against your production database, you will be prompted for confirmation before the seeders are executed. [SOURCE: seeder.txt | CHUNKID: 2] \n\nHowever, if you want to force the seeders to run without a prompt, you can use the --force flag: \nphp artisan db:seed --force [SOURCE: seeder.txt | CHUNKID: 2]",
+    "confidence": "HIGH",
+    "source": "migrations.txt",
+    "chunk_ids": [
+      "migrations.txt_2",
+      "seeder.txt_2"
+    ],
+    "retrieval_scores": [
+      0.5530709028244019,
+      0.4908640384674072,
+      0.3752956986427307,
+      0.30848634243011475,
+      0.30310332775115967,
+      0.28081977367401123,
+      0.26238179206848145
+    ],
+    "reranker_scores": [
+      0.9956356271179769,
+      0.9828037190082725
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.718,
+      "retrieval": 0.005,
+      "reranking": 2.182,
+      "rewrite": 0.0,
+      "generation": 0.508
+    },
+    "anomalies": []
   }
 ]

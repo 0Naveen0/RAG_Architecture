@@ -33,7 +33,8 @@ def ask():
     # query_embeddings = embeddingModel.embed(query)
     
     # orchestrator = RAGOrchestrator()
-    result = orchestrator.run_v1(query)
+    # result = orchestrator.run_v1(query)
+    result = orchestrator.run_groq(query)
     return result
 
 if __name__ == "__main__":
