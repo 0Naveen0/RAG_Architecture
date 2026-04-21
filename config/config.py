@@ -1,5 +1,6 @@
 #Configuration File
-BASE_URL = "/content/drive/MyDrive/ColabNotebooks/EKA_RAG_Project_v2/"
+# BASE_URL = "/content/drive/MyDrive/ColabNotebooks/EKA_RAG_Project_v2/" # in colab
+BASE_URL = "https://rag-architecture-v2.onrender.com/" # in production
 EMBEDDING_MODEL_NAME  ="sentence-transformers/all-MiniLM-L6-v2"
 LLM_MODEL_NAME        = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
 # CHROMA_DB_PATH        = "/db/chroma_db"

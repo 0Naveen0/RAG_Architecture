@@ -38,5 +38,5 @@ def ask():
     return result
 
 if __name__ == "__main__":
-    # app.run(debug=True) # In production
-    app.run(host="0.0.0.0",port=5001) #In colab 
+    app.run(debug=True) # In production
+    # app.run(host="0.0.0.0",port=5001) #In colab 
