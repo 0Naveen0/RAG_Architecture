@@ -7,6 +7,8 @@ from utils.rate_limiter import RateLimiter
 from config.validate_query import validate_query
 from config.config import LIMITER_MAX_REQUESTS,LIMITER_WINDOW_SECOND
 
+print("STARTING APP...")
+print("PORT:", os.environ.get("PORT"))
 
 
 app= Flask(__name__)

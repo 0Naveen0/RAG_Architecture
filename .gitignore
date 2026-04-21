@@ -2,3 +2,5 @@
 rough.txt
 url.txt
 rag_debug.ipynb
+notebooks/rag_debug_v2.ipynb
+.gitignore

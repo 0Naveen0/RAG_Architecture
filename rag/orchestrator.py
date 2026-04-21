@@ -2,7 +2,7 @@ from rag.guard import Guard
 from config.config import SIMILARITY_THRESHOLD,MAX_ALLOWED_CHUNKS,LOG_PATH,REFUSAL_MESSAGE
 from rag.retriever import Retriever
 from rag.generator import Generator
-from models.embedding_model import EmbeddingModel
+# from models.embedding_model import EmbeddingModel
 # from config.model_loader import get_llm # For Tinyllama
 # from models.llm_model import LLMModel # For Tinyllama
 from rewriter.query_rewriter import QueryRewriter
@@ -12,6 +12,7 @@ from observability.logger import Logger
 from observability.anomaly_detector import AnomalyDetector
 from models.groq_model import GroqGenerator
 from math import exp
+from models.hf_embedding import HFEmbeddingModel
 
 #REFUSAL_MESSAGE = "I do not have sufficient information in the knowledge base to answer this question."
 
@@ -33,6 +34,7 @@ class RAGOrchestrator :
 		self.retriever = None
 		self.generator = None
 		self.llm_model = None
+		self.hf_embedding_model = None
 
 	def run(self,query):
 		self.embedding_model = EmbeddingModel()
@@ -220,7 +222,9 @@ class RAGOrchestrator :
 ############################################################################
 
 	def run_groq(self,query):
-		self.embedding_model = EmbeddingModel()
+		# self.embedding_model = EmbeddingModel() #use when self hosting
+		self.hf_embedding_model = HFEmbeddingModel()
+    #result=hfmodel.embed("When is holi?")
 		self.retriever = Retriever()
 		# self.llm_model,tokenizer = get_llm()#For Tinyllama
 		# llm = LLMModel() #For Tinyllama
@@ -237,7 +241,8 @@ class RAGOrchestrator :
 		reranker_scores = []
 		chunk_ids = []
 		# Embed query
-		query_embeddings = self.embedding_model.embed([query])[0]
+		# query_embeddings = self.embedding_model.embed([query])[0]
+		query_embeddings = self.hf_embedding_model.embed([query])[0]
 		
 		# Retrieve Chunks
 		t0_retrieval = time.time()
@@ -297,7 +302,8 @@ class RAGOrchestrator :
 			t0_rewrite = time.time()  
 			# rewritten_query = qrewriter.rewrite(query) #For Tinyllma   
 			rewritten_query = qrewriter.rewrite_with_groq(query)    
-			rewritten_query_embeddings = self.embedding_model.embed([rewritten_query])[0]
+			# rewritten_query_embeddings = self.embedding_model.embed([rewritten_query])[0]
+			rewritten_query_embeddings = self.hf_embedding_model.embed([rewritten_query])[0]
 			rewritten_results =  self.retriever.retrieve(rewritten_query_embeddings)
 			rewrite_triggered =True
 			latency['rewrite'] = round(time.time()-t0_rewrite,3)
