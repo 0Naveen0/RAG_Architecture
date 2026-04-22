@@ -1,0 +1,296 @@
+[
+  {
+    "request_id": "d0b46498-34d5-42b9-96d0-7573002bd8cb",
+    "timestamp": "2026-04-22T08:57:34.755486",
+    "query": "Who is the best footballer in the world?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [],
+    "reranker_scores": [],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 0.197,
+      "retrieval": 0.009,
+      "reranking": 0.0,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "a21715b0-b2ab-4283-bd61-c02ef2259033",
+    "timestamp": "2026-04-22T09:00:08.276978",
+    "query": "How can I configure environment variables to point  a newly created sqlite database?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [],
+    "reranker_scores": [],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 0.203,
+      "retrieval": 0.014,
+      "reranking": 0.0,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "875cf291-1675-4a62-a34e-689462dcdc6c",
+    "timestamp": "2026-04-22T09:01:23.739383",
+    "query": "How can I configure environment variables after creating a newly created database?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [],
+    "reranker_scores": [],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 0.173,
+      "retrieval": 0.004,
+      "reranking": 0.0,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "df87472b-a777-4bff-b6d7-c765cfd70178",
+    "timestamp": "2026-04-22T09:26:04.987639",
+    "query": "How can I configure environment variables after creating a newly created database?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [],
+    "reranker_scores": [],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 0.154,
+      "retrieval": 0.005,
+      "reranking": 0.0,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "2ab87787-473f-4426-b778-a249355b4845",
+    "timestamp": "2026-04-22T09:29:12.872867",
+    "query": "How can I configure environment variables after creating a newly created database?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [],
+    "reranker_scores": [],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 0.125,
+      "retrieval": 0.005,
+      "reranking": 0.0,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "fc7c2f77-73b4-491e-81a6-caa7826867c1",
+    "timestamp": "2026-04-22T09:37:57.043137",
+    "query": "How can I configure environment variables after creating a newly created database?",
+    "answer": "[Source: database.txt | CHUNKID: 1] \nYou can configure environment variables after creating a newly created database by managing several environment variables such as host, database, username, password, etc. Alternatively, you can use a single database \"URL\" that contains all of the connection information for the database in a single string, which follows a standard schema convention: driver://username:password@host:port/database?options. If the url (or corresponding DATABASE_URL environment variable) configuration option is present, it will be used to extract the database connection and credential information.",
+    "confidence": "HIGH",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_1"
+    ],
+    "retrieval_scores": [
+      0.4675405025482178,
+      0.4192553758621216,
+      0.41202831268310547,
+      0.3295879364013672,
+      0.32486772537231445,
+      0.3241885304450989,
+      0.3199611306190491
+    ],
+    "reranker_scores": [
+      0.9596783243260024,
+      0.9140540634715341
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.718,
+      "retrieval": 0.007,
+      "reranking": 0.922,
+      "rewrite": 0.0,
+      "generation": 0.638
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "74fbbb7d-0891-4cab-a5dc-caedc8f833f6",
+    "timestamp": "2026-04-22T09:40:40.844694",
+    "query": "Which command is used to generate migrations?",
+    "answer": "The command used to generate migrations is: php artisan make:migration [FILE: migrations.txt | CHUNKID: 0] and [FILE: migrations.txt | CHUNKID: 1].",
+    "confidence": "HIGH",
+    "source": "migrations.txt",
+    "chunk_ids": [
+      "migrations.txt_1",
+      "migrations.txt_0"
+    ],
+    "retrieval_scores": [
+      0.5023916959762573,
+      0.45723849534988403,
+      0.4564807415008545,
+      0.4011509418487549,
+      0.3055713176727295,
+      0.2995437979698181,
+      0.28809189796447754
+    ],
+    "reranker_scores": [
+      0.9985863066206112,
+      0.9955915298634667
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.609,
+      "retrieval": 0.006,
+      "reranking": 0.78,
+      "rewrite": 0.0,
+      "generation": 0.646
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "3b215402-fe6e-430d-99ba-d48c5c954207",
+    "timestamp": "2026-04-22T09:42:32.340051",
+    "query": "How can I use seeders?",
+    "answer": "To use seeders, you can run the db:seed Artisan command, which by default runs the DatabaseSeeder class. This class can be used to call other seed classes using the call method. [seeder.txt | CHUNKID:2] \n\nYou can also use the --class option to specify a specific seeder class to run individually, for example: \nphp artisan db:seed --class=UserSeeder [seeder.txt | CHUNKID:2]\n\nAdditionally, you can seed your database using the migrate:fresh command, which will drop all tables and re-run all of your migrations: \nphp artisan migrate:fresh --seed [seeder.txt | CHUNKID:2]\n\nIf you want to force the seeders to run without a prompt, you can use the --force flag: \nphp artisan db:seed --force [seeder.txt | CHUNKID:2] \n\nTo generate a seeder, you can execute the make:seeder Artisan command: \nphp artisan make:seeder UserSeeder [seeder.txt | CHUNKID:0] \n\nWithin the run method of the seeder class, you can insert data into your database using the query builder or Eloquent model factories. [seeder.txt | CHUNKID:0]",
+    "confidence": "HIGH",
+    "source": "seeder.txt",
+    "chunk_ids": [
+      "seeder.txt_2",
+      "seeder.txt_0"
+    ],
+    "retrieval_scores": [
+      0.49732542037963867,
+      0.43000560998916626,
+      0.29396259784698486,
+      0.13520610332489014,
+      0.12206828594207764,
+      0.12162166833877563,
+      0.11975765228271484
+    ],
+    "reranker_scores": [
+      0.9748118754362076,
+      0.9630483910561819
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.906,
+      "retrieval": 0.005,
+      "reranking": 0.872,
+      "rewrite": 0.0,
+      "generation": 0.856
+    },
+    "anomalies": []
+  },
+  {
+    "request_id": "491b643d-ecf2-4b6c-9259-bcb338e2090d",
+    "timestamp": "2026-04-22T09:43:36.607513",
+    "query": "Do each migration file name contains a timestamp?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.3238424062728882,
+      0.29865527153015137,
+      0.21248793601989746,
+      0.20246636867523193,
+      0.19613367319107056,
+      0.18420100212097168,
+      0.16205650568008423
+    ],
+    "reranker_scores": [
+      0.0300734884148777
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 0.974,
+      "retrieval": 0.006,
+      "reranking": 0.831,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ]
+  },
+  {
+    "request_id": "9c4fb303-20ca-49cb-a13f-96c66fc2f9ad",
+    "timestamp": "2026-04-22T09:45:35.170553",
+    "query": "why is there no need to clean strings being passed as bindings?",
+    "answer": "The Laravel query builder uses PDO parameter binding to protect your application against SQL injection attacks. Therefore, there is no need to clean strings being passed as bindings. \n[Source: queries.txt | Chunk Id: 0]",
+    "confidence": "LOW",
+    "source": "queries.txt",
+    "chunk_ids": [
+      "queries.txt_0"
+    ],
+    "retrieval_scores": [
+      0.14797347784042358,
+      0.1330890655517578,
+      0.11273747682571411,
+      0.11071246862411499,
+      0.10644900798797607,
+      0.09605985879898071,
+      0.06793814897537231
+    ],
+    "reranker_scores": [
+      0.7735487286484484
+    ],
+    "rewrite_triggered": true,
+    "rewritten_query": "What are the underlying mechanisms that eliminate the necessity for sanitizing string inputs when using parameterized queries or prepared statements with bind variables.",
+    "latency": {
+      "total": 2.479,
+      "retrieval": 0.007,
+      "reranking": 0.816,
+      "rewrite": 0.448,
+      "generation": 0.318
+    },
+    "anomalies": [
+      "low_confidence",
+      "rewrite_failed"
+    ]
+  }
+]

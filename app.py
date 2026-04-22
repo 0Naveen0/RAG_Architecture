@@ -2,7 +2,8 @@ from flask import Flask,request,jsonify,render_template
 from flask_cors import CORS
 import importlib
 import os
-from rag.orchestrator import RAGOrchestrator
+# from rag.orchestrator import RAGOrchestrator
+from rag.pipeline import Pipeline
 from utils.rate_limiter import RateLimiter
 from config.validate_query import validate_query
 from config.config import LIMITER_MAX_REQUESTS,LIMITER_WINDOW_SECOND
@@ -13,7 +14,8 @@ print("PORT:", os.environ.get("PORT"))
 
 app= Flask(__name__)
 CORS(app)
-orchestrator = RAGOrchestrator()
+# orchestrator = RAGOrchestrator()
+orchestrator = Pipeline()
 limiter = RateLimiter(max_requests=LIMITER_MAX_REQUESTS,window_seconds=LIMITER_WINDOW_SECOND)
 
 @app.route("/",methods=["GET"])
@@ -36,7 +38,8 @@ def ask():
     
     # orchestrator = RAGOrchestrator()
     # result = orchestrator.run_v1(query)
-    result = orchestrator.run_groq(query)
+    # result = orchestrator.run_groq(query)
+    result = orchestrator.run_production(query)
     return result
 
 if __name__ == "__main__":
