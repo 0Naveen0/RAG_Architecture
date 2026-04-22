@@ -18,7 +18,7 @@ class Logger:
 			cls._instance = Logger()
 		return cls._instance
 		
-	def build_log(self,query:str,answer:str,confidence:str,source:str,chunk_ids:list,retrieval_scores:list,reranker_scores:list,rewrite_triggered:bool,rewritten_query:str,latency:dict,anomalies:list)->dict:
+	def build_log(self,query:str,answer:str,confidence:str,source:str,chunk_ids:list,retrieval_scores:list,reranker_scores:list,rewrite_triggered:bool,rewritten_query:str,latency:dict,anomalies:list,progress:dict)->dict:
 			return {
 				"request_id": str(uuid.uuid4()),
 				"timestamp":datetime.now().isoformat(),
@@ -32,7 +32,8 @@ class Logger:
 				"rewrite_triggered":rewrite_triggered,
 				"rewritten_query":rewritten_query,
 				"latency":latency,
-				"anomalies": anomalies
+				"anomalies": anomalies,
+        "progress" : progress
 				}
 				
 	def write_log(self,log:dict):

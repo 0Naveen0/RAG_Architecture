@@ -1,6 +1,6 @@
 from rag.guard import Guard
 from config.config import SIMILARITY_THRESHOLD,MAX_ALLOWED_CHUNKS,LOG_PATH,REFUSAL_MESSAGE
-from rag.retriever import Retriever
+# from rag.retriever import Retriever
 from rag.generator import Generator
 from rewriter.query_rewriter import QueryRewriter
 
@@ -27,20 +27,21 @@ class Pipeline :
 	# 	self.retriever = retriever
 	# 	self.generator = generator
 
-	def __init__(self):
-		self.retriever = None
-		self.generator = None
-		self.llm_model = None
-		self.hf_embedding_model = None
+	def __init__(self,retriever,generator,embedding_model,groqq):
+		self.retriever = retriever
+		self.generator = generator
+		self.groqq = groqq
+		self.hf_embedding_model = embedding_model
 
 	def run_production(self,query):		
-		self.hf_embedding_model = HFEmbeddingModel()
-		self.retriever = Retriever()		
-		groqq = GroqGenerator()
-		self.generator = Generator(groqq)		
-		qrewriter = QueryRewriter(groqq)
+		# self.hf_embedding_model = HFEmbeddingModel()
+		# self.retriever = Retriever()		
+		# groqq = GroqGenerator()
+		# self.generator = Generator(groqq)		
+		qrewriter = QueryRewriter(self.groqq)
 		total_start = time.time()
 		latency={"total":0.0,"retrieval":0.0,"reranking":0.0,"rewrite":0.0,"generation":0.0}
+		progress ={"embeddings":None,"retrieval":None,"empty_retrieval":None,"reranker":None,"guard":None,"generation":None,"rw_embeddings":None,"rw_retrieval":None,"rw_reranker":None,"rw_guard":None}
 		rewrite_triggered = False
 		rewrite_success = False
 		rewritten_query = None
@@ -50,13 +51,17 @@ class Pipeline :
 		# Embed query
 		query_embeddings = self.hf_embedding_model.embed([query])[0]
 		print(f"[Debug]query_embeddings->{query_embeddings}")
+		progress['embeddings']="Passed"
 		# Retrieve Chunks
 		t0_retrieval = time.time()
 		results = self.retriever.retrieve(query_embeddings)
-
+		print(f"[Debug]Retrieval->{results}")
+		progress['retrieval']="Passed"
 		latency['retrieval'] = round(time.time()-t0_retrieval,3)
-		final_result = ({"answer":REFUSAL_MESSAGE,"latency":latency['total'],"guard_scores":[],"retrieval_scores":[(1-distance) for distance in results['distances'][0]],"reranker_scores_before":[],"reranker_scores_after":[],"confidence":"low","source":None,"chunk_ids":None,'rewrite_triggered':rewrite_triggered,'rewrite_success':rewrite_success})
+		final_result = ({"answer":REFUSAL_MESSAGE,"progress":progress,"latency":latency['total'],"guard_scores":[],"retrieval_scores":[(1-distance) for distance in results['distances'][0]],"reranker_scores_before":[],"reranker_scores_after":[],"confidence":"low","source":None,"chunk_ids":None,'rewrite_triggered':rewrite_triggered,'rewrite_success':rewrite_success})
 		if(not results or len(results['documents'][0])==0):
+			print(f"[Debug]EmptyRetrieval->{final_result}")
+			progress['empty_retrieval']="Passed"
 			latency['total'] = round(time.time()-total_start,3)
 			self._log(query,final_result,latency,[],[],[],False,None)
 			return final_result
@@ -90,7 +95,8 @@ class Pipeline :
 		# 				}
 		# reranker_scores = [chunk['reranker_score'] for chunk in reranked_chunks]
 		latency['reranking'] = round(time.time()-t0_reranking,3)
-
+		print(f"[Debug]Rerank->{reranker_scores}")
+		progress['reranker']="Passed"
     # Guard Chunks using confidence
 		# guard_output = Guard.filter_results(results)
 		guard_output = Guard.filter_results_v1(reranked_results)
@@ -99,6 +105,8 @@ class Pipeline :
 		filtered_chunks = guard_output['chunks']
 		guard_scores = [f"(Guard->{chunk['reranker_score']},Similarity->{chunk['similarity']},Confidence->{chunk['confidence']})" for chunk in filtered_chunks]
 		# print(f"Guard Scores->{guard_scores}")
+		print(f"[Debug]Guard->{guard_scores}")
+		progress['guard']="Passed"
 		if(retrieval_status=="REFUSE" or (not filtered_chunks)):
 			latency['total'] = round(time.time()-total_start,3)
 			self._log(query,final_result,latency,retrieval_scores,reranker_scores,[],rewrite_triggered,rewritten_query)
@@ -111,9 +119,14 @@ class Pipeline :
 			rewritten_query = qrewriter.rewrite_with_groq(query)    
 			# rewritten_query_embeddings = self.embedding_model.embed([rewritten_query])[0]
 			rewritten_query_embeddings = self.hf_embedding_model.embed([rewritten_query])[0]
+			print(f"[Debug]rw_eguardmbeddings->{rewritten_query_embeddings}")
+			progress['rw_eguardmbeddings']="Passed"
 			rewritten_results =  self.retriever.retrieve(rewritten_query_embeddings)
 			rewrite_triggered =True
+			print(f"[Debug]rw_retrieval->{rewritten_results}")
+			progress['rw_retrieval']="Passed"
 			latency['rewrite'] = round(time.time()-t0_rewrite,3)
+
 			if rewritten_results and len(rewritten_results['documents'][0])>0:
 				raw_chunks=[]
 				for doc,distance,metadata in zip(results['documents'][0],results['distances'][0],results['metadatas'][0]):
@@ -126,6 +139,8 @@ class Pipeline :
 				'metadatas': [[chunk['metadata'] for chunk in rw_selected_chunks]],
         'reranker_score':[[sigmoid(chunk['reranker_score']) for chunk in rw_selected_chunks]]
 				}
+				print(f"[Debug]rw_reranker->{rewritten_results}")
+				progress['rw_reranker']="Passed"
 				rw_guard_output = Guard.filter_results_v1(rw_reranked_results)
 
 				rw_status = rw_guard_output['retrieval_status'] 
@@ -138,6 +153,8 @@ class Pipeline :
 					filtered_chunks = filtered_chunks + rw_chunks
 					# filtered_chunks=remove_duplicate_chunks(filtered_chunks)
 					filtered_chunks.sort(key=lambda x:x['reranker_score'],reverse=True)
+				print(f"[Debug]rw_Guard->{guard_scores}")
+				progress['rw_guard']="Passed"
 		# 	answer = self.generator.generate(query,filtered_chunks)
 		# else:
 		# 	answer = self.generator.generate(query,filtered_chunks)
@@ -150,8 +167,10 @@ class Pipeline :
 		filtered_chunks=remove_duplicate_chunks(filtered_chunks)	
 		# answer = self.generator.generate(query,filtered_chunks[:MAX_ALLOWED_CHUNKS])
 
-		answer = self.generator.generate_with_groq(query,filtered_chunks[:MAX_ALLOWED_CHUNKS],groqq)
+		answer = self.generator.generate_with_groq(query,filtered_chunks[:MAX_ALLOWED_CHUNKS],self.groqq)
 		# answer ="From LLM"
+		print(f"[Debug]Generation->{answer}")
+		progress['generation']="Passed"
 		latency['generation'] = round(time.time()-t0_generation,3)
 		top_meta = filtered_chunks[0]["metadata"]
 		confidence= filtered_chunks[0]['confidence']
@@ -162,7 +181,7 @@ class Pipeline :
 		# chunk_ids = [c['metadata']['chunk_id'] for c in filtered_chunks[:MAX_ALLOWED_CHUNKS] ]
 		chunk_ids = [f"{c['metadata']['source']}_{c['metadata']['chunk_id']}" for c in filtered_chunks[:MAX_ALLOWED_CHUNKS] ]
 		latency['total'] = round(time.time()-total_start,3)
-		final_result = ({"answer":answer,"latency":latency['total'],"guard_scores":guard_scores,"retrieval_scores":retrieval_scores,"reranker_scores_before":reranker_scores_,"reranker_scores_after":reranker_scores,"confidence":confidence,"source":top_meta["source"],"chunk_id":top_meta["chunk_id"],'rewrite_triggered':rewrite_triggered,'rewrite_success':rewrite_success})
+		final_result = ({"answer":answer,"progress":progress,"latency":latency['total'],"guard_scores":guard_scores,"retrieval_scores":retrieval_scores,"reranker_scores_before":reranker_scores_,"reranker_scores_after":reranker_scores,"confidence":confidence,"source":top_meta["source"],"chunk_id":top_meta["chunk_id"],'rewrite_triggered':rewrite_triggered,'rewrite_success':rewrite_success})
 		# final_result = ({"answer":answer,"confidence":confidence,"source":top_meta["source"],"chunk_ids":chunk_ids,'rewrite_triggered':rewrite_triggered,'rewrite_success':rewrite_success})
 		self._log(query,final_result,latency,retrieval_scores,reranker_scores,chunk_ids,rewrite_triggered,rewritten_query)
 
@@ -177,4 +196,4 @@ class Pipeline :
 					"rewrite_triggered":rewrite_triggered
 					}
 		anomalies = AnomalyDetector.detect(temp_log)
-		logger.log_request(query=query,answer=final_result.get('answer',''),confidence=final_result.get('confidence','low'),source=final_result.get('source',None),chunk_ids=chunk_ids,retrieval_scores=retrieval_scores,reranker_scores=reranker_scores,rewrite_triggered=rewrite_triggered,rewritten_query=rewritten_query,latency=latency,anomalies=anomalies)
+		logger.log_request(query=query,answer=final_result.get('answer',''),confidence=final_result.get('confidence','low'),source=final_result.get('source',None),chunk_ids=chunk_ids,retrieval_scores=retrieval_scores,reranker_scores=reranker_scores,rewrite_triggered=rewrite_triggered,rewritten_query=rewritten_query,latency=latency,anomalies=anomalies,progress=final_result.get('progress',None))
