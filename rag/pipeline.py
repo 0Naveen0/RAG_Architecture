@@ -50,12 +50,13 @@ class Pipeline :
 		chunk_ids = []
 		# Embed query
 		query_embeddings = self.hf_embedding_model.embed([query])[0]
-		print(f"[Debug]query_embeddings->{query_embeddings}")
+		print(f"[Debug]query_embeddings->{len(query_embeddings)}")
 		progress['embeddings']="Passed"
 		# Retrieve Chunks
 		t0_retrieval = time.time()
+		print(f"[Debug]Chroma Collection Count->{self.retriever.collection.count()}")
 		results = self.retriever.retrieve(query_embeddings)
-		print(f"[Debug]Retrieval->{results}")
+		print(f"[Debug]Retrieval Count->{len(results)}")
 		progress['retrieval']="Passed"
 		latency['retrieval'] = round(time.time()-t0_retrieval,3)
 		final_result = ({"answer":REFUSAL_MESSAGE,"progress":progress,"latency":latency['total'],"guard_scores":[],"retrieval_scores":[(1-distance) for distance in results['distances'][0]],"reranker_scores_before":[],"reranker_scores_after":[],"confidence":"low","source":None,"chunk_ids":None,'rewrite_triggered':rewrite_triggered,'rewrite_success':rewrite_success})
@@ -119,11 +120,11 @@ class Pipeline :
 			rewritten_query = qrewriter.rewrite_with_groq(query)    
 			# rewritten_query_embeddings = self.embedding_model.embed([rewritten_query])[0]
 			rewritten_query_embeddings = self.hf_embedding_model.embed([rewritten_query])[0]
-			print(f"[Debug]rw_eguardmbeddings->{rewritten_query_embeddings}")
+			print(f"[Debug]rw_eguardmbeddings->{len(rewritten_query_embeddings)}")
 			progress['rw_eguardmbeddings']="Passed"
 			rewritten_results =  self.retriever.retrieve(rewritten_query_embeddings)
 			rewrite_triggered =True
-			print(f"[Debug]rw_retrieval->{rewritten_results}")
+			print(f"[Debug]rw_retrieval_count->{len(rewritten_results)}")
 			progress['rw_retrieval']="Passed"
 			latency['rewrite'] = round(time.time()-t0_rewrite,3)
 
@@ -139,7 +140,7 @@ class Pipeline :
 				'metadatas': [[chunk['metadata'] for chunk in rw_selected_chunks]],
         'reranker_score':[[sigmoid(chunk['reranker_score']) for chunk in rw_selected_chunks]]
 				}
-				print(f"[Debug]rw_reranker->{rewritten_results}")
+				print(f"[Debug]rw_reranker->{len(rewritten_results)}")
 				progress['rw_reranker']="Passed"
 				rw_guard_output = Guard.filter_results_v1(rw_reranked_results)
 

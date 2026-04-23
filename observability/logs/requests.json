@@ -3664,5 +3664,148 @@
       "rw_reranker": null,
       "rw_guard": null
     }
+  },
+  {
+    "request_id": "2a6d5f06-67da-4273-9d31-4435134b6bd3",
+    "timestamp": "2026-04-23T12:35:50.851725",
+    "query": "How database is created in laravel?",
+    "answer": "I do not know [Source: database.txt | CHUNKID: 0] and [Source: migrations.txt | CHUNKID: 13] do not provide information on how to create a database in Laravel. They provide information on database configuration and index creation, but not on the actual creation of a database.",
+    "confidence": "HIGH",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_0",
+      "migrations.txt_13"
+    ],
+    "retrieval_scores": [
+      0.6564083099365234,
+      0.6093412637710571,
+      0.5833663940429688,
+      0.5726693272590637,
+      0.5661428570747375,
+      0.5505293607711792,
+      0.4914501905441284
+    ],
+    "reranker_scores": [
+      0.9956407233760038,
+      0.9863828541132067
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.901,
+      "retrieval": 0.004,
+      "reranking": 1.091,
+      "rewrite": 0.0,
+      "generation": 0.559
+    },
+    "anomalies": [],
+    "progress": {
+      "embeddings": "Passed",
+      "retrieval": "Passed",
+      "empty_retrieval": null,
+      "reranker": "Passed",
+      "guard": "Passed",
+      "generation": "Passed",
+      "rw_embeddings": null,
+      "rw_retrieval": null,
+      "rw_reranker": null,
+      "rw_guard": null
+    }
+  },
+  {
+    "request_id": "fe206327-5712-42f1-957f-716e787d8d2a",
+    "timestamp": "2026-04-23T12:43:53.330270",
+    "query": "How ,queries is handled in laravel?",
+    "answer": "Laravel's database query builder provides a convenient, fluent interface to creating and running database queries. It can be used to perform most database operations in your application and works on all supported database systems. [Source: queries.txt | Chunk Id: 0]\n\nThe query builder uses PDO parameter binding to protect the application against SQL injection attacks. [Source: queries.txt | Chunk Id: 0]\n\nIt also supports various query operations such as retrieving results, chunking results, aggregates, selects, raw expressions, joins, unions, where clauses, parameter grouping, where exists clauses, subquery where clauses, JSON where clauses, ordering, grouping, limit & offset, conditional clauses, inserts, updates, updating JSON columns, increment & decrement, deletes, and pessimistic locking. [Source: queries.txt | Chunk Id: 0]\n\nFor example, to retrieve all rows from a table, you can use the table method on the DB facade and chain more constraints onto the query using methods like where, get, etc. [Source: queries.txt | Chunk Id: 0]\n\nAdditionally, the query builder supports advanced where clauses such as \"where exists\" clauses or nested parameter groupings. [Source: queries.txt | Chunk Id: 12]\n\nIt also supports grouping constraints within parenthesis using the where method with a Closure. [Source: queries.txt | Chunk Id: 12]\n\nThe whereExists method allows you to write where exists SQL clauses by passing a Closure argument that defines the query to be placed inside the \"exists\" clause. [Source: queries.txt | Chunk Id: 12]",
+    "confidence": "HIGH",
+    "source": "queries.txt",
+    "chunk_ids": [
+      "queries.txt_0",
+      "queries.txt_12"
+    ],
+    "retrieval_scores": [
+      0.6425617933273315,
+      0.6392182111740112,
+      0.5898672938346863,
+      0.5870797634124756,
+      0.5868113040924072,
+      0.5856128931045532,
+      0.5847441554069519
+    ],
+    "reranker_scores": [
+      0.9767587842280255,
+      0.9747600855087037
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.684,
+      "retrieval": 0.003,
+      "reranking": 1.11,
+      "rewrite": 0.0,
+      "generation": 1.263
+    },
+    "anomalies": [],
+    "progress": {
+      "embeddings": "Passed",
+      "retrieval": "Passed",
+      "empty_retrieval": null,
+      "reranker": "Passed",
+      "guard": "Passed",
+      "generation": "Passed",
+      "rw_embeddings": null,
+      "rw_retrieval": null,
+      "rw_reranker": null,
+      "rw_guard": null
+    }
+  },
+  {
+    "request_id": "7df1b3e4-0b84-4e44-b6d1-8d165a8f4a26",
+    "timestamp": "2026-04-23T12:57:39.168105",
+    "query": "Which is the upcoming version of Laravel?",
+    "answer": "I do not know [Source: database.txt | Chunk Id: 0]",
+    "confidence": "LOW",
+    "source": "database.txt",
+    "chunk_ids": [
+      "database.txt_0"
+    ],
+    "retrieval_scores": [
+      0.37558549642562866,
+      0.37353992462158203,
+      0.3654496669769287,
+      0.364351749420166,
+      0.3497886657714844,
+      0.34880530834198,
+      0.33504199981689453
+    ],
+    "reranker_scores": [
+      0.3846373491076943
+    ],
+    "rewrite_triggered": true,
+    "rewritten_query": "What is the next scheduled release of the Laravel PHP web framework, including its version number and anticipated features?",
+    "latency": {
+      "total": 2.531,
+      "retrieval": 0.003,
+      "reranking": 0.994,
+      "rewrite": 0.441,
+      "generation": 0.125
+    },
+    "anomalies": [
+      "low_confidence",
+      "rewrite_failed"
+    ],
+    "progress": {
+      "embeddings": "Passed",
+      "retrieval": "Passed",
+      "empty_retrieval": null,
+      "reranker": "Passed",
+      "guard": "Passed",
+      "generation": "Passed",
+      "rw_embeddings": null,
+      "rw_retrieval": "Passed",
+      "rw_reranker": "Passed",
+      "rw_guard": "Passed",
+      "rw_eguardmbeddings": "Passed"
+    }
   }
 ]

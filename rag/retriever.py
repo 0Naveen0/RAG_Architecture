@@ -29,8 +29,13 @@ class Retriever:
 
 
     def retrieve(self, query_embeddings):
-        results = self.collection.query(query_embeddings=[query_embeddings], n_results=TOP_K, include=["documents", "metadatas", "distances"])
-        return results
+        try:
+          print(f"[Debug]Retrieve from chroma Entered with len :{len(query_embeddings)}")
+          results = self.collection.query(query_embeddings=[query_embeddings], n_results=TOP_K, include=["documents", "metadatas", "distances"])
+          print(f"[Debug]Retrieve from chroma complete with len :{len(results)}")
+          return results
+        except Exception as e:
+          raise RuntimeError(f"[Debug]Chroma Query Failed :{e}")
   
     def empty_db(self):
         # Correctly call delete_collection on the client, passing the collection name
