@@ -17,6 +17,7 @@ print("PORT:", os.environ.get("PORT"))
 
 
 app= Flask(__name__)
+IS_RENDER = os.environ.get('RENDER') == 'true'
 CORS(app)
 # orchestrator = RAGOrchestrator()
 retriever = Retriever()
@@ -55,5 +56,7 @@ def ask():
     return result
 
 if __name__ == "__main__":
-    app.run(debug=True) # In production
-    # app.run(host="0.0.0.0",port=5001) #In colab 
+    if IS_RENDER :
+       app.run(debug=True)# In production
+    else:
+       app.run(host="0.0.0.0",port=5001) #In colab 

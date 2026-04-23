@@ -57,7 +57,8 @@ class LangfuseTracer:
           'source' : log['source'],
           'chunk_ids':','.join(map(str,log['chunk_ids'])),
 				  'rewrite_triggered':log['rewrite_triggered'],
-				  'rewritten_query':log['rewritten_query']
+				  'rewritten_query':log['rewritten_query'],
+          'progress' : log['progress']
           }
           )
 

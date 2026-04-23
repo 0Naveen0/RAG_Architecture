@@ -3334,5 +3334,192 @@
       "generation": 0.508
     },
     "anomalies": []
+  },
+  {
+    "request_id": "1653b295-35f0-4386-a740-d0b54788afc4",
+    "timestamp": "2026-04-23T07:54:44.189383",
+    "query": "Who is PM of Russia?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.14996176958084106,
+      0.11880213022232056,
+      0.11493265628814697,
+      0.11034488677978516,
+      0.10515183210372925,
+      0.10203367471694946,
+      0.09951609373092651
+    ],
+    "reranker_scores": [
+      1.1703735143002101e-05,
+      1.1625366486054816e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.859,
+      "retrieval": 0.008,
+      "reranking": 2.649,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ],
+    "progress": {
+      "embeddings": "Passed",
+      "retrieval": "Passed",
+      "empty_retrieval": null,
+      "reranker": "Passed",
+      "guard": "Passed",
+      "generation": null,
+      "rw_embeddings": null,
+      "rw_retrieval": null,
+      "rw_reranker": null,
+      "rw_guard": null
+    }
+  },
+  {
+    "request_id": "e9456200-e045-4967-bedd-c3422eda832d",
+    "timestamp": "2026-04-23T07:55:58.748967",
+    "query": "Where is Darbhanga in India?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.1491038203239441,
+      0.13116765022277832,
+      0.12330704927444458,
+      0.10342037677764893,
+      0.09978413581848145,
+      0.09329789876937866,
+      0.09152907133102417
+    ],
+    "reranker_scores": [
+      1.4426063737775278e-05,
+      1.3168133583333958e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.073,
+      "retrieval": 0.01,
+      "reranking": 0.845,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ],
+    "progress": {
+      "embeddings": "Passed",
+      "retrieval": "Passed",
+      "empty_retrieval": null,
+      "reranker": "Passed",
+      "guard": "Passed",
+      "generation": null,
+      "rw_embeddings": null,
+      "rw_retrieval": null,
+      "rw_reranker": null,
+      "rw_guard": null
+    }
+  },
+  {
+    "request_id": "ecd92f2e-c85f-4fa2-bdf9-fb1fed52ba75",
+    "timestamp": "2026-04-23T07:58:22.827036",
+    "query": "How migration is created in laravel?",
+    "answer": "To create a migration in Laravel, you can use the make:migration Artisan command. The command is as follows: \nphp artisan make:migration create_users_table [FILE: migrations.txt | CHUNKID: 0] \n\nYou can also use the --table and --create options to indicate the name of the table and whether or not the migration will be creating a new table. For example: \nphp artisan make:migration create_users_table --create=users \nphp artisan make:migration add_votes_to_users_table --table=users [FILE: migrations.txt | CHUNKID: 0] \n\nAdditionally, you can specify a custom output path for the generated migration using the --path option. [FILE: migrations.txt | CHUNKID: 1]",
+    "confidence": "HIGH",
+    "source": "migrations.txt",
+    "chunk_ids": [
+      "migrations.txt_0",
+      "migrations.txt_1"
+    ],
+    "retrieval_scores": [
+      0.6877232193946838,
+      0.6675299406051636,
+      0.5876870155334473,
+      0.5835258960723877,
+      0.45389533042907715,
+      0.43830227851867676,
+      0.4303150773048401
+    ],
+    "reranker_scores": [
+      0.99590506759767,
+      0.9860622638870442
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.898,
+      "retrieval": 0.012,
+      "reranking": 0.822,
+      "rewrite": 0.0,
+      "generation": 0.86
+    },
+    "anomalies": [],
+    "progress": {
+      "embeddings": "Passed",
+      "retrieval": "Passed",
+      "empty_retrieval": null,
+      "reranker": "Passed",
+      "guard": "Passed",
+      "generation": "Passed",
+      "rw_embeddings": null,
+      "rw_retrieval": null,
+      "rw_reranker": null,
+      "rw_guard": null
+    }
+  },
+  {
+    "request_id": "3ff4f09f-d056-4576-b72e-b1444526cdd3",
+    "timestamp": "2026-04-23T08:16:26.249483",
+    "query": "Do yo know about Laravel upcoming version?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.4137055277824402,
+      0.3949275016784668,
+      0.39238691329956055,
+      0.37536752223968506,
+      0.37023210525512695,
+      0.35552096366882324,
+      0.3524426817893982
+    ],
+    "reranker_scores": [
+      0.03595920527688468
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.478,
+      "retrieval": 0.013,
+      "reranking": 2.18,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ],
+    "progress": {
+      "embeddings": "Passed",
+      "retrieval": "Passed",
+      "empty_retrieval": null,
+      "reranker": "Passed",
+      "guard": "Passed",
+      "generation": null,
+      "rw_embeddings": null,
+      "rw_retrieval": null,
+      "rw_reranker": null,
+      "rw_guard": null
+    }
   }
 ]

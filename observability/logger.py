@@ -56,6 +56,7 @@ class Logger:
 		print(f"[Logger] {log['request_id']} |"
 			f"latency:{log['latency']['total']}s|" 
 			f"confidence:{log['confidence']}|" 
-			f"anomalies:{log['anomalies']}" 
+			f"anomalies:{log['anomalies']} |"
+			f"progress:{log['progress']}|" 
 		)
 		return log
