@@ -2,6 +2,7 @@ from flask import Flask,request,jsonify,render_template
 from flask_cors import CORS
 import importlib
 import os
+import psutil
 # from rag.orchestrator import RAGOrchestrator
 from rag.retriever import Retriever
 from rag.generator import Generator
@@ -59,7 +60,9 @@ def ask():
 
 @app.route("/health",methods=["GET"])
 def health():
-  return jsonify({"message":"Server Running","Chroma":f"Init({chroma_count})","port":os.environ.get("PORT"),"host_render":IS_RENDER})
+  process = psutil.Process(os.getpid())
+  mem_mb = process.memory_info().rss/1024/1024
+  return jsonify({"message":"Server Running","Chroma":f"Init({chroma_count})","port":os.environ.get("PORT"),"host_render":IS_RENDER,"memory_mb":mem_mb})
 
 
 if __name__ == "__main__":

@@ -8,7 +8,17 @@ BASE_URL = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPO_DB = os.path.join(BASE_URL,"db/chroma_db")
 RUNTIME_DB = "/tmp/chroma_db"
 if not os.path.exists(RUNTIME_DB):
-	shutil.copytree(REPO_DB,RUNTIME_DB)
+  try:
+    shutil.copytree(REPO_DB,RUNTIME_DB)
+    repo_files = sum(len(files) for _, _, files in os.walk(REPO_DB))
+    runtime_files = sum(len(files) for _, _, files in os.walk(RUNTIME_DB))
+    print(f"Copied {repo_files} files from {REPO_DB} to {RUNTIME_DB}.")
+    if repo_files != runtime_files:
+      raise RuntimeError(f"Copied {repo_files} files from {REPO_DB} to {RUNTIME_DB}.") 
+  except FileExistsError:
+    # print(f"[Debug]FileExistsError")
+    pass
+
 CHROMA_DB_PATH = RUNTIME_DB
 
 EMBEDDING_MODEL_NAME  ="sentence-transformers/all-MiniLM-L6-v2"
