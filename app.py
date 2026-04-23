@@ -20,8 +20,19 @@ print("PORT:", os.environ.get("PORT"))
 app= Flask(__name__)
 IS_RENDER = os.environ.get('RENDER') == 'true'
 CORS(app)
+
+def log_chroma_files():
+  total =0
+  for root,dirs,files in os.walk("/tmp/chroma_db"):
+    for f in files:
+      fp = os.path.join(root,f)
+      size_mb = os.path.getsize(fp)/1024/1024
+      total+=size_mb
+      print(f"[Chromadb]{fp}:{size_mb:.3f}MB")
+  print(f"[Chromadb]Total Size:{total:.3f}MB")
 # orchestrator = RAGOrchestrator()
 retriever = Retriever(create_if_missing=False)
+log_chroma_files()
 chroma_count =0
 try:
   chroma_count = retriever.collection.count()

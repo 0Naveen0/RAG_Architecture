@@ -11,8 +11,12 @@ from observability.anomaly_detector import AnomalyDetector
 from models.groq_model import GroqGenerator
 from math import exp
 from models.hf_embedding import HFEmbeddingModel
+import os
+import psutil
 
 #REFUSAL_MESSAGE = "I do not have sufficient information in the knowledge base to answer this question."
+def get_mem():
+  return psutil.Process(os.getpid()).memory_info().rss/1024/1024
 
 # from math import exp
 def sigmoid(x):
@@ -49,13 +53,17 @@ class Pipeline :
 		reranker_scores = []
 		chunk_ids = []
 		# Embed query
+		print(f"[MEM]start:{get_mem():.3f}MB")
 		query_embeddings = self.hf_embedding_model.embed([query])[0]
+		print(f"[MEM]query_embeddings:{get_mem():.3f}MB")
 		print(f"[Debug]query_embeddings->{len(query_embeddings)}")
 		progress['embeddings']="Passed"
 		# Retrieve Chunks
 		t0_retrieval = time.time()
+	
 		print(f"[Debug]Chroma Collection Count->{self.retriever.collection.count()}")
 		results = self.retriever.retrieve(query_embeddings)
+		print(f"[MEM]retriever:{get_mem():.3f}MB")			
 		print(f"[Debug]Retrieval Count->{len(results)}")
 		progress['retrieval']="Passed"
 		latency['retrieval'] = round(time.time()-t0_retrieval,3)
@@ -96,9 +104,10 @@ class Pipeline :
 		# 				}
 		# reranker_scores = [chunk['reranker_score'] for chunk in reranked_chunks]
 		latency['reranking'] = round(time.time()-t0_reranking,3)
+		print(f"[MEM]Rerank:{get_mem():.3f}MB")		
 		print(f"[Debug]Rerank->{reranker_scores}")
 		progress['reranker']="Passed"
-    # Guard Chunks using confidence
+		# Guard Chunks using confidence
 		# guard_output = Guard.filter_results(results)
 		guard_output = Guard.filter_results_v1(reranked_results)
 		# {'chunks':filtered_chunks,'retrieval_status':retrieval_status,'top_score':highest_similarity,'gap':diff}
@@ -106,6 +115,7 @@ class Pipeline :
 		filtered_chunks = guard_output['chunks']
 		guard_scores = [f"(Guard->{chunk['reranker_score']},Similarity->{chunk['similarity']},Confidence->{chunk['confidence']})" for chunk in filtered_chunks]
 		# print(f"Guard Scores->{guard_scores}")
+		print(f"[MEM]Guard:{get_mem():.3f}MB")
 		print(f"[Debug]Guard->{guard_scores}")
 		progress['guard']="Passed"
 		if(retrieval_status=="REFUSE" or (not filtered_chunks)):
@@ -120,10 +130,12 @@ class Pipeline :
 			rewritten_query = qrewriter.rewrite_with_groq(query)    
 			# rewritten_query_embeddings = self.embedding_model.embed([rewritten_query])[0]
 			rewritten_query_embeddings = self.hf_embedding_model.embed([rewritten_query])[0]
+			print(f"[MEM]rw_eguardmbeddings:{get_mem():.3f}MB")
 			print(f"[Debug]rw_eguardmbeddings->{len(rewritten_query_embeddings)}")
 			progress['rw_eguardmbeddings']="Passed"
 			rewritten_results =  self.retriever.retrieve(rewritten_query_embeddings)
 			rewrite_triggered =True
+			print(f"[MEM]rw_retrieval:{get_mem():.3f}MB")      
 			print(f"[Debug]rw_retrieval_count->{len(rewritten_results)}")
 			progress['rw_retrieval']="Passed"
 			latency['rewrite'] = round(time.time()-t0_rewrite,3)
@@ -140,6 +152,7 @@ class Pipeline :
 				'metadatas': [[chunk['metadata'] for chunk in rw_selected_chunks]],
         'reranker_score':[[sigmoid(chunk['reranker_score']) for chunk in rw_selected_chunks]]
 				}
+				print(f"[MEM]rw_reranker:{get_mem():.3f}MB")
 				print(f"[Debug]rw_reranker->{len(rewritten_results)}")
 				progress['rw_reranker']="Passed"
 				rw_guard_output = Guard.filter_results_v1(rw_reranked_results)
@@ -154,6 +167,7 @@ class Pipeline :
 					filtered_chunks = filtered_chunks + rw_chunks
 					# filtered_chunks=remove_duplicate_chunks(filtered_chunks)
 					filtered_chunks.sort(key=lambda x:x['reranker_score'],reverse=True)
+				print(f"[MEM]rw_Guard:{get_mem():.3f}MB")
 				print(f"[Debug]rw_Guard->{guard_scores}")
 				progress['rw_guard']="Passed"
 		# 	answer = self.generator.generate(query,filtered_chunks)
@@ -170,6 +184,7 @@ class Pipeline :
 
 		answer = self.generator.generate_with_groq(query,filtered_chunks[:MAX_ALLOWED_CHUNKS],self.groqq)
 		# answer ="From LLM"
+		print(f"[MEM]Generation:{get_mem():.3f}MB")
 		print(f"[Debug]Generation->{answer}")
 		progress['generation']="Passed"
 		latency['generation'] = round(time.time()-t0_generation,3)

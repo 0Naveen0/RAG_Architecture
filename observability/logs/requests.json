@@ -3807,5 +3807,99 @@
       "rw_guard": "Passed",
       "rw_eguardmbeddings": "Passed"
     }
+  },
+  {
+    "request_id": "094cddb4-34d5-4551-b339-c64945b31278",
+    "timestamp": "2026-04-23T14:30:09.344273",
+    "query": "Who is PM of India?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.13431191444396973,
+      0.12327975034713745,
+      0.11948668956756592,
+      0.11109298467636108,
+      0.11086738109588623,
+      0.10260546207427979,
+      0.0969322919845581
+    ],
+    "reranker_scores": [
+      1.177575726047063e-05,
+      1.1303114882926558e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 3.093,
+      "retrieval": 0.006,
+      "reranking": 2.839,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ],
+    "progress": {
+      "embeddings": "Passed",
+      "retrieval": "Passed",
+      "empty_retrieval": null,
+      "reranker": "Passed",
+      "guard": "Passed",
+      "generation": null,
+      "rw_embeddings": null,
+      "rw_retrieval": null,
+      "rw_reranker": null,
+      "rw_guard": null
+    }
+  },
+  {
+    "request_id": "dcd6e3bb-112e-4945-a601-3eac55141172",
+    "timestamp": "2026-04-23T14:38:55.483597",
+    "query": "Who is PM of Russia?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.14996176958084106,
+      0.11880213022232056,
+      0.11493265628814697,
+      0.11034488677978516,
+      0.10515183210372925,
+      0.10203367471694946,
+      0.09951609373092651
+    ],
+    "reranker_scores": [
+      1.1703735143002101e-05,
+      1.1625366486054816e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.251,
+      "retrieval": 0.003,
+      "reranking": 1.069,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ],
+    "progress": {
+      "embeddings": "Passed",
+      "retrieval": "Passed",
+      "empty_retrieval": null,
+      "reranker": "Passed",
+      "guard": "Passed",
+      "generation": null,
+      "rw_embeddings": null,
+      "rw_retrieval": null,
+      "rw_reranker": null,
+      "rw_guard": null
+    }
   }
 ]

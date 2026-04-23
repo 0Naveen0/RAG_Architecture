@@ -19,7 +19,7 @@ class HFEmbeddingModel:
 		# 	"Content-Type": "application/json"
 		# 	}
 		# print(f"URL={self.url} | headers={headers} ")
-		response = requests.post(self.url, headers=headers, json={"inputs": texts})
+		response = requests.post(self.url, headers=headers, json={"inputs": texts,"options":{"wait_for_model":True,"use_cache":True}},timeout=60)
 		# print(f"[Response_{type(response)}]{response}")
 		response.raise_for_status()
 		return response.json()
