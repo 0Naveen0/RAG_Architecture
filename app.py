@@ -8,7 +8,7 @@ from rag.retriever import Retriever
 from rag.generator import Generator
 from models.groq_model import GroqGenerator
 from models.hf_embedding import HFEmbeddingModel
-from rag.pipeline import Pipeline
+from rag.pipeline import Pipeline,get_mem
 from utils.rate_limiter import RateLimiter
 from config.validate_query import validate_query
 from config.config import LIMITER_MAX_REQUESTS,LIMITER_WINDOW_SECOND
@@ -31,18 +31,25 @@ def log_chroma_files():
       print(f"[Chromadb]{fp}:{size_mb:.3f}MB")
   print(f"[Chromadb]Total Size:{total:.3f}MB")
 # orchestrator = RAGOrchestrator()
+print(f"[MEM]before retriever init:{get_mem():.3f}MB")
 retriever = Retriever(create_if_missing=False)
 log_chroma_files()
 chroma_count =0
 try:
   chroma_count = retriever.collection.count()
   print(f"Chroma initialized->{retriever.collection.count()}")
+  print(f"[MEM]after retriever init:{get_mem():.3f}MB")
 except Exception as e:
   print("Chroma init failed",e)
+print(f"[MEM]before groqq init:{get_mem():.3f}MB")
 groqq = GroqGenerator()
+print(f"[MEM]before gene init:{get_mem():.3f}MB")
 gene = Generator(groqq)
+print(f"[MEM]before hf_embedding_model init:{get_mem():.3f}MB")
 hf_embedding_model = HFEmbeddingModel()
+print(f"[MEM]before pipeline init:{get_mem():.3f}MB")
 orchestrator = Pipeline(retriever=retriever,generator=gene,embedding_model=hf_embedding_model,groqq=groqq)
+print(f"[MEM]after pipeline init:{get_mem():.3f}MB")
 limiter = RateLimiter(max_requests=LIMITER_MAX_REQUESTS,window_seconds=LIMITER_WINDOW_SECOND)
 
 @app.route("/",methods=["GET"])

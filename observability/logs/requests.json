@@ -3901,5 +3901,52 @@
       "rw_reranker": null,
       "rw_guard": null
     }
+  },
+  {
+    "request_id": "a0214e62-0652-434f-b391-aa0c991f0e2f",
+    "timestamp": "2026-04-23T14:48:56.421147",
+    "query": "How seeder is created in laravel?",
+    "answer": "To generate a seeder in Laravel, you can execute the make:seeder Artisan command. [Source: seeder.txt | Chunk Id: 0] \n\nFor example, to create a UserSeeder, you can run the following command:\nphp artisan make:seeder UserSeeder \n\nThis will create a new seeder class in the database/seeds directory. [Source: seeder.txt | Chunk Id: 0]",
+    "confidence": "HIGH",
+    "source": "seeder.txt",
+    "chunk_ids": [
+      "seeder.txt_0",
+      "seeder.txt_1"
+    ],
+    "retrieval_scores": [
+      0.7682434916496277,
+      0.6302913427352905,
+      0.4927235245704651,
+      0.3805498480796814,
+      0.3578677177429199,
+      0.3515458106994629,
+      0.35060834884643555
+    ],
+    "reranker_scores": [
+      0.9941031061299872,
+      0.959552499609836
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 1.398,
+      "retrieval": 0.003,
+      "reranking": 0.787,
+      "rewrite": 0.0,
+      "generation": 0.444
+    },
+    "anomalies": [],
+    "progress": {
+      "embeddings": "Passed",
+      "retrieval": "Passed",
+      "empty_retrieval": null,
+      "reranker": "Passed",
+      "guard": "Passed",
+      "generation": "Passed",
+      "rw_embeddings": null,
+      "rw_retrieval": null,
+      "rw_reranker": null,
+      "rw_guard": null
+    }
   }
 ]
