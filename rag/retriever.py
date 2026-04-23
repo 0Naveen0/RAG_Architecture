@@ -16,9 +16,17 @@ from config.config import CHROMA_DB_PATH,TOP_K
 
 # retrive function returns cosine distance not similarity relation is similarity = 1- distance		
 class Retriever:
-    def __init__(self):
+    def __init__(self,create_if_missing=False):
         self.client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
-        self.collection = self.client.get_or_create_collection(name="enterprise_knowledge",metadata={"hnsw:space":"cosine"})
+        if create_if_missing:
+          self.collection = self.client.get_or_create_collection(name="enterprise_knowledge",metadata={"hnsw:space":"cosine"})
+        else:
+          try:
+            self.collection = self.client.get_collection(name="enterprise_knowledge")
+            print(f"[Retriever]Chroma loaded:{self.collection.count()}")
+          except Exception as e:
+            raise RuntimeError(f"[Debug]Chroma Collection not found at :{CHROMA_DB_PATH}")
+
 
     def retrieve(self, query_embeddings):
         results = self.collection.query(query_embeddings=[query_embeddings], n_results=TOP_K, include=["documents", "metadatas", "distances"])

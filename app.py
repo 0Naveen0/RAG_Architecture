@@ -20,7 +20,7 @@ app= Flask(__name__)
 IS_RENDER = os.environ.get('RENDER') == 'true'
 CORS(app)
 # orchestrator = RAGOrchestrator()
-retriever = Retriever()
+retriever = Retriever(create_if_missing=False)
 chroma_count =0
 try:
   chroma_count = retriever.collection.count()

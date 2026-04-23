@@ -22,7 +22,7 @@ def clean_text(text):
 def ingest_documents():
   
   # embedding_model = EmbeddingModel()
-  # retriever = Retriever()
+  # retriever = Retriever(create_if_missing=True)
   chunker = Chunker()  
   for filename in os.listdir(DOCS_PATH):
     filepath = os.path.join(DOCS_PATH,filename)

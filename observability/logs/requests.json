@@ -3570,5 +3570,99 @@
       "rw_guard": "Passed",
       "rw_eguardmbeddings": "Passed"
     }
+  },
+  {
+    "request_id": "17c55b4f-3096-4b6a-9e08-72738813357d",
+    "timestamp": "2026-04-23T09:55:19.773931",
+    "query": "How migration is created in laravel?",
+    "answer": "To create a migration in Laravel, you can use the make:migration Artisan command. The command is as follows: \nphp artisan make:migration create_users_table [FILE: migrations.txt | CHUNKID: 0] \n\nYou can also use the --table and --create options to indicate the name of the table and whether or not the migration will be creating a new table. For example: \nphp artisan make:migration create_users_table --create=users \nphp artisan make:migration add_votes_to_users_table --table=users [FILE: migrations.txt | CHUNKID: 0] \n\nAdditionally, you can specify a custom output path for the generated migration using the --path option [FILE: migrations.txt | CHUNKID: 1].",
+    "confidence": "HIGH",
+    "source": "migrations.txt",
+    "chunk_ids": [
+      "migrations.txt_0",
+      "migrations.txt_1"
+    ],
+    "retrieval_scores": [
+      0.6877232193946838,
+      0.6675299406051636,
+      0.5876870155334473,
+      0.5835258960723877,
+      0.45389533042907715,
+      0.43830227851867676,
+      0.4303150773048401
+    ],
+    "reranker_scores": [
+      0.99590506759767,
+      0.9860622638870442
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.374,
+      "retrieval": 0.026,
+      "reranking": 1.296,
+      "rewrite": 0.0,
+      "generation": 0.773
+    },
+    "anomalies": [],
+    "progress": {
+      "embeddings": "Passed",
+      "retrieval": "Passed",
+      "empty_retrieval": null,
+      "reranker": "Passed",
+      "guard": "Passed",
+      "generation": "Passed",
+      "rw_embeddings": null,
+      "rw_retrieval": null,
+      "rw_reranker": null,
+      "rw_guard": null
+    }
+  },
+  {
+    "request_id": "8603e9e4-751d-4a39-8933-2a39bf8a7132",
+    "timestamp": "2026-04-23T12:12:20.731235",
+    "query": "How migration is created in laravel?",
+    "answer": "To create a migration in Laravel, you can use the make:migration Artisan command. The command is as follows: \nphp artisan make:migration create_users_table [FILE: migrations.txt | CHUNKID: 0] \n\nYou can also use the --table and --create options to indicate the name of the table and whether or not the migration will be creating a new table. For example: \nphp artisan make:migration create_users_table --create=users \nphp artisan make:migration add_votes_to_users_table --table=users [FILE: migrations.txt | CHUNKID: 0] \n\nAdditionally, you can specify a custom output path for the generated migration using the --path option. [FILE: migrations.txt | CHUNKID: 1]",
+    "confidence": "HIGH",
+    "source": "migrations.txt",
+    "chunk_ids": [
+      "migrations.txt_0",
+      "migrations.txt_1"
+    ],
+    "retrieval_scores": [
+      0.6877232193946838,
+      0.6675299406051636,
+      0.5876870155334473,
+      0.5835258960723877,
+      0.45389533042907715,
+      0.43830227851867676,
+      0.4303150773048401
+    ],
+    "reranker_scores": [
+      0.99590506759767,
+      0.9860622638870442
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 2.011,
+      "retrieval": 0.003,
+      "reranking": 0.976,
+      "rewrite": 0.0,
+      "generation": 0.841
+    },
+    "anomalies": [],
+    "progress": {
+      "embeddings": "Passed",
+      "retrieval": "Passed",
+      "empty_retrieval": null,
+      "reranker": "Passed",
+      "guard": "Passed",
+      "generation": "Passed",
+      "rw_embeddings": null,
+      "rw_retrieval": null,
+      "rw_reranker": null,
+      "rw_guard": null
+    }
   }
 ]
