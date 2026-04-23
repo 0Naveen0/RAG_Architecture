@@ -3521,5 +3521,54 @@
       "rw_reranker": null,
       "rw_guard": null
     }
+  },
+  {
+    "request_id": "981d2c76-9996-42fe-ae48-96ff5748e5ca",
+    "timestamp": "2026-04-23T08:33:05.263180",
+    "query": "Predis is likely to remove in future?",
+    "answer": "Predis has been abandoned by the package's original author and may be removed from Laravel in a future release. [SOURCE: redis.txt | CHUNKID: 0]",
+    "confidence": "LOW",
+    "source": "redis.txt",
+    "chunk_ids": [
+      "redis.txt_0"
+    ],
+    "retrieval_scores": [
+      0.3014656901359558,
+      0.22613972425460815,
+      0.11765170097351074,
+      0.10337841510772705,
+      0.09897351264953613,
+      0.09405720233917236,
+      0.09249496459960938
+    ],
+    "reranker_scores": [
+      0.30724791115955186
+    ],
+    "rewrite_triggered": true,
+    "rewritten_query": "Is Predis anticipated to be deprecated in upcoming versions or releases, potentially leading to its removal from supported libraries or frameworks?",
+    "latency": {
+      "total": 3.184,
+      "retrieval": 0.011,
+      "reranking": 1.094,
+      "rewrite": 0.65,
+      "generation": 0.22
+    },
+    "anomalies": [
+      "low_confidence",
+      "rewrite_failed"
+    ],
+    "progress": {
+      "embeddings": "Passed",
+      "retrieval": "Passed",
+      "empty_retrieval": null,
+      "reranker": "Passed",
+      "guard": "Passed",
+      "generation": "Passed",
+      "rw_embeddings": null,
+      "rw_retrieval": "Passed",
+      "rw_reranker": "Passed",
+      "rw_guard": "Passed",
+      "rw_eguardmbeddings": "Passed"
+    }
   }
 ]

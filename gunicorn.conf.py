@@ -1,7 +1,7 @@
 import os
 
 workers = 1
-threads = 4
+threads = 2
 worker_class = "gthread"
 timeout = 120 #for groq/gemini api calls
 max_requests = 50  # to prevent memory leak

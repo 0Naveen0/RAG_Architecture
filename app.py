@@ -21,7 +21,9 @@ IS_RENDER = os.environ.get('RENDER') == 'true'
 CORS(app)
 # orchestrator = RAGOrchestrator()
 retriever = Retriever()
+chroma_count =0
 try:
+  chroma_count = retriever.collection.count()
   print(f"Chroma initialized->{retriever.collection.count()}")
 except Exception as e:
   print("Chroma init failed",e)
@@ -54,6 +56,11 @@ def ask():
     # result = orchestrator.run_groq(query)
     result = orchestrator.run_production(query)
     return result
+
+@app.route("/health",methods=["GET"])
+def health():
+  return jsonify({"message":"Server Running","Chroma":f"Init({chroma_count})","port":os.environ.get("PORT"),"host_render":IS_RENDER})
+
 
 if __name__ == "__main__":
     if IS_RENDER :

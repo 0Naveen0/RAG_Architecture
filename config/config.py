@@ -3,11 +3,24 @@ import shutil
 #Configuration File
 # BASE_URL = "/content/drive/MyDrive/ColabNotebooks/EKA_RAG_Project_v2/" # in colab
 # BASE_URL = "https://rag-architecture-v2.onrender.com/" # in production
+
 BASE_URL = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REPO_DB = os.path.join(BASE_URL,"db/chroma_db")
+RUNTIME_DB = "/tmp/chroma_db"
+if not os.path.exists(RUNTIME_DB):
+	shutil.copytree(REPO_DB,RUNTIME_DB)
+CHROMA_DB_PATH = RUNTIME_DB
+
 EMBEDDING_MODEL_NAME  ="sentence-transformers/all-MiniLM-L6-v2"
 LLM_MODEL_NAME        = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
 
-CHROMA_DB_PATH         = f"{BASE_URL}/db/chroma_db"
+#CHROMA_DB_PATH         = f"{BASE_URL}/db/chroma_db"
+
+# BASE_URL = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# EMBEDDING_MODEL_NAME  ="sentence-transformers/all-MiniLM-L6-v2"
+# LLM_MODEL_NAME        = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+
+# CHROMA_DB_PATH         = f"{BASE_URL}/db/chroma_db"
 TOP_K				           = 7	
 RERANKER_MODEL_NAME    = "cross-encoder/ms-marco-MiniLM-L6-v2"
 RERANKER_TOP_K         = 3
