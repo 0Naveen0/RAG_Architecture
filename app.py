@@ -91,7 +91,28 @@ def test():
         return jsonify({"error":result}),400
     query =result
 #    answer = f"Test ok........{query}"
-    answer = orchestrator.run(query)
+    answer = {"message":"Running Tests","Chroma":"Trying","Generator":"Trying","Groq":"Trying","hf_embedding_model":"Trying","QueryRewriter":"Trying","query":query}
+    print(f"[MEM]start:{get_mem():.3f}MB \n[Debug]Status:{answer}")
+	
+    try:
+      answer["Chroma"]= "Loaded" if retriever.collection.count()>0 else "Loading Failed"
+    except Exception as e:
+      raise RuntimeError(f"Error getting chroma:{e}\n[Debug]Status:{answer}")
+    print(f"[MEM]Chroma start:{get_mem():.3f}MB\n[Debug]Status:{answer}")
+    try:
+      query_embeddings = hf_embedding_model.embed([query])[0]
+      print(f"[MEM]query_embeddings:{get_mem():.3f}MB")
+      print(f"[Debug]query_embeddings->{len(query_embeddings)}")
+    except Exception as e:
+      raise RuntimeError(f"Error getting query_embeddings:{e}\n[Debug]Status:{answer}")
+    try:
+      results = retriever.retrieve(query_embeddings)
+      print(f"[MEM]retriever:{get_mem():.3f}MB")			
+      print(f"[Debug]Retrieval Count->{len(results)}")
+    except Exception as e:
+      raise RuntimeError(f"Error getting retriever:{e}\n[Debug]Status:{answer}")    
+    
+    # answer = orchestrator.run(query)
     return answer
 
 @app.route("/health",methods=["GET"])
