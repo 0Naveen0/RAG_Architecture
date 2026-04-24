@@ -49,7 +49,10 @@ gene = Generator(groqq)
 print(f"[MEM]before hf_embedding_model init:{get_mem():.3f}MB")
 hf_embedding_model = HFEmbeddingModel()
 print(f"[MEM]before pipeline init:{get_mem():.3f}MB")
-orchestrator = Pipeline(retriever=retriever,generator=gene,embedding_model=hf_embedding_model,groqq=groqq)
+try:
+  orchestrator = Pipeline(retriever=retriever,generator=gene,embedding_model=hf_embedding_model,groqq=groqq)
+except Exception as e:
+  raise RuntimeError(f"Error init orchestrator:{e}|[MEM]{get_mem():.3f}MB")
 print(f"[MEM]after pipeline init:{get_mem():.3f}MB")
 limiter = RateLimiter(max_requests=LIMITER_MAX_REQUESTS,window_seconds=LIMITER_WINDOW_SECOND)
 

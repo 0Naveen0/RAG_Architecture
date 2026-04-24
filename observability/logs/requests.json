@@ -3948,5 +3948,52 @@
       "rw_reranker": null,
       "rw_guard": null
     }
+  },
+  {
+    "request_id": "9130679e-6be1-48e4-9fa9-4bcdbe932581",
+    "timestamp": "2026-04-24T09:20:08.833864",
+    "query": "Who is PM of India?",
+    "answer": "I do not have sufficient information in the knowledge base to answer this question.",
+    "confidence": "low",
+    "source": null,
+    "chunk_ids": [],
+    "retrieval_scores": [
+      0.13431191444396973,
+      0.12327975034713745,
+      0.11948668956756592,
+      0.11109298467636108,
+      0.11086738109588623,
+      0.10260546207427979,
+      0.0969322919845581
+    ],
+    "reranker_scores": [
+      1.177575726047063e-05,
+      1.1303114882926558e-05
+    ],
+    "rewrite_triggered": false,
+    "rewritten_query": null,
+    "latency": {
+      "total": 3.349,
+      "retrieval": 0.006,
+      "reranking": 3.036,
+      "rewrite": 0.0,
+      "generation": 0.0
+    },
+    "anomalies": [
+      "low_confidence",
+      "empty_retrieval"
+    ],
+    "progress": {
+      "embeddings": "Passed",
+      "retrieval": "Passed",
+      "empty_retrieval": null,
+      "reranker": "Passed",
+      "guard": "Passed",
+      "generation": null,
+      "rw_embeddings": null,
+      "rw_retrieval": null,
+      "rw_reranker": null,
+      "rw_guard": null
+    }
   }
 ]
