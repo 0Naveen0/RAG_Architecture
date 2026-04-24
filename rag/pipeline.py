@@ -37,6 +37,46 @@ class Pipeline :
 		self.groqq = groqq
 		self.hf_embedding_model = embedding_model
 
+	def run(self,query):
+		answer = {"message":"Running Tests","Chroma":"Trying","Generator":"Trying","Groq":"Trying","hf_embedding_model":"Trying","QueryRewriter":"Trying","query":query}
+		print(f"[MEM]start:{get_mem():.3f}MB \n[Debug]Status:{answer}")
+	
+		try:
+			answer["Chroma"]= "Loaded" if self.retriever.collection.count()>0 else "Loading Failed"
+		except Exception as e:
+			raise RuntimeError(f"Error getting chroma:{e}\n[Debug]Status:{answer}")
+		print(f"[MEM]Chroma start:{get_mem():.3f}MB\n[Debug]Status:{answer}")
+		try:
+			answer["Generator"]= "Loaded" if self.generator else "Loading Failed"
+		except Exception as e:
+			raise RuntimeError(f"Error getting Generator:{e}\n[Debug]Status:{answer}")		
+		print(f"[MEM]Generator start:{get_mem():.3f}MB\n[Debug]Status:{answer}")
+		try:
+			answer["Groq"]= "Loaded" if self.groqq else "Loading Failed"
+		except Exception as e:
+			raise RuntimeError(f"Error getting Groq:{e}\n[Debug]Status:{answer}")    
+		print(f"[MEM]Groq start:{get_mem():.3f}MB\n[Debug]Status:{answer}")
+		try:
+			answer["hf_embedding_model"]= "Loaded" if self.hf_embedding_model else "Loading Failed"
+		except Exception as e:
+			raise RuntimeError(f"Error getting hf_embedding_model:{e}\n[Debug]Status:{answer}")     
+		print(f"[MEM]hf_embedding_model start:{get_mem():.3f}MB\n[Debug]Status:{answer}")
+		try:
+			qrewriter = QueryRewriter(self.groqq)
+			answer["QueryRewriter"]= "Loaded" if qrewriter else "Loading Failed"
+		except Exception as e:
+			raise RuntimeError(f"Error getting QueryRewriter:{e}\n[Debug]Status:{answer}")
+		print(f"[MEM]QueryRewriter start:{get_mem():.3f}MB\n[Debug]Status:{answer}")
+		try:
+			reranker = HfReranker()
+			answer["HfReranker"]= "Loaded" if reranker else "Loading Failed"
+		except Exception as e:
+			raise RuntimeError(f"Error getting HfReranker:{e}\n[Debug]Status:{answer}")
+		print(f"[MEM]HfReranker start:{get_mem():.3f}MB\n[Debug]Status:{answer}")
+
+		return answer
+
+  
 	def run_production(self,query):		
 		# self.hf_embedding_model = HFEmbeddingModel()
 		# self.retriever = Retriever()		

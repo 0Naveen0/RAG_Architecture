@@ -75,6 +75,7 @@ def ask():
     # result = orchestrator.run_v1(query)
     # result = orchestrator.run_groq(query)
     answer = orchestrator.run_production(query)
+    # answer = orchestrator.run(query)
     return answer
 
 
@@ -86,7 +87,8 @@ def test():
     if not is_valid:
         return jsonify({"error":result}),400
     query =result
-    answer = f"Test ok........{query}"
+#    answer = f"Test ok........{query}"
+    answer = orchestrator.run(query)
     return answer
 
 @app.route("/health",methods=["GET"])
