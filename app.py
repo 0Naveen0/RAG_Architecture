@@ -3,6 +3,7 @@ from flask_cors import CORS
 import importlib
 import os
 import psutil
+import sys
 # from rag.orchestrator import RAGOrchestrator
 from rag.retriever import Retriever
 from rag.generator import Generator
@@ -73,14 +74,28 @@ def ask():
     # orchestrator = RAGOrchestrator()
     # result = orchestrator.run_v1(query)
     # result = orchestrator.run_groq(query)
-    result = orchestrator.run_production(query)
-    return result
+    answer = orchestrator.run_production(query)
+    return answer
+
+
+@app.route("/test",methods=["POST"])
+def test():
+    data = request.json
+    query= data.get("query")
+    is_valid,result = validate_query(query)
+    if not is_valid:
+        return jsonify({"error":result}),400
+    query =result
+    answer = f"Test ok........{query}"
+    return answer
 
 @app.route("/health",methods=["GET"])
 def health():
+  suspicious =["torch","transformers","sentence_transformers","tensorflow","sklearn","scipy","pandas","numpy"]
+  loaded = {m:(m in sys.modules) for m in suspicious}
   process = psutil.Process(os.getpid())
   mem_mb = process.memory_info().rss/1024/1024
-  return jsonify({"message":"Server Running","Chroma":f"Init({chroma_count})","port":os.environ.get("PORT"),"host_render":IS_RENDER,"memory_mb":mem_mb})
+  return jsonify({"message":"Server Running","Chroma":f"Init({chroma_count})","port":os.environ.get("PORT"),"host_render":IS_RENDER,"memory_mb":mem_mb,"modules":loaded})
 
 
 if __name__ == "__main__":
